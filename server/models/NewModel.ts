@@ -1,11 +1,9 @@
-import { Table, Column, Model, DataType, PrimaryKey, AutoIncrement, ForeignKey } from 'sequelize-typescript';
-import { User } from './UserModel.ts'; // Import the 'User' model class from the appropriate file
+import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
+//import { User } from './User'; // Assuming User model is in the same directory
 
 @Table({ tableName: 'news' })
 class News extends Model {
-    @PrimaryKey
-    @AutoIncrement
-    @Column(DataType.INTEGER.UNSIGNED)
+    @Column({ primaryKey: true, autoIncrement: true, type: DataType.INTEGER.UNSIGNED })
     public id!: number;
 
     @Column({ type: DataType.STRING(255), allowNull: false })
@@ -20,7 +18,7 @@ class News extends Model {
     @Column({ type: DataType.DATE, allowNull: false, defaultValue: DataType.NOW })
     public date!: Date;
 
-    @ForeignKey(() => User) 
-    @Column(DataType.INTEGER.UNSIGNED)
-    public userId!: number;
+    // @ForeignKey(() => User) 
+    // @Column(DataType.INTEGER.UNSIGNED)
+    // public userId!: number;
 }
