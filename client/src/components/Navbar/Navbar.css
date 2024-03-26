@@ -1,36 +1,62 @@
-body {
+  body {
     margin: 0;
     padding: 0;
   }
-  
-  nav {
-    background-color: #333;
-    padding: 0;
+   
+   nav {
     text-align: right; /* Orientación al revés */
-    display: flex; /* Pone el texto de la navbar a la izquierda*/
     position: fixed; /* Hace que la navbar solo ocupe el tamaño del texto*/
+    margin-top: 60px;
+    background: linear-gradient(135deg, #261a72, #ff0062, #0000ff);
   }
   
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  li {
-    display: inline;
   }
   
   a {
     color: white;
+    font-size: 23px;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 60px 20px; /* Espacio entre palabras */
     writing-mode: vertical-rl; /* Cambia la direccion de la escritura (vertical) */
     transform: rotate(180deg); /* Rota las letras hacia la derecha */
+    transition: 2s;
+    background-color: #000;
   }
   
   a:hover {
-    background-color: #555;
+    color: black;
+    background-color: #00000000;
+  }
+
+  /* logo */
+
+  .logo_container{
+    height: 60px;
+  }
+
+  .image1, .image2 {
+    position: absolute;
+    transition: transform 0.5s ease;
+  }
+  
+  .image1 {
+    width: 3.5vw;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .image2 {
+    width: 7vw;
+    left: -70px;
+    z-index: 1;
+  }
+  
+  .logo_container:hover .image2 {
+    transform: translateX(100%); /* Desplaza la imagen 2 hacia la derecha */
+
   }
