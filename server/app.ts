@@ -13,9 +13,9 @@ try {
     RoleModel.sync();
     UserModel.sync();
     NewsModel.sync();
-    console.log('conected')
+    console.log('😎  conected, oh yeah!! 💕')
 } catch (error) {
-    console.log(`error`)
+    console.log(`connection error 😒😒`)
     
 }
 app.listen(PORT, () => {
