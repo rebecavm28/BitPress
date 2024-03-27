@@ -11,10 +11,10 @@ export const RolModel = connection_db.define('roles', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    // Otros campos según sea necesario
+    
 }, {
-    tableName: 'roles', // Nombre de la tabla en la base de datos
-    timestamps: false, // Deshabilita los timestamps
+    tableName: 'roles', 
+    timestamps: false, 
 });
 
 export default RolModel;

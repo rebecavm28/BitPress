@@ -20,13 +20,13 @@ export const UserModel = connection_db.define('user', {
         type:DataTypes.INTEGER,
         allowNull:false,
         references: {
-            model: RolModel, // referencia al modelo RolModel
+            model: RolModel, 
             key: 'id', 
         },
     }
 },{
-        tableName: 'users', // Nombre de la tabla en la base de datos
-        timestamps: false, // Disable timestamps
+        tableName: 'users', 
+        timestamps: false, 
       }
 );
 export default UserModel;
