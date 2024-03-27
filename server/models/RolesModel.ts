@@ -1,9 +1,10 @@
-import { DataTypes, Model, Optional } from 'sequelize';
+import { DataTypes, Model, Sequelize } from 'sequelize';
 import connection_db from '../database/connection_db';
 
+class Rol extends Model {}
 
 
-RolModel.init(
+Rol.init(
     {
       id_rol: {
         type: DataTypes.INTEGER,
@@ -21,4 +22,4 @@ RolModel.init(
     }
   );
   
-  export default RolModel;
+  export default Rol;

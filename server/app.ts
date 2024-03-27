@@ -1,11 +1,12 @@
 import connection_db from "./database/connection_db";
-import express, { Express } from "express";
+import * as express from 'express';
 import { PORT } from './helpers/config';
-import cors from "cors";
+import Rol from "./models/RolesModel"
 
-const app: Express = express();
 
-app.use(cors());
+ export const app = express();
+
+
 app.use(express.json());
 app.use
 
@@ -13,7 +14,7 @@ async function startServer() {
   try {
     await connection_db.authenticate();
     console.log('Connection has been established successfully.');
-    await nombredelmodelo.sync();
+    await Rol.sync();
     console.log("The table for the Bonsai model was just (re)created!");
     
     app.listen(PORT, () => {
