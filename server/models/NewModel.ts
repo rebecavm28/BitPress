@@ -21,9 +21,13 @@ export const NewModel = connection_db.define('new', {
     },
     date:{ type: DataTypes.DATE, allowNull: false },
 },
+    id_user: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 {
-        tableName: 'news', // Nombre de la tabla en la base de datos
-        timestamps: false, // Disable timestamps
+    tableName: 'news', // Nombre de la tabla en la base de datos
+    timestamps: false, // Disable timestamps
       }
 );
 export default NewModel;
