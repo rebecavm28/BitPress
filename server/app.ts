@@ -3,6 +3,7 @@ import * as express from 'express';
 import {PORT} from './config';
 import {RolModel} from "./models/RolesModel";
 import {UserModel}from "./models/UserModel";
+import NewModel from "./models/NewModel";
 
 export const app = express();
 
@@ -11,6 +12,7 @@ try {
     connection_db.authenticate()
     RolModel.sync()
     UserModel.sync()
+    NewModel.sync()
     
     console.log('conected')
 } catch (error) {
