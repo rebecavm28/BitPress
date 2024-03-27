@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
+import RolModel from "./RolModel";
 
 export const UserModel = connection_db.define('user', {
     id: {
@@ -18,6 +19,10 @@ export const UserModel = connection_db.define('user', {
     id_rol:{
         type:DataTypes.INTEGER,
         allowNull:false,
+        references: {
+            model: RolModel, // referencia al modelo RolModel
+            key: 'id', 
+        },
     }
 },{
         tableName: 'users', // Nombre de la tabla en la base de datos
