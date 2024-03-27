@@ -1,24 +1,29 @@
-import { Table, Column, Model, DataType, } from 'sequelize-typescript';
-//import { User } from './User'; // Assuming User model is in the same directory
+import { DataTypes } from "sequelize";
+import connection_db from "../database/connection_db";
 
-@Table({ tableName: 'news' })
-class News extends Model {
-    @Column({ primaryKey: true, autoIncrement: true, type: DataType.INTEGER.UNSIGNED })
-    public id!: number;
-
-    @Column({ type: DataType.STRING(255), allowNull: false })
-    public title!: string;
-
-    @Column({ type: DataType.STRING(500), allowNull: false })
-    public imageUrl!: string;
-
-    @Column({ type: DataType.TEXT, allowNull: false })
-    public content!: string;
-
-    @Column({ type: DataType.DATE, allowNull: false, defaultValue: DataType.NOW })
-    public date!: Date;
-
-    // @ForeignKey(() => User) 
-    // @Column(DataType.INTEGER.UNSIGNED)
-    // public userId!: number;
-}
+export const NewModel = connection_db.define('new', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true, 
+        primaryKey: true,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false, 
+    },
+    imageUrl: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    id_new:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+    },
+    date:{ type: DataTypes.DATE, allowNull: false },
+},
+{
+        tableName: 'news', // Nombre de la tabla en la base de datos
+        timestamps: false, // Disable timestamps
+      }
+);
+export default NewModel;
