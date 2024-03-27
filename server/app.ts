@@ -7,8 +7,8 @@ app.use(express.json());
 
 try {
     connection_db.authenticate()
-/*     connection_db.sync();
- */    console.log('conected')
+    
+    console.log('conected')
 } catch (error) {
     console.log(`error`)
     
