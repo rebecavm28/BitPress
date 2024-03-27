@@ -27,14 +27,14 @@ export const NewsModel = connection_db.define('news', {
     id_user: {
         type: DataTypes.INTEGER,
         references: {
-            model: UserModel, // referencia al modelo UserModel
-            key: 'id', // modelo UserModel
+            model: UserModel, 
+            key: 'id', 
         },
         allowNull: false,
     },
 }, {
-    tableName: 'news', // Nombre de la tabla en la base de datos
-    timestamps: false, // Deshabilita los timestamps
+    tableName: 'news', 
+    timestamps: false, 
 });
 
 export default NewsModel;
