@@ -1,6 +1,6 @@
 import connection_db from "./database/connection_db";
-import express from  'express';
-import {PORT} from './config.js'
+import * as express from 'express';
+import {PORT} from './config'
 
 export const app = express();
 app.use(express.json());
@@ -13,6 +13,6 @@ try {
     console.log(`error`)
     
 }
-/* app.listen(PORT, () => {
+app.listen(PORT, () => {
       console.log(`Servidor corriendo en http://localhost:${PORT}`);
-    }); */
+    });
