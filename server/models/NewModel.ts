@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, } from 'sequelize-typescript';
 //import { User } from './User'; // Assuming User model is in the same directory
 
 @Table({ tableName: 'news' })
