@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
-import RoleModel from "./RolModel";
+import RolModel from "./RolModel";
 
 export const UserModel = connection_db.define('user', {
     id: {
@@ -20,7 +20,7 @@ export const UserModel = connection_db.define('user', {
         type:DataTypes.INTEGER,
         allowNull:false,
         references: {
-            model: RoleModel, // referencia al modelo RoleModel
+            model: RolModel, // referencia al modelo RolModel
             key: 'id', 
         },
     }

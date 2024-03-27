@@ -1,8 +1,7 @@
-// RoleModel.ts
 import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
 
-export const RoleModel = connection_db.define('roles', {
+export const RolModel = connection_db.define('roles', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -18,4 +17,4 @@ export const RoleModel = connection_db.define('roles', {
     timestamps: false, // Deshabilita los timestamps
 });
 
-export default RoleModel;
+export default RolModel;
