@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
 
 export const UserModel = connection_db.define('user', {
-    id: {
+    id_user: {
         type: DataTypes.INTEGER,
         autoIncrement: true, 
         primaryKey: true,

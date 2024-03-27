@@ -1,12 +1,13 @@
 import connection_db from "./database/connection_db";
-import * as express from 'express';
-import {PORT} from './config'
+import express from 'express';
+import {PORT} from './config';
 
 export const app = express();
 app.use(express.json());
 
 try {
     connection_db.authenticate()
+    connection_db.sync();
 /*     connection_db.sync();
  */    console.log('conected')
 } catch (error) {
