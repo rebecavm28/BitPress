@@ -1,12 +1,8 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 import connection_db from '../database/connection_db';
 
-class Rol extends Model {}
-
-
-Rol.init(
-    {
-      id_rol: {
+export const RolModel = connection_db.define('Rol', {
+  id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
@@ -15,11 +11,9 @@ Rol.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-    },
-    {
-      sequelize: connection_db,
+    },{
       tableName: 'roles', // Nombre de la tabla en la base de datos
+      timestamps: false, // Disable timestamps
     }
-  );
-  
-  export default Rol;
+);
+export default RolModel;
