@@ -1,6 +1,5 @@
 import { DataTypes, Model, Optional } from 'sequelize';
-import connection_db from '../database/connection_db';yarn add sequelize
-yarn add sequelize
+import connection_db from '../database/connection_db';
 
 
 
