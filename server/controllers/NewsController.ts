@@ -9,3 +9,14 @@ export const getAllNews = async(request: Request, response: Response )=>{
     response.status(500).json({message:error.message})
   }  
 }
+
+export const createNews = async(request: Request, response: Response)=>{
+    try {
+    /* const id_user = request.body.user.id;
+       const data = {}  */
+       const createNew = await NewsModel.create()
+       response.status(201).json({message: "new created correctly"})
+    } catch (error) {
+        
+    }
+}

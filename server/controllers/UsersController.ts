@@ -9,3 +9,13 @@ export const getAllUsers = async(request: Request, response: Response )=>{
     response.status(500).json({message:error.message})
   }  
 }
+
+export const createUsers = async(request: Request, response: Response)=>{
+    try {
+      const users = await UserModel.create()
+      
+      response.status(200).json(users);  
+    } catch (error) {
+      response.status(500).json({message:error.message})  
+    }
+}
