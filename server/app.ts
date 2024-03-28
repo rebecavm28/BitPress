@@ -2,9 +2,6 @@ import connection_db from "./database/connection_db";
 import * as express from 'express';
 import {PORT} from './config'
 import * as cors from 'cors';
-import {UserModel} from './models/UserModel'
-import {RolModel} from    './models/RolModel'
-import NewsModel from "./models/NewsModel";
 import newsRouter from "./routes/NewsRouter";
 import userRouter from "./routes/UserRouter";
 
