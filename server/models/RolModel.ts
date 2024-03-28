@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
 
 export const RolModel = connection_db.define('roles', {
-    id: {
+    id_rol: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,

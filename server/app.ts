@@ -17,15 +17,12 @@ app.use('/api/', userRouter)
 
 try {
     connection_db.authenticate()
-    RolModel.sync();
-    UserModel.sync();
-    NewsModel.sync();
-    
+    connection_db.sync()
     console.log('😎  conected, oh yeah!! 💕');
 } catch (error) {
     console.log(`connection error 😒😒`)
     
 }
 app.listen(PORT, () => {
-      console.log(`Servidor corriendo en http://localhost:${PORT}`);
+      console.log(`🚆Servidor corriendo en http://localhost:${PORT}`);
     });
