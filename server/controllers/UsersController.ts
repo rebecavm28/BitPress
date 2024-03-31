@@ -1,3 +1,21 @@
 import UserModel from "../models/UserModel";
-import { Request, response } from "express";
+import { Request, Response } from "express";
 
+export const getAllUsers = async(request: Request, response: Response )=>{
+  try {
+    const users = await UserModel.findAll()
+    response.status(200).json(users);
+  } catch (error) {
+    response.status(500).json({message:error.message})
+  }  
+}
+
+export const createUsers = async(request: Request, response: Response)=>{
+    try {
+      const users = await UserModel.create()
+      
+      response.status(200).json(users);  
+    } catch (error) {
+      response.status(500).json({message:error.message})  
+    }
+}

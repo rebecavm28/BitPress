@@ -1,22 +1,29 @@
 import connection_db from "./database/connection_db";
 import * as express from 'express';
-import {PORT} from './config';
-import {RolModel} from "./models/RolesModel";
-import {UserModel}from "./models/UserModel";
-import NewModel from "./models/NewModel";
+import {PORT} from './config'
+import * as cors from 'cors';
+import {UserModel} from './models/UserModel'
+import {RolModel} from    "./models/RolesModel"
+import NewsModel from "./models/NewModel";
+import newsRouter from "./routes/NewsRouter";
+import userRouter from "./routes/NewsRouter";
 
 export const app = express();
-
+app.use(cors());
 app.use(express.json());
+
+app.use('/api/', newsRouter);
+app.use('/api/', userRouter)
+
 try {
     connection_db.authenticate()
-    RolModel.sync()
-    UserModel.sync()
-    NewModel.sync()
+    RolModel.sync();
+    UserModel.sync();
+    NewsModel.sync();
     
-    console.log('conected')
+    console.log('😎  conected, oh yeah!! 💕');
 } catch (error) {
-    console.log(`error`)
+    console.log(`connection error 😒😒`)
     
 }
 app.listen(PORT, () => {
