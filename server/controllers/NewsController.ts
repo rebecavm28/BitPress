@@ -1,5 +1,5 @@
 import NewModel from "../models/NewModel";
-import { request, response } from "express";
+import e, { request, response } from "express";
 
 export const getNews = async (req: typeof request, res: typeof response) => {
     try {
@@ -39,6 +39,15 @@ export const updateNews = async (req: typeof request, res: typeof response) => {
 export const deleteNews = async (req: typeof request, res: typeof response) => {
     try {
         const news = await NewModel.destroy({ where: { id: req.params.id } });
+        res.status(201).json(news);
+    } catch (error: any) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
+export const showOneNews = async (req: typeof request, res: typeof response) => {
+    try {
+        const news = await NewModel.findOne({ where: { id: req.params.id } });
         res.status(201).json(news);
     } catch (error: any) {
         res.status(500).json({ message: error.message });

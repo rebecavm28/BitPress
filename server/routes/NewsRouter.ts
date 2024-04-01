@@ -1,10 +1,10 @@
 import * as express from 'express';
-import { deleteNews, getAllNews, createNews, updateNews, showOneNews } from '../controllers/NewsController';
+import { deleteNews, getNews, createNews, updateNews, showOneNews } from '../controllers/NewsController';
 
 
 const newsRouter =  express.Router();
 
-newsRouter.get('/news', getAllNews);
+newsRouter.get('/news', getNews);
 newsRouter.delete('/news/:id', deleteNews);
 newsRouter.get('/news/:id', showOneNews);
 newsRouter.post('/news', createNews);
