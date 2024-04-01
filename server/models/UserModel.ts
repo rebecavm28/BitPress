@@ -21,7 +21,7 @@ export const UserModel = connection_db.define('user', {
         allowNull:false,
         references: {
             model: RolModel, // referencia al modelo RolModel
-            key: 'id_user', 
+            key: 'id_rol', 
         },
     }
 },{

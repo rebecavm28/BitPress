@@ -28,7 +28,7 @@ export const NewsModel = connection_db.define('news', {
         type: DataTypes.INTEGER,
         references: {
             model: UserModel, 
-            key: 'id_news', 
+            key: 'id_user', 
         },
         allowNull: false,
     },
