@@ -11,7 +11,7 @@ export const getAllUsers = async(request: Request, response: Response )=>{
 }
 
 //Login
-export const registerUser = async ( request :Request ,response:Response)=>{
+export const registerUser = async ( request :Request , response:Response)=>{
   try {
     
   } catch (error) {
@@ -20,7 +20,7 @@ export const registerUser = async ( request :Request ,response:Response)=>{
 }
 
 //Registro
-export const loginUser = async ( request :Request ,response:Response)=>{
+export const loginUser = async ( request:Request , response:Response)=>{
   try {
     
   } catch (error) {
@@ -58,12 +58,3 @@ export const updateUser = async(request: Request, response: Response)=>{
   }
 }
 
-export const showOneNews = async(request: Request, response: Response) => {
-  const idUser = request.params.id;
-  try {
-    const oneUser = await UserModel.findOne({ where: { id_user: Number(idUser) } });
-    return response.status(200).json(oneUser);
-  } catch (error: any) {
-    return response.status(500).json({ message: 'error to show the user', error: error.message });
-  }
-}
