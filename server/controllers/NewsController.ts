@@ -22,7 +22,7 @@ export const createNews = async(request: Request, response: Response)=>{
 export const deleteNews = async(request: Request, response: Response)=>{
   const idNews = request.params.id;
   try {
-    await NewsModel.destroy({where:{id_news:idNews}});
+    await NewsModel.destroy({where:{id:idNews}});
     return response.status(201).json({message: 'the note has deleted correctly'})
   } catch (error) {
     return response.status(500).json({message:'error to delete the note', error: error.message})
@@ -32,7 +32,7 @@ export const deleteNews = async(request: Request, response: Response)=>{
 export const updateNews = async(request: Request, response: Response)=>{
   const idNews =request.params.id;
   try {
-    await NewsModel.update(request.body,{where:{id_news:idNews}});
+    await NewsModel.update(request.body,{where:{id:idNews}});
     return response.status(200).json({message:'The Note was updated successfully!'});
   } catch (error) {
     return response.status(500).json({message:'error to update the note', error: error.message})
