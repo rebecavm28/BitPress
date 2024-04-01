@@ -1,6 +1,9 @@
 import UserModel from "../models/UserModel";
 import { Request, Response } from "express";
 import * as bcrypt from 'bcrypt';
+import {User} from '../interfaces/interface';
+import {Model} from 'sequelize'
+import { Jwt } from "jsonwebtoken";
 
 export const getAllUsers = async(request: Request, response: Response )=>{
   try {
@@ -32,12 +35,15 @@ export const registerUser = async ( request :Request ,response:Response)=>{
 
 //Login
 export const loginUser = async ( request :Request ,response:Response)=>{
+  
   try {
-     const oneUser:any = await UserModel.findOne({where: {email: request.body.email}});
+     const oneUser = await UserModel.findOne({where: {email: request.body.email}});
      if(!oneUser){
       return response.status(401).json({message:"User not found"});
      }
-     const isUser =  await bcrypt.compare(request.body.password, oneUser.password );
+     const hashPassword = oneUser?.get("password") as string;
+     const isUser =  await bcrypt.compare(request.body.password, hashPassword );
+    /*  jwt.sign({_id_user:oneUser}) */
      if (!isUser) {
         return response.status(401).json({auth: false, message: 'Wrong Password'});
      }
