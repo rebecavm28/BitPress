@@ -16,10 +16,6 @@ export const NewModel = connection_db.define('news', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    id_new:{
-        type:DataTypes.INTEGER,
-        allowNull:false,
-    },
     date:{ 
         type: DataTypes.DATE, 
         allowNull: false 

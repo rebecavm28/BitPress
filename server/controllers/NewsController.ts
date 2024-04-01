@@ -39,7 +39,7 @@ export const updateNews = async(request: Request, response: Response)=>{
   }
 }
 
-export const  showOneNews = async(request:Request,response:Response)=> {
+export const  showOneNews = async(request:Request,response:Response)=> {  //para que traiga una sola//
   const idNews =request.params.id;
   try {
     const oneNew = await NewsModel.findOne({where: {id_news:Number(idNews)}});
