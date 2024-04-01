@@ -3,17 +3,10 @@ import { Request, Response } from "express";
 import * as bcrypt from 'bcrypt';
 import {User} from '../interfaces/interface';
 import {Model} from 'sequelize'
-import { Jwt, sign } from "jsonwebtoken";
+import { sign } from "jsonwebtoken";
 import {JWT_SECRET} from '../config'
 
-export const getAllUsers = async(request: Request, response: Response )=>{
-  try {
-    const users = await UserModel.findAll()
-    response.status(200).json(users);
-  } catch (error) {
-    response.status(500).json({message:error.message})
-  }  
-}
+
 
 //Registro
 export const registerUser = async ( request :Request ,response:Response)=>{
@@ -29,11 +22,6 @@ export const registerUser = async ( request :Request ,response:Response)=>{
     }
 }
 
-
-
-
-
-
 //Login
 export const loginUser = async ( request :Request ,response:Response)=>{
   
@@ -44,13 +32,14 @@ export const loginUser = async ( request :Request ,response:Response)=>{
      }
      const hashPassword = oneUser?.get("password") as string;
      const idUser = oneUser?.get("id_user") as number;
+     const role=  oneUser?.get('rol') as number ;
      const isUser =  await bcrypt.compare(request.body.password, hashPassword );
      
      if (!isUser) {
         return response.status(401).json({auth: false, message: 'Wrong Password'});
      }
-     const token = sign({_id_user: idUser}, JWT_SECRET, { expiresIn: '1h' })
-     return response.status(200).json({message:"login correctly", token});
+     const token = sign({id_user: idUser}, JWT_SECRET, { expiresIn: '3h' })
+     return response.status(200).json({message:"login correctly", token,idUser,role});
 
   } catch (error) {
            return response.status(500).json({message: 'Error login', error: error.message});
@@ -58,7 +47,16 @@ export const loginUser = async ( request :Request ,response:Response)=>{
   }
 }
 
+//////////
 
+export const getAllUsers = async(request: Request, response: Response )=>{
+  try {
+    const users = await UserModel.findAll()
+    response.status(200).json(users);
+  } catch (error) {
+    response.status(500).json({message:error.message})
+  }  
+}
 export const deleteUser = async(request: Request, response: Response)=>{
   const idUser = request.params.id;
   try {
