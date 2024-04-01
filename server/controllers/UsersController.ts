@@ -3,7 +3,8 @@ import { Request, Response } from "express";
 import * as bcrypt from 'bcrypt';
 import {User} from '../interfaces/interface';
 import {Model} from 'sequelize'
-import { Jwt } from "jsonwebtoken";
+import { Jwt, sign } from "jsonwebtoken";
+import {JWT_SECRET} from '../config'
 
 export const getAllUsers = async(request: Request, response: Response )=>{
   try {
@@ -42,12 +43,14 @@ export const loginUser = async ( request :Request ,response:Response)=>{
       return response.status(401).json({message:"User not found"});
      }
      const hashPassword = oneUser?.get("password") as string;
+     const idUser = oneUser?.get("id_user") as number;
      const isUser =  await bcrypt.compare(request.body.password, hashPassword );
-    /*  jwt.sign({_id_user:oneUser}) */
+     
      if (!isUser) {
         return response.status(401).json({auth: false, message: 'Wrong Password'});
      }
-     return response.status(200).json({message:"login correctly"});
+     const token = sign({_id_user: idUser}, JWT_SECRET, { expiresIn: '1h' })
+     return response.status(200).json({message:"login correctly", token});
 
   } catch (error) {
            return response.status(500).json({message: 'Error login', error: error.message});
