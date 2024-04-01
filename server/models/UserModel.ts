@@ -16,12 +16,12 @@ export const UserModel = connection_db.define('user', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    id_rol:{
+    rol:{
         type:DataTypes.INTEGER,
         allowNull:false,
         references: {
-            model: RolModel, 
-            key: 'id', 
+            model: RolModel, // referencia al modelo RolModel
+            key: 'id_user', 
         },
     }
 },{
