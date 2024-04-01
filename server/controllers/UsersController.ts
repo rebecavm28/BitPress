@@ -11,33 +11,37 @@ export const getAllUsers = async(request: Request, response: Response )=>{
   }  
 }
 
-//Login
+//Registro
 export const registerUser = async ( request :Request ,response:Response)=>{
   try { 
-      const{email,name, password} = request.body;//extraemos name y password
+      const{email,name, password} = request.body;//extraemos name , email y password
       //encriptar contraseña:
       const hashedPassword = await bcrypt.hash(password, 10);
-      const userData = {email,name, password: hashedPassword};
+      const userData = {email, name, password: hashedPassword};
       await UserModel.create(userData);
-
-/*       const{password, ...userData} = request.body;//extrae la password del curpo y crea un nuevo objeto userData con los demás datos.
-      const hashedPassword = await bcrypt.hash(password,10);// bcrypt.hash es una función de bcrypt para encriptar la password, tiene que tener 2 argumentos, contraseña y rondas de hashing
-      await UserModel.create({ ...userData, password: hashedPassword })//le pasa el objeto creado antes y password ya encriptado.
- */       response.status(201).json({message: "user created correctly"})
+      response.status(201).json({message: "user created correctly"})
     } catch (error) {
        return response.status(500).json({message: 'Error on creating user', error: error.message});
     }
 }
 
-//Registro
+
+
+
+
+
+//Login
 export const loginUser = async ( request :Request ,response:Response)=>{
   try {
-     const{email, password} = request.body;//extraemos name y password
-      //encriptar contraseña:
-      const hashedPassword = await bcrypt.hash(password, 10);
-      //quiero que le asigne automaticamente el rol 2, de usuario, en el nuevo objeto:
-      const userData = {email, password: hashedPassword};
-      await UserModel.create(userData);
+     const oneUser:any = await UserModel.findOne({where: {email: request.body.email}});
+     if(!oneUser){
+      return response.status(401).json({message:"User not found"});
+     }
+     const isUser =  await bcrypt.compare(request.body.password, oneUser.password );
+     if (!isUser) {
+        return response.status(401).json({auth: false, message: 'Wrong Password'});
+     }
+     return response.status(200).json({message:"login correctly"});
 
   } catch (error) {
            return response.status(500).json({message: 'Error login', error: error.message});
