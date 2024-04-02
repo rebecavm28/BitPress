@@ -63,3 +63,25 @@ export const registerUser = async ( request :Request ,response:Response)=>{
        return response.status(500).json({message: 'Error on creating user', error: error.message});
     }
 }
+
+//login//
+ 
+export const login = async (req:Request, res:Response) => {
+ try {
+  const { email, password } = req.body;
+    // Buscar al usuario por su correo electrónico
+    const user = await UserModel.findOne({ where: { email } });
+
+    // Verificar si el usuario existe
+    if (!user) {
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+    // Verificar si la contraseña es correcta
+    const passwordMatch = await bcrypt.compare(password, hashedPassword);
+    if (!passwordMatch) {
+      return res.status(401).json({ message: 'Contraseña incorrecta' });
+    }
+  } catch (error) {
+    return res.status(500).json({message: 'error login', error: error.message});
+ }
+}
