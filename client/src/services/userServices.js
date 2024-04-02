@@ -14,14 +14,14 @@ export const getData = async () => {
 
 export const postData = async (data) =>{
   const users = await axios.post(`${url}/users`, data);
-  alert("User creado exitosamente");
+  alert("User created successfully");
   return users;
 };
 
 //DELETE
 
 export const deleteData = async (id) =>{
-  if(confirm("¿Estás seguro que quieres eliminar este user?") === true){
+  if(confirm("Are you sure you want to delete this user?") === true){
     const users = await axios.delete(`${url}/users/${id}`);
     return users;
   }
@@ -30,7 +30,7 @@ export const deleteData = async (id) =>{
 //UPDATE
 
 export const updateData = async (id, newData) => {
-  console.log("modificando");
+  console.log("modifying");
   const response = await fetch(`${url}/users/${id}`, {
     method: "PUT",
     headers: {

@@ -14,14 +14,14 @@ export const getData = async () => {
 
 export const postData = async (data) =>{
   const news = await axios.post(`${url}/news`, data);
-  alert("Noticia creada exitosamente");
+  alert("News created successfully");
   return news;
 };
 
 //DELETE
 
 export const deleteData = async (id) =>{
-  if(confirm("¿Quieres eliminar esta noticia?") === true){
+  if(confirm("Do you want to delete this news?") === true){
     const news = await axios.delete(`${url}/news/${id}`);
     return news;
   }
@@ -30,7 +30,7 @@ export const deleteData = async (id) =>{
 //UPDATE
 
 export const updateData = async (id, newData) => {
-  console.log("modificando");
+  console.log("modifying");
   const response = await fetch(`${url}/news/${id}`, {
     method: "PUT",
     headers: {
