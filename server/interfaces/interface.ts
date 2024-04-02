@@ -3,5 +3,10 @@ export interface User{
     name: string;
     email: string,
     password: string;
-    role?: string,
+    role?: string
+}
+export interface SesionData{
+    id_user?: number;
+    role?: string;
+    token:string; 
 }

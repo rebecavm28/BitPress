@@ -1,7 +1,7 @@
 import UserModel from "../models/UserModel";
 import { Request, Response } from "express";
 import * as bcrypt from 'bcrypt';
-import {User} from '../interfaces/interface';
+import {User, SesionData} from '../interfaces/interface';
 import {Model} from 'sequelize'
 import { sign } from "jsonwebtoken";
 import {JWT_SECRET} from '../config'
@@ -38,7 +38,7 @@ export const loginUser = async ( request :Request ,response:Response)=>{
      if (!isUser) {
         return response.status(401).json({auth: false, message: 'Wrong Password'});
      }
-     const token = sign({id_user: idUser}, JWT_SECRET, { expiresIn: '3h' })
+     const token = sign({id_user: idUser}, JWT_SECRET, { expiresIn: '2h' })
      return response.status(200).json({message:"login correctly", token,idUser,role});
 
   } catch (error) {
