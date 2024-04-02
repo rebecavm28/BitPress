@@ -1,8 +1,10 @@
 import UserModel from "../models/UserModel";
 import { Request, Response } from "express";
 import { bcrypt} from "bcrypt";
-import {jsonwebtoken} from "../config";
-import 
+import { sign } from "jsonwebtoken";
+import {JWT_SECRET} from '../config'
+
+
 
 export const getAllUsers = async(request: Request, response: Response )=>{
   try {
