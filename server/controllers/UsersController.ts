@@ -89,8 +89,6 @@ export const login = async (req:Request, res:Response) => {
     return res.status(500).json({message: 'error login', error: error.message});
  }
 }
-const token = jwt.sign({ userId: user.id }, 'tu_secreto_secreto', { expiresIn: '1h' });
-res.status(200).json({ token });
-
-  return res.status(500).json({ message: 'Error interno del servidor' });
+const token = sign({id_user: idUser}, JWT_SECRET, { expiresIn: '2h' })
+     return response.status(200).json({message:"login correctly", token,idUser,role});
 

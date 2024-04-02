@@ -1,4 +1,10 @@
 let hashedPassword: string;
-interface TokenPayload {
-    userId: string;
+type IdUser = string
+
+interface LoginResponse {
+    message: string;
+    token: string;
+    idUser: IdUser;
+    return:string;
 }
+
