@@ -24,11 +24,11 @@ export const NewsModel = connection_db.define('news', {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,
     },
-    id_user: {
+    user: {
         type: DataTypes.INTEGER,
         references: {
             model: UserModel, 
-            key: 'id', 
+            key: 'id_user', 
         },
         allowNull: false,
     },
