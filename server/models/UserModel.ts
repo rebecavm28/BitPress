@@ -5,7 +5,7 @@ import { UserAttributes } from "../Interfaces/Interfaces";
 interface UserModel extends Model<UserAttributes>, UserAttributes{}
 
 export const UserModel = connection_db.define('user', {
-    id: {
+    id_user: {
         type: DataTypes.INTEGER,
         autoIncrement: true, 
         primaryKey: true,
@@ -23,7 +23,7 @@ export const UserModel = connection_db.define('user', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    id_rol:{
+    rol:{
         type:DataTypes.INTEGER,
         allowNull:false,
         references: {
