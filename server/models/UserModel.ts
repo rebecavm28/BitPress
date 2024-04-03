@@ -1,6 +1,8 @@
-import { DataTypes } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import connection_db from "../database/connection_db";
 import RolModel from "./RolesModel";
+import { UserAttributes } from "../Interfaces/Interfaces";
+interface UserModel extends Model<UserAttributes>, UserAttributes{}
 
 export const UserModel = connection_db.define('user', {
     id: {

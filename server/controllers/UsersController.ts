@@ -1,14 +1,17 @@
 import UserModel from "../models/UserModel";
 import { Request, Response } from "express";
-import { bcrypt} from "bcrypt";
+import * as bcrypt from "bcrypt";
 import { sign } from "jsonwebtoken";
 import {JWT_SECRET} from '../config'
+import { UserAttributes } from "../Interfaces/Interfaces";
 
 
 
 export const getAllUsers = async(request: Request, response: Response )=>{
   try {
+    
     const users = await UserModel.findAll()
+    console.log(users)
     response.status(200).json(users);
   } catch (error) {
     response.status(500).json({message:error.message})
@@ -57,10 +60,10 @@ export const  showOneUsers = async(request:Request,response:Response)=> {  //par
 
 export const registerUser = async ( request :Request ,response:Response)=>{
   try { 
-      const{email,name, password} = request.body;//extraemos name , email y password
+      const{email,name, password,id_rol} = request.body;//extraemos name , email y password
       //encriptar contraseña:
       const hashedPassword = await bcrypt.hash(password, 10);   //2 parametros la contraseña y las vueltas //
-      const userData = {email, name, password: hashedPassword};    //que te hashed la contraseña//
+      const userData = {email, name, id_rol, password: hashedPassword};    //que te hashed la contraseña//
       await UserModel.create(userData);  //aqui le dices cogeme los datos del userdata y creamelo//
       response.status(201).json({message: "user created correctly"})
     } catch (error) {
@@ -74,21 +77,27 @@ export const login = async (req:Request, res:Response) => {
  try {
   const { email, password } = req.body;
     // Buscar al usuario por su correo electrónico
-    const user = await UserModel.findOne({ where: { email } });
-
+    const user:UserAttributes= await UserModel.findOne({ where: { email } });
+     
     // Verificar si el usuario existe
     if (!user) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
     // Verificar si la contraseña es correcta
+    //const hashedPassword= user?.get("password") as string;
+    const hashedPassword= user.password
+    const idUser = user.id 
+    const role= user.id_rol 
     const passwordMatch = await bcrypt.compare(password, hashedPassword);
     if (!passwordMatch) {
       return res.status(401).json({ message: 'Contraseña incorrecta' });
     }
+    const token = sign({id: idUser}, JWT_SECRET, { expiresIn: '2h' })
+    return res.status(200).json({message:"login correctly", token,idUser,role});
+
   } catch (error) {
     return res.status(500).json({message: 'error login', error: error.message});
  }
 }
-const token = sign({id_user: idUser}, JWT_SECRET, { expiresIn: '2h' })
-     return response.status(200).json({message:"login correctly", token,idUser,role});
+
 

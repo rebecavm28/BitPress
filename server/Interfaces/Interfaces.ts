@@ -1,10 +1,21 @@
 let hashedPassword: string;
 type IdUser = string
 
-interface LoginResponse {
+export interface LoginResponse {
     message: string;
     token: string;
     idUser: IdUser;
     return:string;
+
 }
+export interface UserAttributes{
+        id?: number;
+        name: string;
+        email: string,
+        password: string;
+        id_rol?: string
+    }
+
+
+
 
