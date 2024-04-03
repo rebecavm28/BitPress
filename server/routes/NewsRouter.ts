@@ -10,6 +10,6 @@ newsRouter.get('/news',/* isAuthenticated, */ getNews);
 newsRouter.delete('/news/:id',/* isAuthenticated, */ deleteNews);
 newsRouter.get('/news/:id',/* isAuthenticated, */ showOneNews);
 newsRouter.post( '/news',/* isAuthenticated, */ validateNews, createNews);
-newsRouter.put('/news/:id', /* isAuthenticated, */ updateNews);
+newsRouter.put('/news/:id', /* isAuthenticated, */ validateNews, updateNews);
 
 export default newsRouter;
