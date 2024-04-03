@@ -4,9 +4,9 @@
   }
    
    nav {
-    text-align: right; /* Orientación al revés */
-    position: fixed; /* Hace que la navbar solo ocupe el tamaño del texto*/
-    margin-top: 60px;
+    /* Orientación al revés */
+    position: fixed; 
+    /* Hace que la navbar solo ocupe el tamaño del texto*/
     background: linear-gradient(135deg, #261a72, #ff0062, #0000ff);
   }
   
@@ -20,9 +20,12 @@
     color: white;
     font-size: 23px;
     text-decoration: none;
-    padding: 60px 20px; /* Espacio entre palabras */
-    writing-mode: vertical-rl; /* Cambia la direccion de la escritura (vertical) */
-    transform: rotate(180deg); /* Rota las letras hacia la derecha */
+    padding: 60px 20px; 
+    /* Espacio entre palabras */
+    writing-mode: vertical-rl; 
+    /* Cambia la direccion de la escritura (vertical) */
+    transform: rotate(180deg); 
+    /* Rota las letras hacia la derecha */
     transition: 2s;
     background-color: #000;
   }
@@ -57,6 +60,7 @@
   }
   
   .logo_container:hover .image2 {
-    transform: translateX(100%); /* Desplaza la imagen 2 hacia la derecha */
+    transform: translateX(100%); 
+    /* Desplaza la imagen 2 hacia la derecha */
 
   }

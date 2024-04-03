@@ -1,7 +1,7 @@
 import {createBrowserRouter} from 'react-router-dom'
 import Layout from '../layout/Layout'
 import Home from '../pages/Home/Home'
-import Notices from '../pages/Notices/Notices'
+import { getNew } from '../services/newServices'
 
 const router = createBrowserRouter([
     {
@@ -10,11 +10,8 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Home/>
-            },
-            {
-                path: "/notices",
-                element: <Notices />
+                element: <Home/>,
+                loader: getNew
             }
         ]
     }

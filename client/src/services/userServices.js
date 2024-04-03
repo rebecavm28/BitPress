@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const url = 'http://localhost:3000/users';
+const url = 'http://localhost:3000/';
 
 //GET
 
-export const getData = async () => {
+export const getUser = async () => {
   const response = await fetch(`${url}/users`);
   const data = await response.json();
   return data;
@@ -12,7 +12,7 @@ export const getData = async () => {
 
 //POST
 
-export const postData = async (data) =>{
+export const postUser = async (data) =>{
   const users = await axios.post(`${url}/users`, data);
   alert("User creado exitosamente");
   return users;
@@ -20,7 +20,7 @@ export const postData = async (data) =>{
 
 //DELETE
 
-export const deleteData = async (id) =>{
+export const deleteUser = async (id) =>{
   if(confirm("¿Estás seguro que quieres eliminar este user?") === true){
     const users = await axios.delete(`${url}/users/${id}`);
     return users;
@@ -29,7 +29,7 @@ export const deleteData = async (id) =>{
 
 //UPDATE
 
-export const updateData = async (id, newData) => {
+export const updateUser = async (id, newData) => {
   console.log("modificando");
   const response = await fetch(`${url}/users/${id}`, {
     method: "PUT",

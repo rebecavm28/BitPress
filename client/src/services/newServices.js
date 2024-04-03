@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const url = 'http://localhost:3000/news';
+const url = 'http://localhost:3000';
 
 //GET
 
-export const getData = async () => {
+export const getNew = async () => {
   const response = await fetch(`${url}/news`);
   const data = await response.json();
   return data;
@@ -12,7 +12,7 @@ export const getData = async () => {
 
 //POST
 
-export const postData = async (data) =>{
+export const postNew = async (data) =>{
   const news = await axios.post(`${url}/news`, data);
   alert("Noticia creada exitosamente");
   return news;
@@ -20,7 +20,7 @@ export const postData = async (data) =>{
 
 //DELETE
 
-export const deleteData = async (id) =>{
+export const deleteNew = async (id) =>{
   if(confirm("¿Quieres eliminar esta noticia?") === true){
     const news = await axios.delete(`${url}/news/${id}`);
     return news;
@@ -29,7 +29,7 @@ export const deleteData = async (id) =>{
 
 //UPDATE
 
-export const updateData = async (id, newData) => {
+export const updateNew = async (id, newData) => {
   console.log("modificando");
   const response = await fetch(`${url}/news/${id}`, {
     method: "PUT",
