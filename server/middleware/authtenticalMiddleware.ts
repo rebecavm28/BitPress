@@ -10,9 +10,9 @@ export const isAuthenticated = async  (request:Request, response:Response, next:
     try {
        const dataToken:any = await verifyToken(token);
        request.body.user = await UserModel.findByPk(dataToken.id);
-       if(dataToken.rol !== 1){
+      /*  if(dataToken.rol !== 1){
         return response.status(403).json({message: "You do not have permission to access this resource"})
-       }
+       } */
        next(); 
     } catch (error) {
        return response.status(401).json({message:"Invalid Token!"})
