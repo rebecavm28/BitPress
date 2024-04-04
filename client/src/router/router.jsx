@@ -18,7 +18,7 @@ const router = createBrowserRouter([
                 element: <Notices />
             },
             {
-                path: "/detail",
+                path: "/detail:id",
                 element:<Detail />
             }
         ]
