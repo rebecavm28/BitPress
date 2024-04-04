@@ -19,7 +19,7 @@ const router = createBrowserRouter([
                 element: <Notices />
             },
             {
-                path: "/details:id",
+                path: "/detail",
                 element: <Detail/>
             }
     
