@@ -19,7 +19,7 @@ export const registerUser = async ( request :Request ,response:Response)=>{
       id_user: userData?.get('id_user') as number,
       name: userData?.get('name') as string,
       email: userData?.get('email') as string,
-      rol: userData?.get('rol') as number
+      rol: userData?.get('rol') as string
     }
     const sesiondata: SesionData={
       id_user: user.id_user,
@@ -43,7 +43,7 @@ export const loginUser = async ( request :Request ,response:Response)=>{
      
      const hashPassword = oneUser?.get("password") as string;
      const idUser = oneUser?.get("id_user") as number;
-     const rol=  oneUser?.get('rol') as number ;
+     const rol=  oneUser?.get('rol') as string ;
      const isUser =  await bcrypt.compare(request.body.password, hashPassword );
      
      if (!isUser) {

@@ -2,18 +2,24 @@ export interface User{
     id_user?: number;
     name: string;
     email: string,
-    rol?: number
+    rol?: string
 }
 export interface UserAttributes{
     id_user?: number;
     name: string;
     email: string,
     password: string,
-    rol?: number
+    rol?: string
 }
 export interface SesionData{
     id_user?: number;
-    rol?: number;
+    rol?: string;
     token:string; 
+}
+export interface IdUser{
+    id_user?:number;
+}
+export interface RolUser{
+    rol?:string;
 }
 export type newUser = Omit<UserAttributes, 'id'>

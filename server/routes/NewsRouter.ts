@@ -5,10 +5,10 @@ import {rolAuthenticated} from "../middleware/rolesMiddleware"
 
 const newsRouter =  express.Router();
 
-newsRouter.get('/news',isAuthenticated, getAllNews);
-newsRouter.delete('/news/:id',isAuthenticated,rolAuthenticated, deleteNews);
-newsRouter.get('/news/:id',isAuthenticated, showOneNews);
-newsRouter.post('/news',isAuthenticated, createNews);
-newsRouter.put('/news/:id', isAuthenticated,rolAuthenticated, updateNews);
+newsRouter.get('/news',isAuthenticated,rolAuthenticated(["user","admin"]), getAllNews);
+newsRouter.delete('/news/:id',isAuthenticated,rolAuthenticated(["admin"]), deleteNews);
+newsRouter.get('/news/:id',isAuthenticated,rolAuthenticated(["user","admin"]), showOneNews);
+newsRouter.post('/news',isAuthenticated,rolAuthenticated(["user","admin"]), createNews);
+newsRouter.put('/news/:id', isAuthenticated,rolAuthenticated(["admin"]), updateNews);
 
 export default newsRouter;
