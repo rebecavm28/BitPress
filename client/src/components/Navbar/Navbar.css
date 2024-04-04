@@ -10,13 +10,13 @@
     background: linear-gradient(135deg, #261a72, #ff0062, #0000ff);
   }
   
-  ul {
+  .list_box {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
   
-  a {
+  .navbar_link {
     color: white;
     font-size: 23px;
     text-decoration: none;
@@ -30,7 +30,7 @@
     background-color: #000;
   }
   
-  a:hover {
+  .navbar_link:hover {
     color: black;
     background-color: #00000000;
   }

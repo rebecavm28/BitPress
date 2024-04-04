@@ -2,14 +2,14 @@ import React from 'react'
 
 const UserForm = () => {
   return (
-    <div>
+    <div formulary_section>
         <div className="formulary">
 
             <div className="text">
-                <h3 className="login_option"></h3>
-                <button className='login_option_changer'></button>
-                <h3 className="registrer_option"></h3>
-                <button className='registrer_option_changer'></button>
+                <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
+                <button className='login_option_changer'>Aún no tengo cuenta</button>
+                <h3 className="registrer_option">¿Quieres  ser miembro de nuestra web de noticias?</h3>
+                <button className='registrer_option_changer'>Ya tengo una cuenta</button>
             </div>
 
 

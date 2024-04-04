@@ -1,9 +1,30 @@
+/* Inicio tarjeta para cambiar de formulario */
+
+.text{
+    background-color: aqua;
+}
+
+/* Fin tarjeta para cambiar de formulario */
+
+/* ///////////////////////////////////////////////// */
+
+/* Inicio formularios */
+
+.formulary_section{
+    display: flex;
+}
+
 .login{
     display: flex;
     flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #FFFCEF;
 }
 
 .register{
     display: flex;
     flex-direction: column;
 }
+
+/* Final de los formularios */
