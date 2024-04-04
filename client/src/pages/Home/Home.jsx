@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
-import Noticia_Destacada from '../../assets/images/destacada.png'
 import NewsGallery from '../../components/Gallery/NewsGallery'
+import UserForm from '../../components/UserForms/UserForm'
 
 const Home = () => {
   return (
@@ -19,6 +19,7 @@ const Home = () => {
           </div>
         </main>
         <NewsGallery />
+        <UserForm/>
       </div>
   )
 }
