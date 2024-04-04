@@ -1,0 +1,17 @@
+body {
+    background-image: url(../../assets/images/Fondo_Detail.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondo_detail{
+    background-color: rgba(195, 0, 255, 0.329);
+    width: 150vw;
+    height: 100vh;
+}
+
+.imageNew {
+    background-color: white;
+    width: 50vw;
+    height: 50vh;
+}
