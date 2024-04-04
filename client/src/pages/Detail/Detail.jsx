@@ -20,17 +20,18 @@ const Detail = () => {
 return (
   <div>
     {data ? (
-     <article className='animal' key={data.id}>
-     <h1 className='n'>Titulo: {data.name}</h1><br />
-     <div className='mrc'><img src={data.image} alt='img-animal' className='image'/></div><br />
-     <h3 className='s_n'>Nombre Científico: <span className='s_name-c'>{data.scientificName}</span></h3>
+     <article className='details_box' key={data.id}>
+     <h1 className='n'>Titulo{data.name}</h1><br />
+     <div className='mrc'><img src={data.image} alt='img-new' className='image'/></div><br />
+     <h3 className='s_n'>Descripción: <span className='s_name-c'>{data.scientificName}</span></h3>
      <div className='aut'><span className='strong'>Autora: </span>{data.photographer}
-       <img src={voz} alt="altavoz" className='a-voz' onClick={() => sound(data.sound)} />
        </div>
      <p className='descrip'>{data.description}</p>
    </article>
     ) : (
-      <p>Loading data...</p>
+      <div className="chargingBox">
+        <p>Loading data...</p>
+      </div>
     )}
   </div>
 );
