@@ -6,8 +6,12 @@ const NewsGallery = () => {
     const news = useLoaderData();
 
   return (
-    <div className='news_container'>
-        <New news={news}/>
+    <div className="gallery_container">
+      <div className="center">
+        <div className='news_container'>
+          <New news={news}/>
+        </div>
+      </div>
     </div>
   )
 }

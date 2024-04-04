@@ -15,7 +15,7 @@ const Home = () => {
               <div className="blur_effect"></div>
             </div>
           <div className="circle_button">
-            <h2 className='button_letters'>ADD NEW</h2>
+            <h2 className='button_letters'>AÑADIR NOTICIA</h2>
           </div>
         </main>
         <NewsGallery />

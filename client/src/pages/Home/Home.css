@@ -1,9 +1,14 @@
+.home_container{
+    margin-left: 66px;
+}
+
 main{
     padding-left: 80px;
     background-color: #2A2A2A;
     display: flex;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding-left: 170px;
+    box-shadow: 0px 0px 30px #FFFCEF;
 }
 
 .news_carrousel{
@@ -65,13 +70,14 @@ main{
     border-radius: 100%;
     display: grid;
     place-items: center;
-    border: 2px solid #000;
+    border: 1px solid #2A2A2A;
     margin-top: 80px;
 }
 
 .button_letters{
+    width: 150px;
     font-size: 35px;
     color: #AEFFBF;
-    -webkit-text-stroke: 1px #2A2A2A;
-    transform: rotate(-10deg);
+    -webkit-text-stroke: 1.5px #2A2A2A;
+    transform: rotate(-14deg);
 }
