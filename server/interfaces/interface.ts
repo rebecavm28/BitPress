@@ -16,3 +16,4 @@ export interface SesionData{
     rol?: number;
     token:string; 
 }
+export type newUser = Omit<UserAttributes, 'id'>

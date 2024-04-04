@@ -1,5 +1,4 @@
 import { verifyToken } from "../utils/jwt";
-import UserModel from "../models/UserModel";
 import { Request, Response, NextFunction} from "express";
 
 
@@ -21,9 +20,6 @@ export const isAuthenticated = async  (request:Request, response:Response, next:
        /* console.log(dataToken) */
        request.userId = dataToken.id;
        /* request.body.user = await UserModel.findByPk(dataToken.id); */
-      /*  if(dataToken.rol !== 1){
-        return response.status(403).json({message: "You do not have permission to access this resource"})
-       } */
        next(); 
     } catch (error) {
        return response.status(401).json({message:"Invalid Token!"})
