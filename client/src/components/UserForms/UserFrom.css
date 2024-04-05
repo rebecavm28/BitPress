@@ -40,20 +40,20 @@
 .formulary_section{
     display: flex;
     border-radius: 15px;
+    place-content: center;
 }
 
 .formulary{
     display: flex;
-    border: 1px solid #FFFCEF;
+    border: 2px solid #FFFCEF;
     border-radius: 15px;
 }
 
 .register,
 .login {
-    max-width: 300px;
+    width: 300px;
     margin: 0 auto;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .register input,
@@ -75,12 +75,14 @@
     border: none;
     border-radius: 10px;
     color: #000;
+    font-weight: bold;
     cursor: pointer;
 }
 
 .register [type="submit"],
 .login [type="submit"] {
     background-color: #C5A3F0;
+    transition: 0.7s;
 }
 
 .register [type="submit"]:hover,
@@ -93,7 +95,7 @@
 /* Tarjeta social */
 
 .social{
-    border: 1px solid #FFFCEF;
+    border: 2px solid #FFFCEF;
     border-radius: 15px;
     margin-left: 20px;
 }
