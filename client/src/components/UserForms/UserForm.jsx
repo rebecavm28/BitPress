@@ -30,8 +30,9 @@ const UserForm = () => {
         </div>
 
         <div className="social">
+            <h2 className='social_tittle'>Siguenos en redes sociales</h2>
             <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">Instagram/Bitpress</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">Linkedin/Bitpress</a>
+            <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">Linkedin/Bitpress</a>
         </div>
     </div>
   )
