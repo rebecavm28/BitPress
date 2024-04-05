@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
 import UserModel from './UserModel'; 
 
-export const NewsModel = connection_db.define('news', {
+export const NewModel = connection_db.define('news', {
     id_news: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -37,4 +37,4 @@ export const NewsModel = connection_db.define('news', {
     timestamps: false, 
 });
 
-export default NewsModel;
+export default NewModel;
