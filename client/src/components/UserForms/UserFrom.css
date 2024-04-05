@@ -48,18 +48,44 @@
     border-radius: 15px;
 }
 
-.login{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 300px;
+.register,
+.login {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.register{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 300px;
+.register input,
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #FFFCEF;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.register button,
+.login button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    cursor: pointer;
+}
+
+.register [type="submit"],
+.login [type="submit"] {
+    background-color: #C5A3F0;
+}
+
+.register [type="submit"]:hover,
+.login [type="submit"]:hover {
+    background-color: #AEFFBF;
 }
 
 /* Final de los formularios */
