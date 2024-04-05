@@ -14,14 +14,14 @@ const UserForm = () => {
             </div>
 
 
-            <form class="register">
+            <form className="register">
                 <input type="text" className="register_username" placeholder="Username" required/>
                 <input type="email" className="register_email" placeholder="Email" required/>
                 <input type="password" className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
             </form>
 
-            <form class="login">
+            <form className="login">
                 <input type="text" className="login_username" placeholder="Username" required/>
                 <input type="password" className="login_password" placeholder="Password" required/>
                 <button type="submit">Login</button>
