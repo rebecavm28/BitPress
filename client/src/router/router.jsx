@@ -15,8 +15,8 @@ const router = createBrowserRouter([
                 loader: getNew
             },
             {
-                path: "/notices",
-                element: <Notices />
+                path: "/detail",
+                element: <Detail/>
             }
     
         ]
