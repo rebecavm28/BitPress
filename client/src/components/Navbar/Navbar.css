@@ -1,0 +1,66 @@
+  body {
+    margin: 0;
+    padding: 0;
+  }
+   
+   nav {
+    /* Orientación al revés */
+    position: fixed; 
+    /* Hace que la navbar solo ocupe el tamaño del texto*/
+    background: linear-gradient(135deg, #261a72, #ff0062, #0000ff);
+  }
+  
+  .list_box {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar_link {
+    color: white;
+    font-size: 23px;
+    text-decoration: none;
+    padding: 60px 20px; 
+    /* Espacio entre palabras */
+    writing-mode: vertical-rl; 
+    /* Cambia la direccion de la escritura (vertical) */
+    transform: rotate(180deg); 
+    /* Rota las letras hacia la derecha */
+    transition: 2s;
+    background-color: #000;
+  }
+  
+  .navbar_link:hover {
+    color: black;
+    background-color: #00000000;
+  }
+
+  /* logo */
+
+  .logo_container{
+    height: 60px;
+  }
+
+  .image1, .image2 {
+    position: absolute;
+    transition: transform 0.5s ease;
+  }
+  
+  .image1 {
+    width: 3.5vw;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .image2 {
+    width: 7vw;
+    left: -70px;
+    z-index: 1;
+  }
+  
+  .logo_container:hover .image2 {
+    transform: translateX(100%); 
+    /* Desplaza la imagen 2 hacia la derecha */
+
+  }

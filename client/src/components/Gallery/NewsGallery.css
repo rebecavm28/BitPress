@@ -1,0 +1,20 @@
+body{
+    background-color: #2A2A2A;
+}
+
+.gallery_container{
+    margin-top: 70px;
+    display: grid;
+    place-items: center;
+}
+
+.center{
+    width: 1000px;
+}
+
+.news_container{
+    background-color: #2A2A2A;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px; 
+}

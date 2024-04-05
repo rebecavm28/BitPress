@@ -1,0 +1,14 @@
+.details_box{
+    margin-left: 66px;
+    background-color: blanchedalmond;
+}
+
+/* Pantalla decarga */
+
+.chargingBox{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    color: antiquewhite;
+}
