@@ -16,6 +16,7 @@ export interface UserAttributes{
         id_rol?: string
     }
 
+    const status: number = 200;
 
 
 
