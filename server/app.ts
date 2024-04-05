@@ -3,14 +3,13 @@ import express from 'express';
 import {PORT} from './config'
 import cors from 'cors';
 import newsRouter from "./routes/NewsRouter";
-import userRouter from "./routes/UserRouter";
 
 export const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/', newsRouter);
-app.use('/api/', userRouter)
+app.use('/api/',)
 
 try {
     connection_db.authenticate()
