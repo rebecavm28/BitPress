@@ -1,7 +1,6 @@
 import { SesionData } from "../interfaces/interface";
 import NewsModel from "../models/NewsModel";
 import { Request, Response } from "express";
-import {User} from '../interfaces/interface'
 
 export const getAllNews = async(request: Request, response: Response )=>{
   try {
