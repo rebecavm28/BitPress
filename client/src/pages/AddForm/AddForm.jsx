@@ -8,17 +8,17 @@ const AddForm = () => {
                 <h2>Add new news</h2> 
             </div>
             <form> 
-                <div>
-                    <label className='addTitle'>Add the title of the news</label>
-                    <input type="text"/>
+                <div className='formFields'>
+                    <label htmlFor="title"className='addTitle'>Add the title of the news</label>
+                    <input type="text" id="title" name="title"/>
                 </div>
-                <div>
-                    <label className='image'>Imagen</label>
-                    <input type="url"/>
+                <div className='formFields'>
+                    <label htmlFor="image"className='image'>Imagen</label>
+                    <input type="url" id="image" name="image"/>
                 </div>
-                <div>
-                    <label className='addDescription'>Add the news description</label>
-                    <input type="text"/>
+                <div className='formFields'>
+                    <label htmlFor="description"className='addDescription'>Add the news description</label>
+                    <input type="text" id="description" name="description"/>
                 </div>
                 <input className="buttonAdd" type="submit" value="Añadir noticia" />
             </form>
