@@ -8,6 +8,7 @@
     position: fixed; 
     /* Hace que la navbar solo ocupe el tamaño del texto*/
     background-color: #FFFCEF;
+    height: 100%;
   }
   
   .list_box {
@@ -20,21 +21,21 @@
     color: #2A2A2A;
     font-size: 23px;
     text-decoration: none;
-    padding: 60px 20px; 
+    display: grid;
+    place-content: center;
+    width: 30px;
+    height: 120px;
+    margin: 15px;
     /* Espacio entre palabras */
     writing-mode: vertical-rl; 
     /* Cambia la direccion de la escritura (vertical) */
     transform: rotate(180deg); 
     /* Rota las letras hacia la derecha */
+    border: 2px solid #2A2A2A;
   }
 
   .violet{
     background-color: #C5A3F0;
-  }
-  
-  .navbar_link:hover {
-    color: black;
-    background-color: #00000000;
   }
 
   /* logo */
