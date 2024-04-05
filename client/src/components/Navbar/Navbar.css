@@ -7,7 +7,7 @@
     /* Orientación al revés */
     position: fixed; 
     /* Hace que la navbar solo ocupe el tamaño del texto*/
-    background: linear-gradient(135deg, #261a72, #ff0062, #0000ff);
+    background-color: #FFFCEF;
   }
   
   .list_box {
@@ -17,7 +17,7 @@
   }
   
   .navbar_link {
-    color: white;
+    color: #2A2A2A;
     font-size: 23px;
     text-decoration: none;
     padding: 60px 20px; 
@@ -26,8 +26,10 @@
     /* Cambia la direccion de la escritura (vertical) */
     transform: rotate(180deg); 
     /* Rota las letras hacia la derecha */
-    transition: 2s;
-    background-color: #000;
+  }
+
+  .violet{
+    background-color: #C5A3F0;
   }
   
   .navbar_link:hover {

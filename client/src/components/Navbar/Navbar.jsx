@@ -13,10 +13,8 @@ const Navbar = () => {
       <img src={texto} alt="" className='image2'/>
     </div>
     <ul className='list_box'>
-      <li><a className='navbar_link' href="#">Inicio</a></li>
-      <li><a className='navbar_link' href="#">Acerca</a></li>
-      <li><a className='navbar_link' href="#">Servicios</a></li>
-      <li><a className='navbar_link' href="#">Contacto</a></li>
+      <li><a className='navbar_link violet' href="#">Registrer</a></li>
+      <li><a className='navbar_link' href="#">Login</a></li>
     </ul>
   </nav>
   )
