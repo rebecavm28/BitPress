@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 //USERSMODEL
 
-// Validad el schema del modelo de usuario
+// ValidaR el schema del modelo de usuario
 export const UserSchema = z.object({
     id_user: z.number().int().positive(),
     username: z.string().min(3, 'El nombre de usuario debe tener al menos 3 caracteres. 😁'),

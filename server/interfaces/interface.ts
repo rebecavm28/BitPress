@@ -18,7 +18,7 @@ export interface SesionData{
     token:string; 
 }
 
-interface News {
+ export interface News {
     id: number;
     title: string;
     imageUrl: string;
@@ -27,7 +27,7 @@ interface News {
     user: number;
 }
 
-interface NewsRequestBody {
+export interface NewsRequestBody {
     title?: string;
     imageUrl?: string;
     content?: string;

@@ -22,15 +22,12 @@ export const createNews = async (req: Request, res: Response) => {
     }
 }
 
-interface NewsRequestBody {
-    // Define the properties of the request body here
-}
-
-export const updateNews = async (req: Request<any, any, NewsRequestBody>, res: Response) => {
+export const updateNews = async (req: Request, res: Response) => {
+    const idNews = req.params.id;
     try {
         if (req.body) {
-            const news = await NewModel.update(req.body, { where: { id: req.params.id_news } });
-            res.status(201).json(news);
+            const news = await NewModel.update(req.body, { where: { id_news: idNews } });
+            res.status(201).json( {message: "News updated successfully" });
         } else {
             res.status(400).json({ message: "Invalid Request body" });
         }
