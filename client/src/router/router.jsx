@@ -25,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: "/Register",
                 element: <RegisterForm />
+            },
+            {
+                path: "/AddForm",
+                element: <AddForm />
             }
         ]
     }
