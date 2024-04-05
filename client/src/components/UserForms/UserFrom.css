@@ -61,7 +61,7 @@
 .register,
 .login {
     width: 300px;
-    margin: 0 auto;
+    margin: 0 30px;
     display: grid;
     place-content: center;
 }
