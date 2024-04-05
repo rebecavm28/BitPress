@@ -1,7 +1,9 @@
 /* Inicio tarjeta para cambiar de formulario */
 
-.text{
-    background-color: aqua;
+.formulary_text{
+    width: 300px;
+    height: 300px;
+    border: 1px solid #FFFCEF;
 }
 
 /* Fin tarjeta para cambiar de formulario */
@@ -12,6 +14,13 @@
 
 .formulary_section{
     display: flex;
+    border-radius: 15px;
+}
+
+.formulary{
+    display: flex;
+    border: 1px solid #FFFCEF;
+    border-radius: 15px;
 }
 
 .login{
@@ -19,12 +28,25 @@
     flex-direction: column;
     width: 300px;
     height: 300px;
-    border: 1px solid #FFFCEF;
 }
 
 .register{
     display: flex;
     flex-direction: column;
+    width: 300px;
+    height: 300px;
 }
 
 /* Final de los formularios */
+
+/* Tarjeta social */
+
+.social{
+    border: 1px solid #FFFCEF;
+    border-radius: 15px;
+    margin-left: 20px;
+}
+
+.social_links{
+    display: block;
+}

@@ -1,11 +1,12 @@
 import React from 'react'
+import './UserFrom.css'
 
 const UserForm = () => {
   return (
-    <div formulary_section>
+    <div className='formulary_section'>
         <div className="formulary">
 
-            <div className="text">
+            <div className="formulary_text">
                 <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
                 <button className='login_option_changer'>Aún no tengo cuenta</button>
                 <h3 className="registrer_option">¿Quieres  ser miembro de nuestra web de noticias?</h3>
@@ -27,7 +28,7 @@ const UserForm = () => {
         </div>
 
         <div className="social">
-            <a href="http://" target="_blank" rel="noopener noreferrer">Instagram/Bitpress</a>
+            <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">Instagram/Bitpress</a>
             <a href="http://" target="_blank" rel="noopener noreferrer">Linkedin/Bitpress</a>
         </div>
     </div>
