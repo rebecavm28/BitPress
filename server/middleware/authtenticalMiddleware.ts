@@ -3,14 +3,6 @@ import { Request, Response, NextFunction} from "express";
 import {IdUser} from '../interfaces/interface'
 
 
-/* declare global {
- namespace Express {
-    interface Request {
-      userId?: number; // Añade la propiedad userId a la interfaz Request
-    }
- }
-} */
-
 export const isAuthenticated = async  (request:Request, response:Response, next:NextFunction) =>{
     const token = request.headers.authorization?.split(" ").pop();
     if(!token){
@@ -19,11 +11,11 @@ export const isAuthenticated = async  (request:Request, response:Response, next:
     try {
        const dataToken:any = await verifyToken(token);
        console.log(dataToken)
-       const user : IdUser ={
+       const res=  request.body.userId = dataToken.id;
+       console.log(res)
+       /* const user : IdUser ={
          id_user: dataToken.id,
-       }
-      /*  request.userId = dataToken.id; */
-       /* request.body.user = await UserModel.findByPk(dataToken.id); */
+       } */
        next(); 
     } catch (error) {
        return response.status(401).json({message:"Invalid Token!"})

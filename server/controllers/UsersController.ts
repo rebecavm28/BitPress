@@ -54,8 +54,7 @@ export const loginUser = async ( request :Request ,response:Response)=>{
       rol:rol,
       token:await createToken(oneUser)
     }
-/*      token = sign({id_user: idUser}, JWT_SECRET, { expiresIn: '2h' })
- */     
+   
      return response.status(200).json({message:"login correctly", SesionData});
 
   } catch (error) {

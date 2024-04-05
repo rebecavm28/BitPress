@@ -8,17 +8,18 @@ export const rolAuthenticated =  (reqRol:string[]) => async(req: Request, res : 
       const dataToken:any = await verifyToken(token);
        const rolUser = dataToken.rol
         const rolesByUser = rolUser;
-        console.log("dataToken:", dataToken);
+        /* console.log("dataToken:", dataToken);
         console.log("rolesByUser:", rolesByUser);
-        console.log("reqRol:", reqRol);
+        console.log("reqRol:", reqRol); */
         const checkValueRol = reqRol.some((rolSingle) => rolesByUser.includes(rolSingle))
 
         if(!checkValueRol){
-         return res.status(401).json({msg:"No tienes permisos para acceder a esta ruta"})
+         return res.status(401).json({msg:"You don't have permissions"})
         }
 
     }catch(error){
-      console.log("Error en el middleware de autenticación por Rol", error);
+      console.log("Error in the middleware", error);
     }
     next();
 }
+
