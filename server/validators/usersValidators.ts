@@ -1,3 +1,4 @@
+import e from 'express';
 import { z } from 'zod';
 
 //USERSMODEL
@@ -45,4 +46,24 @@ export function validateUserCredentials(data: unknown): UserCredentials {
         return {} as UserCredentials;
     }
 }
+
+export const UserUpdateSchema = z.object({
+    username: z.string().min(3, 'El nombre de usuario debe tener al menos 3 caracteres. 😁'),
+    email: z.string().email('El email proporcionado no es válido. 🥶'),
+    password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres.')
+});
+
+export type UserUpdate = z.infer<typeof UserUpdateSchema>;
+
+export function validateUserUpdate(data: unknown): UserUpdate {
+    try {
+        const validUserUpdate = UserUpdateSchema.parse(data);
+        return validUserUpdate;
+    } catch (error) {
+        console.error('Error de validación:', (error as Error).message);
+        return {} as UserUpdate;
+    }
+}
+
+
 

@@ -3,7 +3,7 @@ import { z } from 'zod';
 // Definir el esquema de validación para las noticias (en función del modelo)
 export const NewsSchema = z.object({
     id_news: z.number().int().positive(),
-    title: z.string().min(3, 'El título debe tener al menos 3 caracteres. 😁'),
+    title: z.string().min(3, 'El título debe tener al menos 7 caracteres.'),
     imageUrl: z.string().max(500, 'La URL de la imagen debe tener como máximo 500 caracteres.🥶'),
     content: z.string().min(10, 'El contenido debe tener al menos 10 caracteres.'),
     date: z.date(),
@@ -27,3 +27,6 @@ export function validateNews(data: unknown): News {
         return {} as News;
     }
 }
+
+
+
