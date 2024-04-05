@@ -22,13 +22,13 @@ export const UserModel = connection_db.define('user', {
         allowNull: false,
     },
     rol:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.STRING,
         allowNull:false,
-        defaultValue: 2,
-        references: {
+        defaultValue: "user",
+        /* references: {
             model: RolModel, // referencia al modelo RolModel
             key: 'id_rol', 
-        },
+        }, */
     }
 },{
         tableName: 'users', 
