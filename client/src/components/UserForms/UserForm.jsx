@@ -15,15 +15,15 @@ const UserForm = () => {
 
 
             <form class="register">
-                <input type="text" id="register-username" placeholder="Username" required/>
-                <input type="email" id="register-email" placeholder="Email" required/>
-                <input type="password" id="register-password" placeholder="Password" required/>
+                <input type="text" className="register_username" placeholder="Username" required/>
+                <input type="email" className="register_email" placeholder="Email" required/>
+                <input type="password" className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
             </form>
 
             <form class="login">
-                <input type="text" id="login-username" placeholder="Username" required/>
-                <input type="password" id="login-password" placeholder="Password" required/>
+                <input type="text" className="login_username" placeholder="Username" required/>
+                <input type="password" className="login_password" placeholder="Password" required/>
                 <button type="submit">Login</button>
             </form>
 
