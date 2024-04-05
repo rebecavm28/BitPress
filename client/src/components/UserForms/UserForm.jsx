@@ -14,16 +14,18 @@ const UserForm = () => {
             </div>
 
 
-            <div className="register">
-                <input type="text" placeholder='Username'/>
-                <input type="text" placeholder='Email'/>
-                <input type="text" placeholder='Password'/>
-            </div>
+            <form class="register">
+                <input type="text" id="register-username" placeholder="Username" required/>
+                <input type="email" id="register-email" placeholder="Email" required/>
+                <input type="password" id="register-password" placeholder="Password" required/>
+                <button type="submit">Register</button>
+            </form>
 
-            <div className="login">
-                <input type="text" placeholder='Username'/>
-                <input type="text" placeholder='Password'/>
-            </div>
+            <form class="login">
+                <input type="text" id="login-username" placeholder="Username" required/>
+                <input type="password" id="login-password" placeholder="Password" required/>
+                <button type="submit">Login</button>
+            </form>
 
         </div>
 
