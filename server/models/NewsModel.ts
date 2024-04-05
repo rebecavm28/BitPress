@@ -27,7 +27,7 @@ export const NewsModel = connection_db.define('news', {
     user: {
         type: DataTypes.INTEGER,
         references: {
-            model: UserModel, 
+            model: "users", 
             key: 'id_user', 
         },
         allowNull: false,
@@ -36,5 +36,7 @@ export const NewsModel = connection_db.define('news', {
     tableName: 'news', 
     timestamps: false, 
 });
+
+UserModel.hasMany(NewsModel,{foreignKey: "id_user"})
 
 export default NewsModel;

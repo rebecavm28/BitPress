@@ -3,22 +3,30 @@
     {
       "id": "1",
       "name": "Sofia",
-      "password": "1234"
+      "email": "sofia@example.com",
+      "password": "1234",
+      "rol": "admin"
     },
     {
       "id": "2",
       "name": "Carlos",
-      "password": "65432"
+      "email": "carlos@example.com",
+      "password": "65432",
+      "rol": "user"
     },
     {
       "id": "3",
       "name": "Naruto",
-      "password": "9876"
+      "email": "naruto@example.com",
+      "password": "9876",
+      "rol": "user"
     },
     {
       "id": "4",
       "name": "Carlota",
-      "password": "123456"
+      "email": "carlota@example.com",
+      "password": "123456",
+      "rol": "user"
     }
   ],
   "news": [

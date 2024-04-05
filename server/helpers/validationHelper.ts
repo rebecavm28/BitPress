@@ -8,5 +8,5 @@ export const validateResult = (request: Request, response: Response, next: NextF
     }
     else{
         return response.status(400).json({ errors: errors.array() });
-    } 
+    }
 };
