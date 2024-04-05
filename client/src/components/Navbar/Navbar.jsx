@@ -14,7 +14,7 @@ const Navbar = () => {
     </div>
     <ul className='list_box'>
       <li><a className='navbar_link violet' href="#">Registrer</a></li>
-      <li><a className='navbar_link' href="#">Login</a></li>
+      <li><a className='navbar_link cream' href="#">Login</a></li>
     </ul>
   </nav>
   )
