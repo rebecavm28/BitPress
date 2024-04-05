@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const url = 'http://localhost:3000/news';
+const url = 'http://localhost:3000';
 
 //GET
 
-export const getData = async () => {
+export const getNew = async () => {
   const response = await fetch(`${url}/news`);
   const data = await response.json();
   return data;
@@ -12,7 +12,7 @@ export const getData = async () => {
 
 //POST
 
-export const postData = async (data) =>{
+export const postNew = async (data) =>{
   const news = await axios.post(`${url}/news`, data);
   alert("News created successfully");
   return news;
@@ -21,7 +21,7 @@ export const postData = async (data) =>{
 //DELETE
 
 export const deleteData = async (id) =>{
-  if(confirm("Do you want to delete this news?") === true){
+  if(confirm("Do you want to delete this new?") === true){
     const news = await axios.delete(`${url}/news/${id}`);
     return news;
   }

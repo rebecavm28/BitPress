@@ -1,22 +1,29 @@
-// import {useNavigate} from 'react-router-dom'
-// import './New.css'
-// import Notice_img from '../../assets/images/destacada.png'
+import './New.css'
+// import { useState } from 'react'
+// import { useNavigate } from 'react-router-dom'
 
-// const New = (data) => {
-//     // const navigate = useNavigate();  (para crear el navigate al details)
+const New = ({news}) => {
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    // const navigate = useNavigate();
 
-//     return(
-//         <>
-//             {data.data.map((new) => {
-//                 return (
-//                     <article className='New_box'>
-//                         <img src={Notice_img} alt="Imagen de la noticia" className='New_img'/>
-//                         <h2 className='New_title'>Titulo de la noticia</h2>
-//                         <p className='New_description'>Decsripcion de la noticia</p>
-//                     </article>
-//                     )}
-//                 )}
-//         </>
-// )}
+    return(
+        <>
+            {
+                news.map(newData => {
+                    return(
+                        <div key={newData.id} className='news_container'>
+                            <article className='New_box'>
+                                <div className="text">
+                                    <h2 className='New_tittle'>{newData.title}</h2>
+                                    <p className="date">{newData.date}</p>
+                                </div>
+                                <img src='https://imagenes.elpais.com/resizer/jJ3ROgHziR1xFLhRyLOHdOHNx7U=/1200x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/MOIV3QIGOUC5YWUF5FEJ34N57Q.jpg' alt="Imagen de la noticia" className='New_img'/>
+                            </article>
+                        </div>
+                    )
+                })
+            }
+        </>
+)}
 
-// export default New
+export default New

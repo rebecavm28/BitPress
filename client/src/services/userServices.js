@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const url = 'http://localhost:3000/users';
+const url = 'http://localhost:3000/';
 
 //GET
 
-export const getData = async () => {
+export const getUser = async () => {
   const response = await fetch(`${url}/users`);
   const data = await response.json();
   return data;
@@ -12,7 +12,7 @@ export const getData = async () => {
 
 //POST
 
-export const postData = async (data) =>{
+export const postUser = async (data) =>{
   const users = await axios.post(`${url}/users`, data);
   alert("User created successfully");
   return users;

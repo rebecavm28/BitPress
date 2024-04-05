@@ -1,14 +1,32 @@
 .New_box{
-    background-color: gray;
+    background-color: transparent;
+    border: 2px solid #FFFCEF;
     width: 300px;
-    height: 300px;
+    height: 380px;
     border-radius: 15px;
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.text{
+    margin-left: 10px;
+}
+
+.New_tittle{
+    margin: 10px 0 10px 0;
+    color: #FFFCEF;
+}
+
+.date{
+    margin: 0;
+    color: #9A9A9A;
 }
 
 .New_img{
     width: 100%;
-    height: 36%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    height: 50%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }

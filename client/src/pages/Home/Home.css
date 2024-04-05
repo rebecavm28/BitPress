@@ -1,2 +1,83 @@
+.home_container{
+    margin-left: 66px;
+}
 
-  
+main{
+    padding-left: 80px;
+    background-color: #2A2A2A;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 170px;
+    box-shadow: 0px 0px 30px #FFFCEF;
+}
+
+.news_carrousel{
+    width: 400px;
+    height: 400px;
+    background-color: #bbb;
+    border-radius: 25px;
+    margin: 40px;
+}
+
+.slogan{
+    padding-top: 90px;
+}
+
+.tittle_1{
+    font-size: 33px;
+    margin: 0;
+    color: #2A2A2A;
+    -webkit-text-stroke: 1.5px #FFFCEF;
+}
+
+.tittle_2{
+    font-size: 48px;
+    margin: 0 0 50px 50px;
+    color: #2A2A2A;
+    -webkit-text-stroke: 5px transparent;
+    background: linear-gradient(45deg, #7333FB, #F32972);
+    -webkit-background-clip: text;
+}
+
+.color_back{
+    width: 400px;
+    height: 170px;
+    border-radius: 30px;
+    background-image: url(../../assets/images/animated_background.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.blur_effect{
+    width: 400px;
+    height: 170px;
+    border: 1px solid #FFFCEF;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.258);
+    backdrop-filter: blur(15px);
+    position: relative;
+    left: 15px;
+    bottom: 15px;
+    margin-right: 50px;
+}
+
+.circle_button{
+    width: 300px;
+    height: 300px;
+    background-color: #AEFFBF;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    border: 1px solid #2A2A2A;
+    margin-top: 80px;
+}
+
+.button_letters{
+    width: 150px;
+    font-size: 35px;
+    color: #AEFFBF;
+    -webkit-text-stroke: 1.5px #2A2A2A;
+    transform: rotate(-14deg);
+}
