@@ -30,6 +30,7 @@ return (
    </article>
     ) : (
       <div className="chargingBox">
+        <h1>Titulo de la Noticia</h1>
         <p>Loading data...</p>
       </div>
     )}
