@@ -3,6 +3,7 @@ import Layout from '../layout/Layout'
 import Home from '../pages/Home/Home'
 import { getNew } from '../services/newServices'
 import Detail from '../pages/Detail/Detail'
+import AddForm from '../pages/AddForm/AddForm'
 
 const router = createBrowserRouter([
     {
@@ -17,7 +18,12 @@ const router = createBrowserRouter([
             {
                 path: "/detail",
                 element: <Detail/>
+            },
+            {
+                path: "/add",
+                element: <AddForm/>
             }
+
     
         ]
     }

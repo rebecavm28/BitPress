@@ -1,3 +1,4 @@
+import { SesionData } from "../interfaces/interface";
 import NewsModel from "../models/NewsModel";
 import { Request, Response } from "express";
 
@@ -10,12 +11,12 @@ export const getAllNews = async(request: Request, response: Response )=>{
   }  
 }
 
-export const createNews = async(request: Request, response: Response)=>{
-    try { 
-       await NewsModel.create(request.body)
-       response.status(201).json({message: "new created correctly"})
-    } catch (error) {
-       return response.status(500).json({message: 'Error on creating new', error: error.message});
+export const createNews = async (req: Request, res: Response) => {
+    try {
+        const createdNews = await NewsModel.create(req.body);
+        res.status(201).json(createdNews);
+    }catch(error){
+        return res.status(500).send({ error: 'Internal Server Error' });
     }
 }
 
