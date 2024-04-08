@@ -27,9 +27,9 @@ export const registerUser = async ( request :Request ,response:Response)=>{
     }
       return response.status(201).json({message: "user created correctly", sesiondata})
       
-    } catch (error) {
+     } catch (error: any) {
        return response.status(500).json({message: 'Error on creating user', error: error.message});
-    }
+     }
 }
 
 //Login
@@ -57,7 +57,7 @@ export const loginUser = async ( request :Request ,response:Response)=>{
    
      return response.status(200).json({message:"login correctly", SesionData});
 
-  } catch (error) {
+  } catch (error: any) {
            return response.status(500).json({message: 'Error login', error: error.message});
 
   }
@@ -69,8 +69,8 @@ export const getAllUsers = async(request: Request, response: Response )=>{
   try {
     const users = await UserModel.findAll()
     response.status(200).json(users);
-  } catch (error) {
-    response.status(500).json({message:error.message})
+  } catch (error: any) {
+    response.status(500).json({message: error.message});
   }  
 }
 export const deleteUser = async(request: Request, response: Response)=>{
@@ -93,12 +93,12 @@ export const updateUser = async(request: Request, response: Response)=>{
   }
 }
 
-export const  showOneNews = async(request:Request,response:Response)=> {
-  const idUser =request.params.id;
+export const showOneNews = async (request: Request, response: Response) => {
+  const idUser = request.params.id;
   try {
-    const oneUser = await UserModel.findOne({where: {id_user:Number(idUser)}});
+    const oneUser = await UserModel.findOne({ where: { id_user: Number(idUser) } });
     return response.status(200).json(oneUser);
-  } catch (error) {
-    return response.status(500).json({message:'error to show the user', error: error.message})
+  } catch (error: any) {
+    return response.status(500).json({ message: 'error to show the user', error: error.message });
   }
 }
