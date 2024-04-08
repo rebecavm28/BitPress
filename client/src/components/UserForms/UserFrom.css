@@ -1,60 +1,124 @@
 /* Inicio tarjeta para cambiar de formulario */
-
 .formulary_text{
     width: 300px;
     height: 300px;
-    border: 1px solid #FFFCEF;
-}
-
-.login_option{
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 30px;
+    }
+    .registrer_option{
     color: #AEFFBF;
-}
-
-.registrer_option{
+    font-size: 27px;
+    text-align: center;
+    }
+    .registrer_option_changer{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFCEF;
+    font-size: 17px;
+    text-decoration: underline;
+    }
+    .registrer_option{
     color: #AEFFBF;
-}
-
-/* Fin tarjeta para cambiar de formulario */
-
-/* ///////////////////////////////////////////////// */
-
-/* Inicio formularios */
-
-.formulary_section{
+    }
+    .registrer_option_changer{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFCEF;
+    }
+    /* Fin tarjeta para cambiar de formulario */
+    /* ///////////////////////////////////////////////// */
+    /* Inicio formularios */
+    .formulary_section{
     display: flex;
     border-radius: 15px;
-}
-
-.formulary{
+    place-content: center;
+    margin: 40px;
+    }
+    .formulary{
     display: flex;
-    border: 1px solid #FFFCEF;
+    border: 2px solid #FFFCEF;
     border-radius: 15px;
-}
-
-.login{
-    display: flex;
-    flex-direction: column;
+    }
+    .register,
+    .login {
     width: 300px;
-    height: 300px;
-}
-
-.register{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 300px;
-}
-
-/* Final de los formularios */
-
-/* Tarjeta social */
-
-.social{
+    margin: 0 30px;
+    display: grid;
+    place-content: center;
+    }
+    .register input,
+    .login input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
     border: 1px solid #FFFCEF;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #FFFCEF;
+    }
+    .register button,
+    .login button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    }
+    .register [type="submit"],
+    .login [type="submit"] {
+    background-color: #C5A3F0;
+    transition: 0.7s;
+    }
+    .register [type="submit"]:hover,
+    .login [type="submit"]:hover {
+    background-color: #AEFFBF;
+    }
+    /* Final de los formularios */
+    /* Tarjeta social */
+    .social{
+    border: 2px solid #FFFCEF;
     border-radius: 15px;
     margin-left: 20px;
-}
-
-.social_links{
+    padding-right: 20px;
+    display: grid;
+    place-content: center;
+    width: 300px;
+    }
+    .social_tittle{
+    color: #AEFFBF;
+    width: 200px;
+    text-align: center;
+    font-size: 28px;
+    margin-left: 28px;
+    }
+    .instagram_box{
+    display: flex;
+    }
+    .linkedin_box{
+    display: flex;
+    }
+    .social_links{
     display: block;
-}
+    color: #FFFCEF;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    }
+    .social_logo{
+    color: #FFFCEF;
+    margin: 0 15px;
+    }
