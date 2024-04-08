@@ -1,9 +1,19 @@
 import React from 'react'
+import axios from 'axios'
 import './UserFrom.css'
 import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 
 const UserForm = () => {
+
+  const navigate = useNavigate();
+  const [urlImg, setUrlImg] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: ''
+  });
+
   return (
     <div className='formulary_section'>
         <div className="formulary">
