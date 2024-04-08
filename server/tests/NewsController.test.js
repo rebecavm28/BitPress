@@ -1,6 +1,7 @@
-/* import  request  from "supertest";
+import  request  from "supertest";
 import {app, server} from '../app';
 import connection_db from '../database/connection_db'
+import NewsModel from '../models/NewsModel'
 
 const api = request(app);
 
@@ -21,4 +22,4 @@ DESCRIBE('testing news'), ()=>{
         await connection_db.sync({force: true });
         console.log('All databases are clean')
      })
-} */
+}
