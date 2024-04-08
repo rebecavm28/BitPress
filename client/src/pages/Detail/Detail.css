@@ -21,7 +21,6 @@
 .imgNew{
     width: 80vw;
     height: 22vw;
-    background-image: url(https://cdn.pixabay.com/photo/2017/04/23/19/30/earth-2254769_1280.jpg);
     border-radius:20px;
     box-shadow: 0 0 35px rgb(253, 249, 249);
 }
