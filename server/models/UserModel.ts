@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
-import RolModel from "./RolModel";
 
 export const UserModel = connection_db.define('user', {
     id_user: {
@@ -25,14 +24,13 @@ export const UserModel = connection_db.define('user', {
         type:DataTypes.STRING,
         allowNull:false,
         defaultValue: "user",
-        /* references: {
-            model: RolModel, // referencia al modelo RolModel
-            key: 'id_rol', 
-        }, */
     }
 },{
         tableName: 'users', 
         timestamps: false, 
       }
 );
+
+/* UserModel.hasMany(NewsModel,{foreignKey: "id_user"})
+ */
 export default UserModel;
