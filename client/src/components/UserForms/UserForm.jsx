@@ -6,6 +6,8 @@ import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 
 const UserForm = () => {
 
+//   Codigo JS para el formulario de registro
+
   const navigate = useNavigate();
   const [urlImg, setUrlImg] = useState('');
   const [formData, setFormData] = useState({
@@ -13,6 +15,14 @@ const UserForm = () => {
     email: '',
     password: ''
   });
+
+//   Fin de codigo JS para el formulario de registro
+
+//   Codigo JS para el formulario de login
+
+///////////////////////////
+
+//   Fin de codigo JS para el formulario de registro
 
   return (
     <div className='formulary_section'>
@@ -27,9 +37,9 @@ const UserForm = () => {
 
 
             <form className="register">
-                <input type="text" className="register_username" placeholder="Username" required/>
-                <input type="email" className="register_email" placeholder="Email" required/>
-                <input type="password" className="register_password" placeholder="Password" required/>
+                <input type="text" value={formData.name} className="register_username" placeholder="Username" required/>
+                <input type="email" value={formData.email} className="register_email" placeholder="Email" required/>
+                <input type="password" value={formData.password} className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
             </form>
 
