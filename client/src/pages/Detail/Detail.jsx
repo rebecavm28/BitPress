@@ -30,8 +30,20 @@ return (
    </article>
     ) : (
       <div className="chargingBox">
-        <h1>Titulo de la Noticia</h1>
-        <p>Loading data...</p>
+        <h2 className="titleNew">TITLE NEW</h2>
+        <img className="imgNew"></img>
+      <div className="subtitles">
+        <p><span className="author">Author:</span> <span className="date">| Date:</span></p>
+        <h3 classNAme="subDescrip">DESCRIPTION:</h3>
+        <div className="description">
+        <p>Lorem ipsum dolor sit amet consectetur. Fringilla sit viverra metus sit sem. Diam pharetra tortor egestas urna faucibus tincidunt faucibus. Aliquet volutpat bibendum consectetur amet et porttitor mattis ipsum. Scelerisque vestibulum nec facilisis varius fermentum...Lorem ipsum dolor sit amet consectetur. Fringilla sit viverra metus sit sem. Diam pharetra tortor egestas urna faucibus tincidunt faucibus. Aliquet volutpat bibendum consectetur amet et porttitor mattis ipsum. Scelerisque vestibulum nec facilisis varius fermentum.</p></div>
+      </div>
+        <div className='buttons'>
+        <button className="bEdit">EDIT</button>
+        <button className="bDelete">DELETE</button>
+        {/* <button onClick={handleClick}>Edit</button>
+        <button onClick={handleClick}>Delete</button> */}
+        </div>
       </div>
     )}
   </div>
