@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const url = 'http://localhost:5000/api';
-
+/* export const url = 'http://localhost:5000/api';
+ */export const url = 'http://localhost:3000';
 //GET
 
 export const getNew = async () => {
