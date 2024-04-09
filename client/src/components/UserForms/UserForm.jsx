@@ -1,57 +1,15 @@
-import React from 'react'
 import './UserFrom.css'
 import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
-import { useState } from 'react'
-import Login from './Login/Login'
-
+import { useForm } from 'react-hook-form'
+import { Registrer } from '../../services/authService'
 const UserForm = () => {
 
-//   Codigo JS para el formulario de registro
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
-
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
-
-  const registerSubmit = async (e) => {
-    e.preventDefault();
-   let userData = new FormData();
-   animalData = {...formData};
-
-    try{ 
-      const response = await fetch('http://localhost:3000/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userData)
-      });
-
-     if (!response.ok) {
-      throw new Error('Error al crear la cuenta');
-     }
-
-      Swal.fire('Cuenta creada exitosamente');
-
-
-    } catch (error){
-      console.log('Error al crear la cuenta: ', error);
-      Swal.fire('Error al crear la cuenta, intentelo más tarde');
-    }
-  };
-//   Fin de codigo JS para el formulario de registro
-
-//   Codigo JS para el formulario de login
-
-///////////////////////////
-
-//   Fin de codigo JS para el formulario de registro
+  const { register, handleSubmit, formState: { errors } } = useForm()
+  
+  const handleFrom = async (data) => {
+    Registrer(data)
+  }
 
   return (
     <div className='formulary_section'>
@@ -65,10 +23,10 @@ const UserForm = () => {
             </div>
 
 
-            <form className="register" onSubmit={registerSubmit}>
-                <input type="text" value={formData.name} onChange={handleChange} className="register_username" placeholder="Username" required/>
-                <input type="email" value={formData.email} onChange={handleChange} className="register_email" placeholder="Email" required/>
-                <input type="password" value={formData.password} onChange={handleChange} className="register_password" placeholder="Password" required/>
+            <form className="register" onSubmit={handleSubmit(handleFrom)}>
+                <input type="text" name='name' {...register('name')} className="register_username" placeholder="Username" required/>
+                <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
+                <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
             </form>
 

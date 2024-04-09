@@ -15,3 +15,22 @@ export const login = async (variableForm ) => {
     throw error;
  }
 };
+
+export const Registrer = async (formData) => {
+  try{ 
+    const response = await fetch('http://localhost:5000/api/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+  
+   if (!response.ok) {
+    throw new Error('Error al crear la cuenta');
+   }
+  
+  } catch (error){
+    console.log('Error al crear la cuenta: ', error);
+  }
+}
