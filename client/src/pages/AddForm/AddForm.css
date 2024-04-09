@@ -1,4 +1,8 @@
 
+body {
+  font-family: "Anonymous Pro", monospace;
+}
+
 .formAdd {
     display: flex;
     flex-direction: column;
@@ -20,18 +24,27 @@
     width: 300px;
     padding: 10px;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
   }
-  
+
+  label {
+    margin-bottom: 5px;
+    color: #FFFCEF;
+  }
+
+  .formFields{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    margin-bottom: 20px;
+  }
+
   .buttonAdd {
     padding: 10px 20px;
     background-color: #C5A3F0;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    color: #FFFCEF;
   }
   
