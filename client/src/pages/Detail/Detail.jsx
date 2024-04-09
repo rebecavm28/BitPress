@@ -10,7 +10,7 @@ const Detail = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () =>{
+    const fetchData = async (id_news) =>{
       const newsResponse = await getNewById(id_news); 
       setData(newsResponse);
       
