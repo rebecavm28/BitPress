@@ -1,7 +1,7 @@
 import React from 'react'
 import './AddForm.css'
 import { useForm } from "react-hook-form";
-//import { postNew } from 'client\src\services\newServices'
+//import { postNew } from 'client\src\services\newServices.js';
 import { useNavigate } from "react-router-dom";
 
 const AddForm = () => {
@@ -9,13 +9,13 @@ const AddForm = () => {
     const navigate = useNavigate()
     const onSubmit = async (Data) => {
         await postNew(Data)
-        navigate("/")
+        navigate("/detail")
     };
  
     return (
         <div className='formAdd'>
             <div>
-                <h2>Add new news</h2> 
+                <h2>ADD NEW</h2> 
             </div>
             <form onSubmit={handleSubmit(onSubmit)}> 
                 <div className='formFields'>
