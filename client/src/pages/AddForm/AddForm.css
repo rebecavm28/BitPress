@@ -1,4 +1,8 @@
 
+body {
+  font-family: "Anonymous Pro", monospace;
+}
+
 .formAdd {
     display: flex;
     flex-direction: column;
@@ -24,26 +28,14 @@
     border: none;
   }
 
-  input[type="text"]:focus + label,
-  input[type="url"]:focus + label {
-    opacity: 0;
-  }
-
-  input[type="text"]:focus::placeholder,
-  input[type="url"]:focus::placeholder {
-    color: transparent; /* Oculta el placeholder cuando el input está enfocado */
-  }
-  
   label {
     margin-bottom: 5px;
-    color: #2A2A2A;
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    transition: all 0.2s ease-out;
+    color: #FFFCEF;
   }
 
   .formFields{
+    display: flex;
+    flex-direction: column;
     position:relative;
     margin-bottom: 20px;
   }
