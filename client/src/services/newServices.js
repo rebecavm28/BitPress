@@ -58,10 +58,19 @@ export const updateData = async (id, newData) => {
 
 export const getNewById = async (id) => {
   try {
-    const response = await fetch(`${url}/news/${id}`);
-    const data = await response.json();
-    return data
+    const response = await fetch(`http://localhost:5000/api/news/${id}`, {
+      headers: {
+        Authorization: 'Bearer ${token}', //💥🐱‍🏍😁💥🐱‍🏍😁🐱‍🏍😁💥 need to be fixed
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch news');
+    }
+
+    return await response.json();
   } catch (error) {
     console.error('Error fetching news:', error);
+    throw error;
   }
 };
