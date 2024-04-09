@@ -1,0 +1,62 @@
+body {
+    font-family: "Anonymous Pro", monospace;
+  }
+  
+  .formEdit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90vh; 
+      margin: 10vh auto; 
+      padding: 5vh; 
+      border: 1px solid #FFFCEF; 
+    }
+    
+    h2 {
+      text-align: center;
+      color: #AEFFBF;
+    }
+    
+    input[type="text"],
+    input[type="url"] {
+      width: 300px;
+      padding: 10px;
+      margin-bottom: 10px;
+      outline: none;
+      border: none;
+    }
+  
+  /*   input[type="text"]:focus + label,
+    input[type="url"]:focus + label {
+      opacity: 0;
+    }
+  
+    input[type="text"]:focus::placeholder,
+    input[type="url"]:focus::placeholder {
+      color: transparent; 
+    } */
+    
+    label {
+      margin-bottom: 5px;
+      color: #FFFCEF;
+     /*  position: absolute; */
+      /* left: 10px;
+      bottom: 10px; */
+      transition: all 0.2s ease-out;
+    }
+  
+    .formFields{
+      display: flex;
+      flex-direction: column;
+      position:relative;
+      margin-bottom: 20px;
+    }
+  
+    .buttonEdit {
+      padding: 10px 20px;
+      background-color: #C5A3F0;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
