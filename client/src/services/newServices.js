@@ -5,7 +5,7 @@ import axios from "axios";
 // url de la base de datos = 'http://localhost:5000/'
 
 
-export const url = 'http://localhost:3000';
+export const url = 'http://localhost:5000/';
 
 
 //GET
@@ -50,27 +50,27 @@ export const updateData = async (id, newData) => {
 
 //Get by id
 
-// export const getNewById = async (id) => {
-//   const response = await fetch(`${url}/news/${id}`);
-//   const data = await response.json();
-//   return data;
-// };
-
 export const getNewById = async (id) => {
-  try {
-    const response = await fetch(`http://localhost:5000/api/news/${id}`, {
-      headers: {
-        Authorization: 'Bearer ${token}', //💥🐱‍🏍😁💥🐱‍🏍😁🐱‍🏍😁💥 need to be fixed
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch news');
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching news:', error);
-    throw error;
-  }
+  const response = await fetch(`${url}/news/${id}`);
+  const data = await response.json();
+  return data;
 };
+
+// export const getNewById = async (id) => {
+//   try {
+//     const response = await fetch(`${url}/news/${id}`, {
+//       headers: {
+//         Authorization: 'Bearer ${token}', //💥🐱‍🏍😁💥🐱‍🏍😁🐱‍🏍😁💥 need to be fixed
+//       },
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Failed to fetch news');
+//     }
+
+//     return await response.json();
+//   } catch (error) {
+//     console.error('Error fetching news:', error);
+//     throw error;
+//   }
+// };
