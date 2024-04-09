@@ -1,6 +1,7 @@
 import * as request  from "supertest";
 import {app, server} from '../app';
 import connection_db from '../database/connection_db'
+import NewsModel from "../models/NewsModel";
 import * as moment from 'moment';
 
 
@@ -17,34 +18,43 @@ describe('TESTING CRUD news', () => {
     });
     });
     
-    describe('POST', () => {
-        let newUser: any = {};
-        let user: any;
-        let token: any;
+    describe('News creation', () => {
+        let userId: number;
+        let token: string;
     
-        test('POST response should be an object and then show 201 status', async () => {
-            newUser = await api.post('/users/register').send({
-                name: 'Teste1',
-                email: "test@gmail.com",
-                password: "12345"
+        // Prueba para crear un usuario
+        test('POST /api/users/register', async () => {
+            const response = await api.post('/api/users/register').send({
+                "name": "testUser",
+                "email": "testUser@example.com",
+                "password": "1234"
             });
-    
-            console.log(newUser.body);
-            user = newUser.body.sesiondata.id_user;
-            token = `Bearer ${newUser.body.sesiondata.token}`;
-    
-            const date = moment().format('YYYY-MM-DD');
-            const response = await api.post('/api/news').set('Authorization', token).send({
-                "title": "testTitle",
-                "imageUrl": "http://www.imagen.com",
-                "content": "descripcionTest",
-                "date": date,
-                "user": user,
-            });
-    
             expect(response.status).toBe(201);
-            expect(typeof response.body).toBe('object');
+            expect(response.body.sesiondata).toHaveProperty('id_user');
+            userId = response.body.sesiondata.id_user; 
+            token = `Bearer ${response.body.sesiondata.token}`; 
         });
+        test('POST /api/news', async () => {
+            const newsData = {
+                "tittle": "Test News",
+                "imageUrl": "http://example.com/image.jpg",
+                "content": "This is a test news.",
+                "date": new Date().toISOString(),
+                "user": userId
+            };
+    
+            const response = await api.post('/api/news').set('Authorization', token).send(newsData);
+            expect(response.status).toBe(201);
+            const news = await NewsModel.findOne({ where: { title: newsData.tittle } });
+            expect(news).not.toBeNull();
+            expect(news.get('title')).toBe(newsData.tittle);
+        });
+    });
+    
+    // Después de todas las pruebas, limpia la base de datos
+    afterAll(async () => {
+        await connection_db.sync({ force: true });
+        server.close();
     });
     
     /* afterAll( async () => {
@@ -52,6 +62,6 @@ describe('TESTING CRUD news', () => {
         await connection_db.sync({force: true });
         console.log('All databases are clean')
      }) */
-     afterAll(done => {
+     /* afterAll(done => {
         server.close(done);
-       });
+       }); */
