@@ -2,7 +2,6 @@ import * as request  from "supertest";
 import {app, server} from '../app';
 import connection_db from '../database/connection_db'
 import NewsModel from "../models/NewsModel";
-import * as moment from 'moment';
 
 
 const api = request(app);
@@ -21,8 +20,6 @@ describe('TESTING CRUD news', () => {
     describe('News creation', () => {
         let userId: number;
         let token: string;
-    
-        // Prueba para crear un usuario
         test('POST /api/users/register', async () => {
             const response = await api.post('/api/users/register').send({
                 "name": "testUser",
@@ -49,23 +46,14 @@ describe('TESTING CRUD news', () => {
                 const news = await NewsModel.findOne({ where: { title: newsData.tittle } });
                 expect(news).not.toBeNull();
                 expect(news.get('title')).toBe(newsData.tittle);
+                expect(news.get('content')).toBe(newsData.content);
             } catch (error) {
                 console.error('Error al buscar la noticia:', error);
             }
         });
     });
-    
-    // Después de todas las pruebas, limpia la base de datos
+
     afterAll(async () => {
         await connection_db.sync({ force: true });
         server.close();
     });
-    
-    /* afterAll( async () => {
-        server.close();
-        await connection_db.sync({force: true });
-        console.log('All databases are clean')
-     }) */
-     /* afterAll(done => {
-        server.close(done);
-       }); */

@@ -87,19 +87,3 @@ afterAll( async () => {
     await connection_db.sync({force: true });
     console.log('All databases are clean')
  });
-/* afterAll(async () => {
-    try {
-        await UserModel.destroy({
-            where: {},
-            truncate: true
-        });
-    } catch (error) {
-        console.error('Error al limpiar la base de datos:', error);
-    } finally {
-        server.close();
-    }
-}); */
-    /* afterAll(done => {
-        server.close(done);
-       });
-    */
