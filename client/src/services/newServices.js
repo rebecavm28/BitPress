@@ -50,8 +50,18 @@ export const updateData = async (id, newData) => {
 
 //Get by id
 
+// export const getNewById = async (id) => {
+//   const response = await fetch(`${url}/news/${id}`);
+//   const data = await response.json();
+//   return data;
+// };
+
 export const getNewById = async (id) => {
-  const response = await fetch(`${url}/news/${id}`);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(`${url}/news/${id}`);
+    const data = await response.json();
+    return data
+  } catch (error) {
+    console.error('Error fetching news:', error);
+  }
 };
