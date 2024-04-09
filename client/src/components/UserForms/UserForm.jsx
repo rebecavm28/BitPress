@@ -3,6 +3,7 @@ import './UserFrom.css'
 import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 import { useState } from 'react'
+import Login from './Login/Login'
 
 const UserForm = () => {
 
@@ -69,12 +70,6 @@ const UserForm = () => {
                 <input type="email" value={formData.email} onChange={handleChange} className="register_email" placeholder="Email" required/>
                 <input type="password" value={formData.password} onChange={handleChange} className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
-            </form>
-
-            <form className="login">
-                <input type="text" className="login_username" placeholder="Username" required/>
-                <input type="password" className="login_password" placeholder="Password" required/>
-                <button type="submit">Login</button>
             </form>
 
         </div>
