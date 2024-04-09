@@ -1,10 +1,8 @@
 import './New.css'
-// import { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const New = ({news}) => {
-    // const [isModalOpen, setIsModalOpen] = useState(false);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     return(
         <>

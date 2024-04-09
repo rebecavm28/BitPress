@@ -18,7 +18,7 @@ export const login = async (variableForm ) => {
 
 export const Registrer = async (formData) => {
   try{ 
-    const response = await fetch('http://localhost:3000/users', {
+    const response = await fetch('http://localhost:5000/api/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
