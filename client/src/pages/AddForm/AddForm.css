@@ -20,18 +20,39 @@
     width: 300px;
     padding: 10px;
     margin-bottom: 10px;
+    outline: none;
+    border: none;
+  }
+
+  input[type="text"]:focus + label,
+  input[type="url"]:focus + label {
+    opacity: 0;
+  }
+
+  input[type="text"]:focus::placeholder,
+  input[type="url"]:focus::placeholder {
+    color: transparent; /* Oculta el placeholder cuando el input está enfocado */
   }
   
+  label {
+    margin-bottom: 5px;
+    color: #2A2A2A;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    transition: all 0.2s ease-out;
+  }
+
+  .formFields{
+    position:relative;
+    margin-bottom: 20px;
+  }
+
   .buttonAdd {
     padding: 10px 20px;
     background-color: #C5A3F0;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    color: #FFFCEF;
   }
   
