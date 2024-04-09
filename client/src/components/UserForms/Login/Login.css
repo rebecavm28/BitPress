@@ -1,0 +1,56 @@
+.formulary_section{
+    display: flex;
+    border-radius: 15px;
+    place-content: center;
+    margin: 40px;
+}
+
+.formulary{
+    display: flex;
+    border: 2px solid #FFFCEF;
+    border: 2px solid #FFFCEF;
+    border-radius: 15px;
+}
+
+.register,
+.login {
+    width: 300px;
+    margin: 0 30px;
+    display: grid;
+    place-content: center;
+}
+
+.register input,
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #FFFCEF;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #FFFCEF;
+}
+
+.register button,
+.login button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register [type="submit"],
+.login [type="submit"] {
+    background-color: #C5A3F0;
+    transition: 0.7s;
+}
+
+.register [type="submit"]:hover,
+.login [type="submit"]:hover {
+    background-color: #AEFFBF;
+}
