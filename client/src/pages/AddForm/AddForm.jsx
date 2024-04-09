@@ -1,14 +1,14 @@
 import React from 'react'
 import './AddForm.css'
 import { useForm } from "react-hook-form";
-//import { postNew } from 'client\src\services\newServices.js';
+import { postNew } from '../../services/newServices';
 import { useNavigate } from "react-router-dom";
 
 const AddForm = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const navigate = useNavigate()
-    const onSubmit = async (Data) => {
-        await postNew(Data)
+    const onSubmit = async (data) => {
+        await postNew(data)
         navigate("/detail")
     };
  

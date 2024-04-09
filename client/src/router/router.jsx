@@ -23,7 +23,6 @@ const router = createBrowserRouter([
                 path: "/add",
                 element: <AddForm/>
             }
-
     
         ]
     }
