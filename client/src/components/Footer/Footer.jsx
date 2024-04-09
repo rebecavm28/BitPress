@@ -1,8 +1,10 @@
-import React from 'react'
+import './Footer.css'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+      <p className="copyrigth">Copyrigth © 2024 BitPress, Inc. All rights reserved.</p>
+    </footer>
   )
 }
 

@@ -11,11 +11,10 @@ export const isAuthenticated = async  (request:Request, response:Response, next:
     try {
        const dataToken:any = await verifyToken(token);
        console.log(dataToken)
-       const res=  request.body.userId = dataToken.id;
-       console.log(res)
-       /* const user : IdUser ={
+       request.body.userId = dataToken.id;
+       const user : IdUser ={
          id_user: dataToken.id,
-       } */
+       }
        next(); 
     } catch (error) {
        return response.status(401).json({message:"Invalid Token!"})

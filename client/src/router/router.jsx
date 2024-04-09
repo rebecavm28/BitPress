@@ -17,7 +17,7 @@ const router = createBrowserRouter([
                 loader: getNew
             },
             {
-                path: "/detail",
+                path: "/detail/:id_news",
                 element: <Detail/>
             },
             {
