@@ -8,7 +8,7 @@ export const NewsModel = connection_db.define('news', {
         autoIncrement: true,
         primaryKey: true,
     },
-    tittle: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false,
     },

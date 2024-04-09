@@ -12,7 +12,7 @@ let Token: string;
 beforeAll(async () => {
   // Envía una solicitud de inicio de sesión para obtener el token
   const loginResponse = await api
-    .post('/users/login') //login es tu ruta de inicio de sesión
+    .post('/news/login') //login es tu ruta de inicio de sesión
     .send({ email: 'correo@example.com', password: 'contraseña' });
 
   // Extrae el token de la respuesta y almacénalo en authToken
@@ -38,12 +38,12 @@ describe('DELETE', () => {
       content: 'test content',
       imageUrl: 'imagen',
       date: '2000-01-01',
-      userId: 1,
+      user_Id: 1,
     });
 
     // Utiliza el token de autenticación en la solicitud DELETE
     await api
-      .delete(`/api/news/id/${createdNews}`)
+      .delete(`/api/news/ ${createdNews.id}`)
       .set('Authorization', `Bearer ${Token}`)
       .send();
   });
@@ -58,29 +58,31 @@ describe('PUT', () => {
 
   beforeEach(async () => {
     createdNews = await NewsModel.create({
-      title: 'test',
-      content: 'test content',
-      imageUrl: 'https://example.com/image.jpg',
-      date: '2000-01-01',
-      userId: 1,
+      title: 'New News',
+      imageURL: 'url',
+      content: 'Content of the new news',
+      date: '2012-03-01',
+      user_Id: 1
     });
   });
 
+  
   afterAll(async () => {
-    await NewsModel.destroy({ where: { id: createdNews } });
+    await NewsModel.destroy({ where: { id: createdNews.id } });
   });
 
   test('Put response should be an object and return status 201', async () => {
     // Utiliza el token de autenticación en la solicitud PUT
     const response = await api
-      .put(`/api/news/${createdNews}`)
+      .put(`/api/news ${createdNews.id}`)
       .set('Authorization', `Bearer ${Token}`)
       .send({
-        title: 'updated test',
-        content: 'updated test content',
-        imageUrl: 'https://example.com/updated-image.jpg',
-        date: '2000-01-01',
-        userId: 1,
+        
+        title: 'noticias',
+        imageURL: 'url',
+        content: 'una cosa',
+        date: '2012-03-01',
+        user_Id: 1 
       });
 
     expect(typeof response).toBe('object');
