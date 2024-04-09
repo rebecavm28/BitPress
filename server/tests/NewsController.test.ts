@@ -1,6 +1,5 @@
 import * as request  from "supertest";
 import {app, server} from '../app';
-import connection_db from '../database/connection_db'
 import NewsModel from '../models/NewsModel'
 import * as moment from 'moment';
 const api = request(app);
@@ -9,7 +8,7 @@ describe('TESTING CRUD news', () => {
 
     describe('GET', () => {
         test('GET ', async() => {
-            const response = await api.get('/api/news')
+            const response = await request(app).get('/api/news')
             expect(response.status).toBe(200)
             expect(Array.isArray(response.body)).toBe(true)
         })    
@@ -32,7 +31,7 @@ describe('TESTING CRUD news', () => {
             test('POST response should be an object and then show 201 status', async () => {
                 const date = moment().format('YYYY-MM-DD');
                 const response = await api.post('/api/news').set('Authorization', token).send({
-                    "title": "testTitle",
+                    "tittle": "testTitle",
                     "imageUrl": "http://www.imagen.com",
                     "content": "descripcionTest",
                     "date": date,
