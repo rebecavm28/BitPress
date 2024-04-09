@@ -9,7 +9,7 @@ const AddForm = () => {
     const navigate = useNavigate()
     const onSubmit = async (data) => {
         await postNew(data)
-        navigate("/detail")
+        navigate("/") //Cambiar luego la navegación a la página de detail
     };
  
     return (
