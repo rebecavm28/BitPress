@@ -8,14 +8,43 @@ const UserForm = () => {
 
 //   Codigo JS para el formulario de registro
 
-  const navigate = useNavigate();
-  const [urlImg, setUrlImg] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: ''
   });
 
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+   let animalData = new FormData();
+   animalData = {...formData};
+
+    try{ 
+      const response = await fetch('http://localhost:3000/animals', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(animalData)
+      });
+     navigate('/gallery');
+
+     if (!response.ok) {
+      throw new Error('Error al crear al animal');
+     }
+
+      Swal.fire('Animal creado exitosamente');
+
+
+    } catch (error){
+      console.log('Error al crear animal: ', error);
+      Swal.fire('Error al crear el animal');
+    }
+  };
 //   Fin de codigo JS para el formulario de registro
 
 //   Codigo JS para el formulario de login
