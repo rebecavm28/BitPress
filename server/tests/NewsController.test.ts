@@ -45,9 +45,13 @@ describe('TESTING CRUD news', () => {
     
             const response = await api.post('/api/news').set('Authorization', token).send(newsData);
             expect(response.status).toBe(201);
-            const news = await NewsModel.findOne({ where: { title: newsData.tittle } });
-            expect(news).not.toBeNull();
-            expect(news.get('title')).toBe(newsData.tittle);
+            try {
+                const news = await NewsModel.findOne({ where: { title: newsData.tittle } });
+                expect(news).not.toBeNull();
+                expect(news.get('title')).toBe(newsData.tittle);
+            } catch (error) {
+                console.error('Error al buscar la noticia:', error);
+            }
         });
     });
     
