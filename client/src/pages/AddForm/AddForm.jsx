@@ -19,7 +19,7 @@ const AddForm = () => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}> 
                 <div className='formFields'>
-                    <label htmlFor="title"className='addTitle'>Add the title of the new</label>
+                    <label htmlFor="title"className='addTitle'>Title</label>
                     <input type="text" id="title" name="title" {...register('title', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  100 
@@ -35,7 +35,7 @@ const AddForm = () => {
                     {errors.image?.type === 'required' && <p className="error-message">Please, add the image of the new</p>}
                 </div>
                 <div className='formFields'>
-                    <label htmlFor="description"className='addDescription'>Add the news description</label>
+                    <label htmlFor="description"className='addDescription'>Description</label>
                     <input type="text" id="description" name="description"{...register('description', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  1000 
