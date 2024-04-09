@@ -2,6 +2,7 @@ import React from 'react'
 import './UserFrom.css'
 import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
+import { useState } from 'react'
 
 const UserForm = () => {
 
