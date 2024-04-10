@@ -63,15 +63,15 @@
   }
   
   .image1 {
-    width: 85px;
+    width: 84px;
     left: 0;
     overflow: hidden;
     z-index: 2;
   }
   
   .image2 {
-    width: 175px;
-    left: -90px;
+    width: 180px;
+    left: -96px;
     z-index: 1;
   }
   
