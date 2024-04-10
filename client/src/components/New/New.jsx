@@ -8,8 +8,7 @@ const New = ({news}) => {
         <>
             {
                 news.map(newData => {
-                    return(
-                        <div key={newData.id_news} onClick={()=>navigate(`/detail/${newData.id_news}`)} className='news_container'>
+                    return(<div key={newData.id} className='news_container'>
                             <article className='New_box'>
                                 <div className="text">
                                     <h2 className='New_tittle'>{newData.tittle}</h2>
