@@ -3,14 +3,28 @@ import './AddForm.css'
 import { useForm } from "react-hook-form";
 import { postNew } from '../../services/newServices';
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { login } from "../../services/authService";
 
 const AddForm = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const navigate = useNavigate()
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const currentDate = new Date().toISOString().split('T')[0];
     const onSubmit = async (data) => {
-        await postNew(data)
+        try {
+            // Verifica si el usuario está autenticado
+            const isAuthenticated = await login(variableForm);
+            if (!isAuthenticated) {
+              return;
+            }
+        data.publicationDate = currentDate;
+        await postNew(data);
         navigate("/") //Cambiar luego la navegación a la página de detail
-    };
+    } catch (error){
+        console.error('Error al intentar iniciar sesión:', error);
+    }
+  };
  
     return (
         <div className='formAdd'>
@@ -33,6 +47,10 @@ const AddForm = () => {
                         required: true 
                     })}/>
                     {errors.image?.type === 'required' && <p className="error-message">Please, add the image of the new</p>}
+                </div>
+                <div className='formFields'>
+                    <label htmlFor='publicationDate' className='publicationDate'>Publication Date</label>
+                    <input type='text' id='publicationDate' name='publicationDate'value={currentDate} readOnly/>
                 </div>
                 <div className='formFields'>
                     <label htmlFor="description"className='addDescription'>Description</label>
