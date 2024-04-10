@@ -15,7 +15,8 @@ main{
 
 .slogan{
     padding-top: 90px;
-    margin-left: 25%;
+    padding-bottom: 60px;
+    margin-left: 30%;
 }
 
 .tittle_1{
@@ -35,7 +36,7 @@ main{
 }
 
 .color_back{
-    width: 400px;
+    width: 30vw;
     height: 170px;
     border-radius: 30px;
     background-image: url(../../assets/images/animated_background.gif);
@@ -46,7 +47,7 @@ main{
 }
 
 .blur_effect{
-    width: 400px;
+    width: 30vw;
     height: 170px;
     border: 1px solid #FFFCEF;
     border-radius: 30px;
