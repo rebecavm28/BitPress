@@ -50,63 +50,42 @@
   "news": [
     {
       "id": "1",
-      "tittle": "Humanos robotizados, algoritmos humanizados",
+      "tittle": "Algoritmos humanizados",
       "date": "27 marzo 2023",
       "imageUrl": "https://imageUrlnes.elpais.com/resizer/jJ3ROgHziR1xFLhRyLOHdOHNx7U=/1200x0/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/MOIV3QIGOUC5YWUF5FEJ34N57Q.jpg",
       "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
     },
     {
       "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
+      "tittle": "La ley recurre a código abierto",
       "date": "8 marzo 2023",
       "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
       "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
     },
     {
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://imageUrlnes.elpais.com/resizer/jJ3ROgHziR1xFLhRyLOHdOHNx7U=/1200x0/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/MOIV3QIGOUC5YWUF5FEJ34N57Q.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
+    },
+    {
       "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
+      "tittle": "La ley recurre a código abierto",
       "date": "8 marzo 2023",
       "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
       "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
     },
     {
-      "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
-      "date": "8 marzo 2023",
-      "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
-      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://imageUrlnes.elpais.com/resizer/jJ3ROgHziR1xFLhRyLOHdOHNx7U=/1200x0/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/MOIV3QIGOUC5YWUF5FEJ34N57Q.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
     },
     {
       "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
-      "date": "8 marzo 2023",
-      "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
-      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
-    },
-    {
-      "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
-      "date": "8 marzo 2023",
-      "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
-      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
-    },
-    {
-      "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
-      "date": "8 marzo 2023",
-      "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
-      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
-    },
-    {
-      "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
-      "date": "8 marzo 2023",
-      "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
-      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
-    },
-    {
-      "id": "2",
-      "tittle": "La ley de inteligencia artificial abre una brecha entre las grandes empresas preparadas y las que recurren a código abierto",
+      "tittle": "La ley recurre a código abierto",
       "date": "8 marzo 2023",
       "imageUrl": "https://imageUrlnes.elpais.com/resizer/xYo9XHYmygZuUTfPOXoWB-OQAwM=/828x0/filters:focal(2956x1726:2966x1736)/cloudfront-eu-central-1.imageUrls.arcpublishing.com/prisa/A7ILNOIJXVADBCVPS2M35FWQSI.jpg",
       "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
