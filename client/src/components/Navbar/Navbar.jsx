@@ -1,4 +1,3 @@
-import React from 'react'
 import '../Navbar/Navbar.css'
 import logo from '../../assets/images/logo_negro.png'
 import texto from '../../assets/images/texto_logo.png'
@@ -16,8 +15,8 @@ const Navbar = () => {
       <img src={texto} alt="" className='image2'/>
     </div>
     <ul className='list_box'>
-      <li><a className='navbar_link violet' href="#">Registrer</a></li>
-      <li><a className='navbar_link cream' href="#">Login</a></li>
+      <li><a className='navbar_link violet'>Registrer</a></li>
+      <li><a className='navbar_link cream'>Login</a></li>
     </ul>
   </nav>
   )
