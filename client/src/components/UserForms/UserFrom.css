@@ -144,3 +144,34 @@
     color: #FFFCEF;
     margin: 0 15px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 1000px){
+    .formulary_section {
+        flex-direction: column;
+    }
+
+    .registrer_option,
+    .registrer_option_changer{
+        font-size: 100%;
+    }
+
+    .register input{
+        width: 100%;
+    }
+
+    .formulary,
+    .login
+    .register,
+    .social {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .social_tittle {
+        font-size: 24px;
+    }
+
+    .social_links {
+        font-size: 100%;
+    }
+}
