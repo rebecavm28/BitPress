@@ -19,8 +19,8 @@
 /* Imagen de Noticia */
 
 .imgNew{
-    width: 80vw;
-    height: 22vw;
+    width: 50vw;
+    height: 20vw;
     border-radius:20px;
     box-shadow: 0 0 35px rgb(253, 249, 249);
 }
