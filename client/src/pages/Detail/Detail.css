@@ -19,8 +19,8 @@
 /* Imagen de Noticia */
 
 .imgNew{
-    width: 50vw;
-    height: 20vw;
+    width: 30vw;
+    height: 50vh;
     border-radius:20px;
     box-shadow: 0 0 35px rgb(253, 249, 249);
 }
@@ -48,6 +48,7 @@ h2{
     width: 80vw;
     min-height: auto;
     margin-top: 1vw;
+    margin-bottom: 2vw;
   }
 
 .bEdit{

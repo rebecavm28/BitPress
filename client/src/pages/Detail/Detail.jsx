@@ -27,13 +27,13 @@ return (
         <p><span className="author">User : </span>{data.user}<span className="date"> | Date : </span>{data.date}</p>
         <h3 className="subDescrip">DESCRIPTION:</h3>
         <div className="description">
-        <p>{data.content}</p></div>
-      </div>
+          <p>{data.content}</p></div>
         <div className='buttons'>
-        <button className="bEdit">EDIT</button>
-        <button className="bDelete">DELETE</button>
-        {/* <button onClick={handleClick}>Edit</button>
-        <button onClick={handleClick}>Delete</button> */}
+          <button className="bEdit">EDIT</button>
+          <button className="bDelete">DELETE</button>
+          {/* <button onClick={handleClick}>Edit</button>
+          <button onClick={handleClick}>Delete</button> */}
+        </div>
         </div>
       </div>
     ) : (
