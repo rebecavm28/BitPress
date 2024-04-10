@@ -3,7 +3,7 @@ body{
 }
 
 .gallery_container{
-    margin: 70px 300px 0 0;
+    margin: 70px 320px 0 0;
     display: grid;
     place-items: center;
 }
