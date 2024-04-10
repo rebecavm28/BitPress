@@ -8,7 +8,9 @@ const UserForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm()
   
   const handleFrom = async (data) => {
-    Registrer(data)
+    Registrer(data).then(()=>{
+        navigate('/');
+    })
   }
 
   return (
