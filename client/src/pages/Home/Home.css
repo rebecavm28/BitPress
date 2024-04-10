@@ -1,9 +1,4 @@
-.home_container{
-    margin-left: 66px;
-}
-
 main{
-    padding-left: 80px;
     background-color: #2A2A2A;
     display: flex;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
