@@ -18,11 +18,11 @@ export const getNew = async () => {
 
 //POST
 
-// export const postNew = async (data) =>{
-//   const news = await axios.post(`${url}/news`, data);
-//   alert("News created successfully");
-//   return news;
-// };
+ export const postNew = async (data) =>{
+   const news = await axios.post(`${url}/news`, data);
+   alert("News created successfully");
+   return news;
+ };
 
 //DELETE
 
