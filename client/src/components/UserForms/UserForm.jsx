@@ -24,7 +24,7 @@ const UserForm = () => {
 
 
             <form className="register" onSubmit={handleSubmit(handleFrom)}>
-                <input type="text" name='name' {...register('name')} className="register_username" placeholder="Username" required/>
+                <input name='name' {...register('name')} className="register_username" placeholder="Username" required/>
                 <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
                 <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
