@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 // url de la FakeAPI de noticias = 'http://localhost:3000'
-// url de la base de datos = 'http://localhost:5000/'
+// url de la base de datos = 'http://localhost:5000/api'
 
 
 export const url = 'http://localhost:5000/api';
@@ -18,11 +18,11 @@ export const getNew = async () => {
 
 //POST
 
-export const postNew = async (data) =>{
-  const news = await axios.post(`${url}/news`, data);
-  alert("News created successfully");
-  return news;
-};
+// export const postNew = async (data) =>{
+//   const news = await axios.post(`${url}/news`, data);
+//   alert("News created successfully");
+//   return news;
+// };
 
 //DELETE
 
