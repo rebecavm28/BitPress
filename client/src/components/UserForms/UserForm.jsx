@@ -1,9 +1,16 @@
-import React from 'react'
 import './UserFrom.css'
 import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
-
+import { useForm } from 'react-hook-form'
+import { Registrer } from '../../services/authService'
 const UserForm = () => {
+
+  const { register, handleSubmit, formState: { errors } } = useForm()
+  
+  const handleFrom = async (data) => {
+    Registrer(data)
+  }
+
   return (
     <div className='formulary_section'>
         <div className="formulary">
@@ -16,17 +23,11 @@ const UserForm = () => {
             </div>
 
 
-            <form className="register">
-                <input type="text" className="register_username" placeholder="Username" required/>
-                <input type="email" className="register_email" placeholder="Email" required/>
-                <input type="password" className="register_password" placeholder="Password" required/>
+            <form className="register" onSubmit={handleSubmit(handleFrom)}>
+                <input type="text" name='name' {...register('name')} className="register_username" placeholder="Username" required/>
+                <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
+                <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
-            </form>
-
-            <form className="login">
-                <input type="text" className="login_username" placeholder="Username" required/>
-                <input type="password" className="login_password" placeholder="Password" required/>
-                <button type="submit">Login</button>
             </form>
 
         </div>

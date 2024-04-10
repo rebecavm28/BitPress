@@ -1,17 +1,14 @@
 import './New.css'
-// import { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const New = ({news}) => {
-    // const [isModalOpen, setIsModalOpen] = useState(false);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     return(
         <>
             {
                 news.map(newData => {
-                    return(
-                        <div key={newData.id} className='news_container'>
+                    return(<div key={newData.id} className='news_container'>
                             <article className='New_box'>
                                 <div className="text">
                                     <h2 className='New_tittle'>{newData.tittle}</h2>
