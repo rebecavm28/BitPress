@@ -1,4 +1,3 @@
-import React from 'react'
 import './Home.css'
 import NewsGallery from '../../components/Gallery/NewsGallery'
 import UserForm from '../../components/UserForms/UserForm'

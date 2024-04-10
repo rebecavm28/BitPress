@@ -1,5 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 import  {JWT_SECRET}  from '../config';
+
 export const  createToken = async (user:any) => {
     const  token = jwt.sign(
         {
