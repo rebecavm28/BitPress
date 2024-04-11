@@ -2,11 +2,14 @@ import { useParams } from "react-router";
 import { useEffect, useState } from 'react';
 import { getNewById } from '../../services/newServices'
 import './Detail.css';
+import { deleteData } from "../../services/newServices";
+import { useNavigate } from "react-router";
+
 
 const Detail = () => {
   const { id_news } = useParams();
     const [ data, setData ] = useState(null);
-  
+      const navigate = useNavigate()
 
       
       useEffect(() => {
@@ -24,15 +27,14 @@ return (
         <h2 className="titleNew">{data.tittle}</h2>
         <img className="imgNew" src={data.imageUrl}/>
       <div className="subtitles">
-        <p><span className="author">User : </span>{data.user}<span className="date"> | Date : </span>{data.date}</p>
+        <p><span className="author">User : </span>{data.user}<span className="date"> | Date : </span> {new Date(data.date).toLocaleDateString()}
+          </p>
         <h3 className="subDescrip">DESCRIPTION:</h3>
         <div className="description">
           <p>{data.content}</p></div>
         <div className='buttons'>
           <button className="bEdit">EDIT</button>
-          <button onClick={() => clickDelete(deleteData.id)} className="bDelete">DELETE</button>
-          {/* <button onClick={handleClick}>Edit</button>
-          <button onClick={handleClick}>Delete</button> */}
+          <button onClick={() => {deleteData(`${id_news}`); navigate("/")}} className="bDelete">DELETE</button>
         </div>
         </div>
       </div>
