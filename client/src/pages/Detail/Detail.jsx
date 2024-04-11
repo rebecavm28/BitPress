@@ -20,7 +20,7 @@ const Detail = () => {
 
 return (
   <div>
-    {data ? (<div className="chargingBox">
+    {data ? (<div className="chargingBox" key={data.id}>
         <h2 className="titleNew">{data.tittle}</h2>
         <img className="imgNew" src={data.imageUrl}/>
       <div className="subtitles">
@@ -30,7 +30,7 @@ return (
           <p>{data.content}</p></div>
         <div className='buttons'>
           <button className="bEdit">EDIT</button>
-          <button className="bDelete">DELETE</button>
+          <button onClick={() => clickDelete(deleteData.id)} className="bDelete">DELETE</button>
           {/* <button onClick={handleClick}>Edit</button>
           <button onClick={handleClick}>Delete</button> */}
         </div>
