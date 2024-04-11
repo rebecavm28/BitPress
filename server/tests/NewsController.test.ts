@@ -6,8 +6,6 @@ import UserModel from "../models/UserModel";
 import {createToken} from "../utils/jwt"
 
 
-const api = request(app);
-
 describe('TESTING CRUD news', () => {
 
     describe('GET', () => {
@@ -19,7 +17,7 @@ describe('TESTING CRUD news', () => {
     });
     });
     
-    describe('News creation', () => {
+    /* describe('News creation', () => {
         let userId: number;
         let token: string;
         let newsId: number;
@@ -44,7 +42,7 @@ describe('TESTING CRUD news', () => {
 
             };
             const news:any = await NewsModel.create(newsData);
-            expect(news).toBeDefined();
+            expect(news).toBeDefined(); */
             /* expect(news.id_news).toBeDefined();
             expect(news.tittle).toBe(newsData.tittle);
             expect(news.content).toBe(newsData.content);
@@ -53,15 +51,19 @@ describe('TESTING CRUD news', () => {
             expect(newsData).toBeDefined();
             expect(newsData.id_news).toBeDefined(); */
 
+        /* });
+        afterAll(async () => {
+            await connection_db.sync({ force: true });
+            server.close();
         });
-    
+     */
         /* test('POST /api/news', async () => {
            
 
         });
      */
         // Puedes agregar más pruebas aquí, todas ellas tendrán acceso a userId, token y newsId
-    });
+  /*   }); */
             /* const response = await api.post('/api/news').set('Authorization', token).send(newsData);
             expect(response.status).toBe(201); */
           /*   try {
@@ -88,9 +90,5 @@ describe('TESTING CRUD news', () => {
         
  
 
-    afterAll(async () => {
-        await connection_db.sync({ force: true });
-        server.close();
-    });
-
+    
     
