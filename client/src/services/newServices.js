@@ -5,12 +5,12 @@ import axios from "axios";
 //url de la base de datos = 'http://localhost:5000/api'
 
 
-export const url = 'http://localhost:3000';
+export const url = 'http://localhost:5000/api';
 
 
 
 //GET
-
+ 
 export const getNew = async () => {
   const response = await fetch(`${url}/news`);
   const data = await response.json();
