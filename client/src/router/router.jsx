@@ -6,6 +6,7 @@ import Detail from '../pages/Detail/Detail'
 import AddForm from '../pages/AddForm/AddForm'
 import EditForm from '../pages/EditForm/EditForm'
 import NewsForm from '../components/NewsForm/NewsForm'
+import Dashboard from '../pages/Dashboard/Dashboard'
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
                 element: <Home/>,
                 loader: getNew
             },
+            // {
+            //     path: "/dashboard",
+            //     element: <Dashboard/>
+            // },
             {
                 path: "/detail/:id_news",
                 element: <Detail/>
