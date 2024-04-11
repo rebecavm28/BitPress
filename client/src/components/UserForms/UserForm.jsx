@@ -11,8 +11,8 @@ const UserForm = () => {
   const onSubmit = async (data) =>{
     try {
         const response = await registerUser(data)
-        localStorage.setItem('token', response.data.token);
-        navigate('/');
+        localStorage.setItem('token', response.sesiondata.token)
+        // navigate('/');
     } catch (error) {
         
     }
