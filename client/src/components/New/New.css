@@ -17,11 +17,15 @@
 .New_tittle{
     margin: 10px 0 10px 0;
     color: #FFFCEF;
+    font-size: 25px;
+    text-align: left;
 }
 
 .date{
     margin: 0;
     color: #9A9A9A;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .New_img{

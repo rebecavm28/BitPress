@@ -5,6 +5,7 @@ import { getNew } from '../services/newServices'
 import Detail from '../pages/Detail/Detail'
 import AddForm from '../pages/AddForm/AddForm'
 import EditForm from '../pages/EditForm/EditForm'
+import NewsForm from '../components/NewsForm/NewsForm'
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "/edit/:id",
                 element: <EditForm/>
+            },
+            {
+                path: "/newsform",
+                element: <NewsForm/>
             }
         ]
     }

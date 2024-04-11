@@ -1,6 +1,7 @@
+
 import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
-import UserModel from "./UserModel";
+import UserModel from './UserModel'; 
 
 export const NewsModel = connection_db.define('news', {
     id_news: {
@@ -27,7 +28,7 @@ export const NewsModel = connection_db.define('news', {
     user: {
         type: DataTypes.INTEGER,
         references: {
-            model: "users", 
+            model: UserModel, 
             key: 'id_user', 
         },
         allowNull: false,
@@ -36,6 +37,5 @@ export const NewsModel = connection_db.define('news', {
     tableName: 'news', 
     timestamps: false, 
 });
-UserModel.hasMany(NewsModel,{foreignKey: "user"})
 
 export default NewsModel;
