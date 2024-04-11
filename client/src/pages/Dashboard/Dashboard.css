@@ -1,0 +1,32 @@
+main{
+    background-color: #2A2A2A;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0px 0px 30px #FFFCEF;
+}
+.circle_button{
+    background-color: #AEFFBF;
+    border-radius: 200px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #2A2A2A;
+    height: 210px;
+    margin: 110px 0 0 20px;
+    transition: 0.3s;
+}
+
+.button_letters{
+    width: 150px;
+    font-size: 35px;
+    color: #AEFFBF;
+    -webkit-text-stroke: 1.5px #2A2A2A;
+    transform: rotate(-14deg);
+    margin: 30px;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.circle_button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px #fffcef51;
+}
