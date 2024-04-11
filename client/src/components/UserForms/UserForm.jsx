@@ -1,23 +1,32 @@
 import './UserFrom.css'
-import instagram_logo from '../../assets/svg/instagramCream.svg'
+/* import React, {useState} from 'react'
+ */import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
-import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'
+/* import { useId } from 'react'; */
 import { registerUser } from '../../services/authService'
 import { useNavigate } from 'react-router-dom'
-
+/* import { useUserContext } from '../../context/UserContext'
+ */
 const UserForm = () => {
+   /*  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState(''); */
 const navigate = useNavigate();
-
+/* const termsId = useId();
+  const { userAuth, setUserAuth } = useUserContext();
+  const { user, setUser  } = useUserContext(); */
 
   const { register, handleSubmit, formState: { errors } } = useForm()
 
-  const onSubmit = async (sesiondata) =>{
+  const onSubmit = async (data) =>{
     try {
         const response = await registerUser(data);
         const {token, rol} = response.sesiondata;
         localStorage.setItem('token', token);
         localStorage.setItem('rol', rol);
+        /* setUser(data.data);
+        setUserAuth(true); */
         navigate('/dashboard');
     } catch (error) {
         console.error(error)

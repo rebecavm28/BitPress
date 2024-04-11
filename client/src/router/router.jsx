@@ -1,5 +1,6 @@
 import {createBrowserRouter} from 'react-router-dom'
 import LayoutPublic from '../layout/LayoutPublic'
+import LayoutPrivate from '../layout/LayoutPrivate'
 import Home from '../pages/Home/Home'
 import { getNew } from '../services/newServices'
 import Detail from '../pages/Detail/Detail'
@@ -16,31 +17,37 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home/>,
-                loader: getNew
+                /* loader: getNew */
             },
              {
-                path: "/dashboard",
-                element: <Dashboard/>,
-                loader: getNew
-            },
-            {
-                path: "/detail/:id_news",
-                element: <Detail/>
-            },
-            {
-                path: "/add",
-                element: <AddForm/>
-            },
-            {
-                path: "/edit/:id",
-                element: <EditForm/>
-            },
-            {
-                path: "/newsform",
-                element: <NewsForm/>
-            }
-        ]
+                path: "dashboard",
+                element:<LayoutPrivate/>,
+                children:[
+                    {
+                        index:true,
+                        element: <Dashboard/>,
+                        loader: getNew
+                    },
+                    {
+                        path: "detail/:id_news",
+                        element: <Detail/>
+                    },
+                    {
+                        path: "add",
+                        element: <AddForm/>
+                    },
+                    {
+                        path: "edit/:id",
+                        element: <EditForm/>
+                    },
+                    {
+                        path: "newsform",
+                        element: <NewsForm/>
+                    }
+                ]
+
     }
+]}
 ])
 
 export default router
