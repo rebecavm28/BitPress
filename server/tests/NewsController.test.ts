@@ -2,6 +2,8 @@ import /* * as */ request  from "supertest";
 import {app, server} from '../app';
 import connection_db from '../database/connection_db'
 import NewsModel from "../models/NewModel";
+import UserModel from "../models/UserModel";
+import {createToken} from "../utils/jwt"
 
 
 const api = request(app);
@@ -17,10 +19,22 @@ describe('TESTING CRUD news', () => {
     });
     });
     
-    describe('News creation', () => {
+describe('News creation', () => {
         let userId: number;
         let token: string;
-        test('POST /api/users/register', async () => {
+        let newsId: number;
+
+     beforeEach(async()=>{
+        const user:any = await UserModel.create({
+            name: "test",
+            email:"test@gmail.com",
+            password:"1234"
+        });
+        token = await createToken(user);
+        expect(user).toBeDefined();
+        expect(user.sesiondata.id_user).toBeDefined();
+     })  
+/* test('POST /api/users/register', async () => {
             const response = await api.post('/api/users/register').send({
                 "name": "testUser",
                 "email": "test@gmail.com",
@@ -30,7 +44,7 @@ describe('TESTING CRUD news', () => {
             expect(response.body.sesiondata).toHaveProperty('id_user');
             userId = response.body.sesiondata.id_user; 
             token = `Bearer ${response.body.sesiondata.token}`; 
-        });
+        }); */
         test('POST /api/news', async () => {
             const newsData = {
                 "tittle": "Test",
