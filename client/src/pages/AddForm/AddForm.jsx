@@ -12,18 +12,19 @@ const AddForm = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const currentDate = new Date().toISOString().split('T')[0];
     const onSubmit = async (data) => {
-        try {
-            // Verifica si el usuario está autenticado
-            const isAuthenticated = await login(variableForm);
-            if (!isAuthenticated) {
-              return;
-            }
-        data.publicationDate = currentDate;
-        await postNew(data);
-        navigate("/") //Cambiar luego la navegación a la página de detail
-    } catch (error){
+        // try {
+        //     // Verifica si el usuario está autenticado
+        //     const isAuthenticated = await login(variableForm);
+        //     if (!isAuthenticated) {
+        //       return;
+        //     }
+        //data.publicationDate = currentDate;
+        await postNew(data).then(() => {
+            navigate("/") //Cambiar luego la navegación a la página de detail
+        })
+    /* } catch (error){
         console.error('Error al intentar iniciar sesión:', error);
-    }
+    } */
   };
  
     return (
