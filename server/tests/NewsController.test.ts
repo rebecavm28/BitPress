@@ -23,7 +23,7 @@ describe('TESTING CRUD news', () => {
         test('POST /api/users/register', async () => {
             const response = await api.post('/api/users/register').send({
                 "name": "testUser",
-                "email": "testUser@example.com",
+                "email": "test@gmail.com",
                 "password": "1234"
             });
             expect(response.status).toBe(201);
@@ -33,9 +33,9 @@ describe('TESTING CRUD news', () => {
         });
         test('POST /api/news', async () => {
             const newsData = {
-                "tittle": "Test News",
-                "imageUrl": "http://example.com/image.jpg",
-                "content": "This is a test news.",
+                "tittle": "Test",
+                "imageUrl": "www.google.es",
+                "content": "test news.",
                 "date": new Date().toISOString(),
                 "user": userId
             };
@@ -43,7 +43,7 @@ describe('TESTING CRUD news', () => {
             const response = await api.post('/api/news').set('Authorization', token).send(newsData);
             expect(response.status).toBe(201);
             try {
-                const news = await NewsModel.findOne({ where: { title: newsData.tittle } });
+                const news:any = await NewsModel.findOne({ where: { title: newsData.tittle } });
                 expect(news).not.toBeNull();
                 if (news) {
                     expect(news.get('title')).toBe(newsData.tittle);
@@ -59,3 +59,5 @@ describe('TESTING CRUD news', () => {
         await connection_db.sync({ force: true });
         server.close();
     });
+
+    

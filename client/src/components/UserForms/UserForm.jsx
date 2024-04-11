@@ -2,15 +2,20 @@ import './UserFrom.css'
 import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 import { useForm } from 'react-hook-form'
-import { Registrer } from '../../services/authService'
+import { registerUser } from '../../services/authService'
+
 const UserForm = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
   
-  const handleFrom = async (data) => {
-    Registrer(data).then(()=>{
+  const onSubmit = async (data) =>{
+    try {
+        const response = await registerUser(data)
+        localStorage.setItem('token', response.data.token);
         navigate('/');
-    })
+    } catch (error) {
+        
+    }
   }
 
   return (
@@ -25,7 +30,7 @@ const UserForm = () => {
             </div>
 
 
-            <form className="register" onSubmit={handleSubmit(handleFrom)}>
+            <form className="register" onSubmit={handleSubmit(onSubmit)}>
                 <input name='name' {...register('name')} className="register_username" placeholder="Username" required/>
                 <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
                 <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>

@@ -1,3 +1,4 @@
+import /* * as */ request from 'supertest';
 import { app, server } from '../app';
 import UserModel from '../models/UserModel';
 import connection_db from '../database/connection_db';
@@ -58,7 +59,7 @@ describe('User update', () => {
     test('POST /api/users/register', async () => {
         const response = await api.post('/api/users/register').send({
             "name": "testUser",
-            "email": "testUser@example.com",
+            "email": "testUser@gmail.com",
             "password": "1234"
         });
         expect(response.status).toBe(201);
@@ -69,17 +70,15 @@ describe('User update', () => {
     test('PUT /api/users/:id', async () => {
         const updatedUserData = {
             "name": "updatedTest",
-            "email": "updatedTest@example.com",
+            "email": "updatedTest@gmail.com",
             "password": "5678"
         };
 
         const response = await api.put(`/api/users/${userId}`).set('Authorization', token).send(updatedUserData);
         expect(response.status).toBe(200); 
-        const user = await UserModel.findByPk(userId);
-        if (user !== null) {
-            expect(user.get('name')).toBe(updatedUserData.name);
-            expect(user.get('email')).toBe(updatedUserData.email);
-        }
+        const user:any = await UserModel.findByPk(userId);
+        expect(user.get('name')).toBe(updatedUserData.name);
+        expect(user.get('email')).toBe(updatedUserData.email);
     });
 });
 afterAll( async () => {
