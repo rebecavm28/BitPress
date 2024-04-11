@@ -10,12 +10,12 @@ const Login = () => {
   const navigate = useNavigate();
   const { setIsAuthenticated } = useUserContext();
 
-  const onSubmit = async (dataForm) => { // Cambio de nombre de la función para que coincida con el manejador del evento onSubmit
+  const onSubmit = async (dataForm) => { 
     try {
       const responseLogin = await loginForm(dataForm);
       localStorage.setItem('token', responseLogin.token);
       setIsAuthenticated(true);
-      navigate('/dashboard'); // Cambio de 'dashborad' a 'dashboard'
+      navigate('/dashboard'); 
     } catch (error) {
       console.error('Error:', error);
     }
