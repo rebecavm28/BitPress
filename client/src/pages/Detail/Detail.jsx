@@ -45,4 +45,3 @@ return (
 
 
 export default Detail;
-
