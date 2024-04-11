@@ -21,7 +21,7 @@ const Home = () => {
             <h2 className='button_letters' onClick={() => navigate(`/add`)} >AÑADIR NOTICIA</h2>
           </div>
         </main>
-        <NewsGallery />
+        <NewsGallery/>
         <UserForm/>
       </div>
   )

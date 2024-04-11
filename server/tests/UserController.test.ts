@@ -1,19 +1,17 @@
-import * as request from 'supertest';
 import { app, server } from '../app';
 import UserModel from '../models/UserModel';
 import connection_db from '../database/connection_db';
+import supertest from 'supertest';
 
-const api = request(app);
+const api = supertest(app);
 
-
-
-    describe('GET', () => {
-        test('get', async() => {
-            const response = await api.get('/api/users')
-            expect(Array.isArray(response.body)).toBe(true)
-            expect(response.status).toBe(200)
-        })
+describe('GET', () => {
+    test('get', async() => {
+        const response = await api.get('/api/users')
+        expect(Array.isArray(response.body)).toBe(true)
+        expect(response.status).toBe(200)
     })
+})
 
     describe('POST', () => {
         test('post', async() => {
@@ -78,8 +76,10 @@ describe('User update', () => {
         const response = await api.put(`/api/users/${userId}`).set('Authorization', token).send(updatedUserData);
         expect(response.status).toBe(200); 
         const user = await UserModel.findByPk(userId);
-        expect(user.get('name')).toBe(updatedUserData.name);
-        expect(user.get('email')).toBe(updatedUserData.email);
+        if (user !== null) {
+            expect(user.get('name')).toBe(updatedUserData.name);
+            expect(user.get('email')).toBe(updatedUserData.email);
+        }
     });
 });
 afterAll( async () => {

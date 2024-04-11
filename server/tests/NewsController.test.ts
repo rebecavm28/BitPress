@@ -1,7 +1,7 @@
-import * as request  from "supertest";
 import {app, server} from '../app';
 import connection_db from '../database/connection_db'
-import NewsModel from "../models/NewsModel";
+import NewsModel from "../models/NewModel";
+import request from "supertest";
 
 
 const api = request(app);
@@ -15,7 +15,7 @@ describe('TESTING CRUD news', () => {
             expect(Array.isArray(response.body)).toBe(true)
         })    
     });
-    });
+});
     
     describe('News creation', () => {
         let userId: number;
@@ -45,8 +45,10 @@ describe('TESTING CRUD news', () => {
             try {
                 const news = await NewsModel.findOne({ where: { title: newsData.tittle } });
                 expect(news).not.toBeNull();
-                expect(news.get('title')).toBe(newsData.tittle);
-                expect(news.get('content')).toBe(newsData.content);
+                if (news) {
+                    expect(news.get('title')).toBe(newsData.tittle);
+                    expect(news.get('content')).toBe(newsData.content);
+                }
             } catch (error) {
                 console.error('Error al buscar la noticia:', error);
             }
