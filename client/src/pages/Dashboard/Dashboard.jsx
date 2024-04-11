@@ -2,7 +2,8 @@ import React from 'react'
 import './Dashboard.css'
 import NewsGallery from '../../components/Gallery/NewsGallery'
 import { useNavigate } from 'react-router-dom'
-
+/* import Login from '../../components/UserForms/Login/Login'
+ */
 const Dashboard = () => {
 
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Dashboard = () => {
           </div>
         </main>
         <NewsGallery />
+        {/* <Login/> */}
       </div>
     )
   }

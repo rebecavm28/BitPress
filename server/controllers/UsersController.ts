@@ -23,6 +23,7 @@ export const registerUser = async ( request :Request ,response:Response)=>{
     }
     const sesiondata: SesionData={
       id_user: user.id_user,
+      rol: user.rol,
       token: await createToken(userData),
     }
       return response.status(201).json({message: "user created correctly", sesiondata})

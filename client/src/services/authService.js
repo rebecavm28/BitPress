@@ -2,11 +2,10 @@ import axios from 'axios';
 export const url = 'http://localhost:5000/api/';
 
 
-export const login = async (data) => {
+export const loginUser = async (data) => {
 
  try {
-   const response = await axios.post(`${url}/users/login`, data);
-   console.log(response.data.token)
+   const response = await axios.post(`${url}users/login`, data);
    return response.data
  } 
  catch (error) {
@@ -17,10 +16,8 @@ export const login = async (data) => {
 
 export const registerUser = async (sesiondata) => {
   try{ 
-    const response = await axios.post(`${url}/users/register`, sesiondata)
-    if (response.sesiondata.token){
-    console.log(data)
-    }
+    const response = await axios.post(`${url}users/register`, data)
+    return response.data
   }
    catch (error){
     console.log('Error al crear la cuenta: ', error);

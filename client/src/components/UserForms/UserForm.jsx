@@ -4,19 +4,23 @@ import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'
 import { registerUser } from '../../services/authService'
+import { useNavigate } from 'react-router-dom'
 
 const UserForm = () => {
+const navigate = useNavigate();
+
 
   const { register, handleSubmit, formState: { errors } } = useForm()
-  const navigate = useNavigate();
 
   const onSubmit = async (sesiondata) =>{
     try {
-        const response = await registerUser(sesiondata)
-        localStorage.setItem('token', response.sesiondata.token);
-        navigate('/');
+        const response = await registerUser(data);
+        const {token, rol} = response.sesiondata;
+        localStorage.setItem('token', token);
+        localStorage.setItem('rol', rol);
+        navigate('/dashboard');
     } catch (error) {
-       console.error('Error al registrar el usuario:', error); 
+        console.error(error)
     }
   }
 
