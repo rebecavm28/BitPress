@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 
-const Layout = () => {
+const LayoutPublic = () => {
   return (
     <>
         <Navbar />
@@ -13,4 +13,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default LayoutPublic
