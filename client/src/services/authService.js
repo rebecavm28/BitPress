@@ -1,11 +1,11 @@
 import axios from 'axios';
-export const url = 'http://localhost:5000/api';
+export const url = 'http://localhost:5000/api/';
 
 
-export const login = async (variableForm ) => {
+export const login = async (data) => {
 
  try {
-   const response = await axios.post(`${url}`, variableForm);
+   const response = await axios.post(`${url}/users/login`, data);
    console.log(response.data.token)
    return response.data
  } 
@@ -15,11 +15,11 @@ export const login = async (variableForm ) => {
  }
 };
 
-export const registerUser = async (data) => {
+export const registerUser = async (sesiondata) => {
   try{ 
-    const response = await axios.post(`${url}/users/register`, data)
-    if (response.data.token){
-    console.log('hola hola')
+    const response = await axios.post(`${url}/users/register`, sesiondata)
+    if (response.sesiondata.token){
+    console.log(data)
     }
   }
    catch (error){
