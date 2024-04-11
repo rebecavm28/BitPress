@@ -23,3 +23,7 @@ export interface RolUser{
     rol?:string;
 }
 export type newUser = Omit<UserAttributes, 'id'>
+
+export interface JWT_SECRET {
+    JWT_SECRET: string;
+}

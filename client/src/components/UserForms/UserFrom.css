@@ -68,7 +68,6 @@
 
 .register input,
 .login input {
-    width: 100%;
     padding: 10px;
     margin: 8px 0;
     border: 1px solid #FFFCEF;
@@ -76,6 +75,7 @@
     box-sizing: border-box;
     background-color: transparent;
     color: #FFFCEF;
+    width: 250px;
 }
 
 .register button,
@@ -143,4 +143,47 @@
 .social_logo{
     color: #FFFCEF;
     margin: 0 15px;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1200px){
+    .formulary_section {
+        flex-direction: column;
+    }
+
+    .registrer_option,
+    .registrer_option_changer{
+        font-size: 100%;
+    }
+
+    .register input,
+    .register button{
+        width: 120%;
+    }
+
+    .formulary,
+    .login
+    .register,
+    .social {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .social_tittle {
+        font-size: 24px;
+    }
+
+    .social_links {
+        font-size: 100%;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1200px){
+    .register input,
+    .register button{
+        width: 100%;
+    }
+
+    .formulary_section{
+        margin: 40px 0 0 80px;
+    }
 }

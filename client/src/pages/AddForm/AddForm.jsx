@@ -35,7 +35,7 @@ const AddForm = () => {
             <form onSubmit={handleSubmit(onSubmit)}> 
                 <div className='formFields'>
                     <label htmlFor="title"className='addTitle'>Title</label>
-                    <input type="text" id="title" name="title" {...register('title', { 
+                    <input type="text" id="tittle" name="title" {...register('tittle', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  100 
                     })}/>
@@ -43,7 +43,7 @@ const AddForm = () => {
                 </div>
                 <div className='formFields'>
                     <label htmlFor="image"className='image'>Imagen</label>
-                    <input type="url" id="image" name="image" {...register('image', { 
+                    <input type="url" id="image" name="imageUrl" {...register('imageUrl', { 
                         pattern: /^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$/,
                         required: true 
                     })}/>
@@ -55,7 +55,7 @@ const AddForm = () => {
                 </div>
                 <div className='formFields'>
                     <label htmlFor="description"className='addDescription'>Description</label>
-                    <input type="text" id="description" name="description"{...register('description', { 
+                    <input type="text" id="description" name="content"{...register('content', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  1000 
                     })}/>
@@ -68,7 +68,3 @@ const AddForm = () => {
 };
 
 export default AddForm;
-
-
-
-    
