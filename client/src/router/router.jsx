@@ -1,5 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom'
-import Layout from '../layout/Layout'
+import LayoutPublic from '../layout/LayoutPublic'
 import Home from '../pages/Home/Home'
 import { getNew } from '../services/newServices'
 import Detail from '../pages/Detail/Detail'
@@ -10,7 +10,7 @@ import NewsForm from '../components/NewsForm/NewsForm'
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layout/>,
+        element: <LayoutPublic/>,
         children: [
             {
                 index: true,
