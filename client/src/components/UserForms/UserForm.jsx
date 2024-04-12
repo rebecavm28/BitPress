@@ -18,7 +18,7 @@ const navigate = useNavigate();
         const {token, rol} = response.sesiondata;
         localStorage.setItem('token', token);
         localStorage.setItem('rol', rol);
-        navigate('/dashboard');
+        navigate('dashboard');
     } catch (error) {
         console.error(error)
     }

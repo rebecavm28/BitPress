@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 import UserForm from '../UserForm';
-import { loginUser} from '../services/authService'; // Cambio de nombre para evitar conflicto de nombres
+import { loginUser } from '../services/authService'; // Cambio de nombre para evitar conflicto de nombres
 import { useUserContext } from '../context/UserContext';
 import { useNavigate } from "react-router-dom"; // "React-rout-dom" => "react-router-dom" (cambio en el nombre de la importación)
 
@@ -12,12 +12,12 @@ const Login = () => {
 
   const onSubmit = async (data) => { 
     try {
-      const response = await loginForm(data);
+      const response = await loginUser(data);
       const {token, rol} = response.data.sesiondata;
       localStorage.setItem('token', token);
       localStorage.setItem('rol', rol);
       setIsAuthenticated(true);
-      navigate('/dashboard'); 
+      navigate('dashboard'); 
     } catch (error) {
       console.error('Error:', error);
     }
