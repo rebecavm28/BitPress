@@ -7,6 +7,7 @@ import AddForm from '../pages/AddForm/AddForm'
 import EditForm from '../pages/EditForm/EditForm'
 import NewsForm from '../components/NewsForm/NewsForm'
 import Dashboard from '../pages/Dashboard/Dashboard'
+import LayoutPrivate from '../layout/LayoutPrivate'
 
 const router = createBrowserRouter([
     {
@@ -16,29 +17,31 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home/>,
-                loader: getNew
-            },
-             {
-                path: "/dashboard",
-                element: <Dashboard/>,
-                loader: getNew
             },
             {
-                path: "/detail/:id_news",
-                element: <Detail/>
+                path: "dashboard",
+                element: <LayoutPrivate/>,
+                children: [
+                    {
+                        index: true,
+                        element: <Dashboard/>,
+                        loader: getNew
+                    },
+                    {
+                        path: "detail/:id_news",
+                        element: <Detail/>
+                    },
+                    {
+                        path: "add",
+                        element: <AddForm/>
+                    },
+                    {
+                        path: "edit/:id",
+                        element: <EditForm/>
+                    }
+                ]
             },
-            {
-                path: "/add",
-                element: <AddForm/>
-            },
-            {
-                path: "/edit/:id",
-                element: <EditForm/>
-            },
-            {
-                path: "/newsform",
-                element: <NewsForm/>
-            }
+             
         ]
     }
 ])
