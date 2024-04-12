@@ -1,9 +1,22 @@
 import React from 'react'
 import './EditForm.css'
-
+import { useNavigate } from "react-router";
 
 const EditForm = () => {
-    
+    const { register, handleSubmit } = EditForm();
+    const navigate = useNavigate();
+    const onSubmit = async (data) => { 
+        try {
+          const response = await EditForm(data);
+          const {token, rol} = response.data.sesiondata;
+          localStorage.setItem('token', token);
+          localStorage.setItem('rol', rol);
+          setIsAuthenticated(true);
+          navigate('/editForm'); 
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      }; 
 
 
   return (

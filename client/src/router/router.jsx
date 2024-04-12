@@ -32,7 +32,7 @@ const router = createBrowserRouter([
                 element: <AddForm/>
             },
             {
-                path: "/edit/:id_news",
+                path: "/editForm/:id_news",
                 element: <EditForm/>
             },
             {
