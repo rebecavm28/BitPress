@@ -27,9 +27,9 @@ export const getNew = async () => {
 
 //DELETE
 
-export const deleteData = async (id) =>{
+export const deleteData = async (id_news) =>{
   if(confirm("Do you want to delete this new?") === true){
-    const news = await axios.delete(`${url}/news/${id}`);
+    const news = await axios.delete(`${url}/detail/${id_news}`);
     return news;
   }
 };
