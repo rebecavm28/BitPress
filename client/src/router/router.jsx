@@ -1,20 +1,26 @@
 import {createBrowserRouter} from 'react-router-dom'
-import Layout from '../layout/Layout'
+import LayoutPublic from '../layout/LayoutPublic'
 import Home from '../pages/Home/Home'
 import { getNew } from '../services/newServices'
 import Detail from '../pages/Detail/Detail'
 import AddForm from '../pages/AddForm/AddForm'
 import EditForm from '../pages/EditForm/EditForm'
 import NewsForm from '../components/NewsForm/NewsForm'
+import Dashboard from '../pages/Dashboard/Dashboard'
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layout/>,
+        element: <LayoutPublic/>,
         children: [
             {
                 index: true,
                 element: <Home/>,
+                loader: getNew
+            },
+             {
+                path: "/dashboard",
+                element: <Dashboard/>,
                 loader: getNew
             },
             {

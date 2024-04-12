@@ -8,9 +8,6 @@ export const rolAuthenticated =  (reqRol:string[]) => async(req: Request, res : 
       const dataToken:any = await verifyToken(token);
        const rolUser = dataToken.rol
         const rolesByUser = rolUser;
-        /* console.log("dataToken:", dataToken);
-        console.log("rolesByUser:", rolesByUser);
-        console.log("reqRol:", reqRol); */
         const checkValueRol = reqRol.some((rolSingle) => rolesByUser.includes(rolSingle))
 
         if(!checkValueRol){
