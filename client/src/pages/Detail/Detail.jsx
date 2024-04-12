@@ -2,10 +2,12 @@ import { useParams } from "react-router";
 import { useEffect, useState } from 'react';
 import { getNewById, deleteData } from '../../services/newServices'; // Asumiendo que existe una función deleteData en tu servicio
 import './Detail.css';
+import { useNavigate } from 'react-router-dom'
 
 const Detail = () => {
   const { id_news } = useParams();
   const [ data, setData ] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,10 +25,11 @@ const Detail = () => {
     try {
       await deleteData(id_news);
 
+      const response = await registerUser(data);
       const {token, rol} = response.sesiondata;
       localStorage.setItem('token', token);
       localStorage.setItem('rol', rol);
-          //añadir redireccion a la home
+          console.log(handleDelete)
     } catch (error) {
           console.error(error)
     }
@@ -46,7 +49,7 @@ const Detail = () => {
             </div>
             <div className="buttons">
               <button className="bEdit">EDIT</button>
-              <button className="bDelete" onClick={handleDelete}>DELETE</button>
+              <button className="bDelete" onClick={() => {handleDelete(`${data.new_id}`); navigate('/dashboard')}}>DELETE</button>
             </div>
           </div>
         </div>
