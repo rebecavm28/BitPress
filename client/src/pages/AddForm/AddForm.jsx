@@ -4,13 +4,13 @@ import { useForm } from "react-hook-form";
 import { postNew } from '../../services/newServices';
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import { login } from "../../services/authService";
+import { loginUser } from "../../services/authService";
 
 const AddForm = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const navigate = useNavigate()
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const currentDate = new Date().toISOString().split('T')[0];
+/*     const [isLoggedIn, setIsLoggedIn] = useState(false);
+ */    const currentDate = new Date().toISOString().split('T')[0];
     const onSubmit = async (data) => {
         // try {
         //     // Verifica si el usuario está autenticado
