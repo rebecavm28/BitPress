@@ -1,6 +1,4 @@
 import './UserFrom.css'
-import instagram_logo from '../../assets/svg/instagramCream.svg'
-import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 import { useForm } from 'react-hook-form'
 import { registerUser } from '../../../services/authService'
 import { useNavigate } from 'react-router-dom'
@@ -42,20 +40,7 @@ const navigate = useNavigate();
                 <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
                 <button type="submit">Register</button>
             </form>
-
         </div>
-
-        <div className="social">
-            <h2 className='social_tittle'>Siguenos en redes sociales</h2>
-                <div className="instagram_box">
-                    <img className='social_logo' src={instagram_logo} alt="instagram logo" />
-                    <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">Instagram/Bitpress</a>
-                </div>
-                <div className="linkedin_box">
-                    <img className='social_logo' src={linkedin_logo} alt="linkedin logo" />
-                    <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">Linkedin/Bitpress</a>
-                </div>
-            </div>
     </div>
   )
 }
