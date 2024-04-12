@@ -14,7 +14,7 @@ const New = ({news}) => {
                                     <h2 className='New_tittle'>{newData.tittle}</h2>
                                     <p className="date">{new Date(newData.date).toLocaleDateString()}</p>
                                 </div>
-                                <img src={newData.imageUrl} alt="Imagen de la noticia" className='New_img' onClick={navigate('/detail')}/>
+                                <img src={newData.imageUrl} alt="Imagen de la noticia" className='New_img'/>
                             </article>
                         </div>
                     )

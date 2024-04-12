@@ -1,6 +1,5 @@
 import './Home.css'
-import NewsGallery from '../../components/Gallery/NewsGallery'
-import UserForm from '../../components/UserForms/UserForm'
+//import NewsGallery from '../../components/Gallery/NewsGallery'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
@@ -21,8 +20,7 @@ const Home = () => {
             <h2 className='button_letters' onClick={() => navigate(`/add`)} >AÑADIR NOTICIA</h2>
           </div>
         </main>
-        <NewsGallery/>
-        <UserForm/>
+        {/* <NewsGallery /> */}
       </div>
   )
 }
