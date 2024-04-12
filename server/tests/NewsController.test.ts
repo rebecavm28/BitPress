@@ -2,7 +2,8 @@ import /* * as */ request  from "supertest";
 import {app, server} from '../app';
 import {NewsModel} from "../models/NewModel";
 import UserModel from "../models/UserModel";
-import {createToken} from "../utils/jwt"
+import {createToken} from "../utils/jwt";
+import connection_db from "../database/connection_db";
 
 const api = request(app);
 describe('TESTING CRUD news', () => {
@@ -48,7 +49,6 @@ describe('TESTING CRUD news', () => {
             const response = await request(app)
             .post('/api/news').set('Authorization', `Bearer ${token}`)
             .send(dataNew);
-            /* const body = response.body; */
 
             expect(response.status).toBe(201);
             expect(response.body.content).toBeDefined();
@@ -62,7 +62,6 @@ describe('TESTING CRUD news', () => {
         let newsId = "";
     
         beforeEach(async () => {
-            // Preparar los datos para la creación de la noticia
             dataNew = {
                 tittle: "test",
                 imageUrl: "test",
@@ -70,22 +69,18 @@ describe('TESTING CRUD news', () => {
                 date: "2022-01-01",
                 user: userId
             };
-    
-            // Crear una noticia de prueba utilizando api.post
+
             const responseCreation = await request(app)
                 .post('/api/news').set('Authorization', `Bearer ${token}`)
                 .send(dataNew);
     
-            // Asegurarse de que la noticia se haya creado correctamente
             expect(responseCreation.status).toBe(201);
             expect(responseCreation.body.id_news).toBeDefined();
-    
-            // Asignar el ID de la noticia recién creada
+
             newsId = responseCreation.body.id_news.toString();
         });
     
         test("when users update a new note", async () => {
-            // Actualizar la noticia con los nuevos datos
             const updatedData = {
                 tittle: "updated test",
                 imageUrl: "updated test",
@@ -102,21 +97,25 @@ describe('TESTING CRUD news', () => {
             expect(response.body.message).toContain("The Note was updated successfully!");
         });
     });
-    /* afterAll(async () => {
-        await UserModel.destroy({
-            where: {
-                id_user: userId
+    afterAll(async () => {
+        try {
+            if (connection_db) {
+                await UserModel.destroy({
+                    where: {
+                        name: "test"
+                    }
+                });
+                await NewsModel.destroy({
+                    where: {
+                        tittle: "test"
+                    }
+                });
+                await connection_db.sync({ force: true });
             }
-        });
-        await NewsModel.destroy({
-            where: {
-                user: userId
-            }
-        });
-        await connection_db.sync({ force: true });
-        server.close();
-    }); */
-    afterAll(done => {
-        server.close(done);
+        } catch (error) {
+            console.error("Error", error);
+        } finally {
+            server.close();
+        }
     });
 })
