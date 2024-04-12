@@ -24,6 +24,7 @@ const Detail = () => {
   const handleDelete = async () => {
     try {
       await deleteData(id_news);
+      window.location.reload();
 
       const response = await registerUser(data);
       const {token, rol} = response.sesiondata;
