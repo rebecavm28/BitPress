@@ -31,7 +31,6 @@ const Detail = () => {
       const {token, rol} = response.sesiondata;
       localStorage.setItem('token', token);
       localStorage.setItem('rol', rol);
-          console.log(handleDelete)
     } catch (error) {
           console.error(error)
     }
