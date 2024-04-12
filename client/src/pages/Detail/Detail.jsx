@@ -34,7 +34,7 @@ return (
           <p>{data.content}</p></div>
         <div className='buttons'>
           <button className="bEdit">EDIT</button>
-          <button onClick={() => {deleteData(`${id_news}`); navigate("/")}} className="bDelete">DELETE</button>
+          <button onClick={() => {deleteData(`${id_news}`); navigate("/dashboard")}} className="bDelete">DELETE</button>
         </div>
         </div>
       </div>
