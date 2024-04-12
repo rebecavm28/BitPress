@@ -1,6 +1,6 @@
 import './Home.css'
 //import NewsGallery from '../../components/Gallery/NewsGallery'
-import UserForm from '../../components/UserForms/UserForm'
+import UserForm from '../UserForms/UserForm'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
