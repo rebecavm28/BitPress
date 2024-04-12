@@ -49,8 +49,8 @@ const Detail = () => {
               <p>{data.content}</p>
             </div>
             <div className="buttons">
-              <button className="bEdit" onClick={() => navigate(`/edit/${data.new_id}`)}>EDIT</button>
-              <button className="bDelete" onClick={() => {handleDelete(`${data.new_id}`)}}>DELETE</button>
+              <button className="bEdit" onClick={() => navigate(`/edit/${data.id_news}`)}>EDIT</button>
+              <button className="bDelete" onClick={() => {handleDelete(`${data.id_news}`)}}>DELETE</button>
             </div>
           </div>
         </div>
