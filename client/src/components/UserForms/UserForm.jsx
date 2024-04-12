@@ -4,6 +4,7 @@ import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 import { useForm } from 'react-hook-form'
 import { registerUser } from '../../services/authService'
 
+
 const UserForm = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
