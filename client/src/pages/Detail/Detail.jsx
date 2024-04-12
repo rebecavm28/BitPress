@@ -24,7 +24,8 @@ const Detail = () => {
   const handleDelete = async () => {
     try {
       await deleteData(id_news);
-      window.location.reload();
+      navigate('/dashboard')
+      setTimeout(() => { window.location.reload() }, 100);
 
       const response = await registerUser(data);
       const {token, rol} = response.sesiondata;
@@ -50,7 +51,7 @@ const Detail = () => {
             </div>
             <div className="buttons">
               <button className="bEdit">EDIT</button>
-              <button className="bDelete" onClick={() => {handleDelete(`${data.new_id}`); navigate('/dashboard')}}>DELETE</button>
+              <button className="bDelete" onClick={() => {handleDelete(`${data.new_id}`)}}>DELETE</button>
             </div>
           </div>
         </div>
