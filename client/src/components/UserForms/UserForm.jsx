@@ -3,19 +3,24 @@ import instagram_logo from '../../assets/svg/instagramCream.svg'
 import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 import { useForm } from 'react-hook-form'
 import { registerUser } from '../../services/authService'
+import { useNavigate } from 'react-router-dom'
 
 
 const UserForm = () => {
+const navigate = useNavigate();
+
 
   const { register, handleSubmit, formState: { errors } } = useForm()
   
   const onSubmit = async (data) =>{
     try {
-        const response = await registerUser(data)
-        localStorage.setItem('token', response.data.token);
-        navigate('/');
+        const response = await registerUser(data);
+        const {token, rol} = response.sesiondata;
+        localStorage.setItem('token', token);
+        localStorage.setItem('rol', rol);
+        navigate('/dashboard');
     } catch (error) {
-        
+        console.error(error)
     }
   }
 

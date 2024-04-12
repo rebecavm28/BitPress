@@ -18,10 +18,11 @@ const router = createBrowserRouter([
                 element: <Home/>,
                 loader: getNew
             },
-            // {
-            //     path: "/dashboard",
-            //     element: <Dashboard/>
-            // },
+             {
+                path: "/dashboard",
+                element: <Dashboard/>,
+                loader: getNew
+            },
             {
                 path: "/detail/:id_news",
                 element: <Detail/>
