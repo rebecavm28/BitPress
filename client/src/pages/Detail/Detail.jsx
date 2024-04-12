@@ -49,7 +49,7 @@ const Detail = () => {
               <p>{data.content}</p>
             </div>
             <div className="buttons">
-              <button className="bEdit">EDIT</button>
+              <button className="bEdit" onClick={() => navigate(`/edit/${data.new_id}`)}>EDIT</button>
               <button className="bDelete" onClick={() => {handleDelete(`${data.new_id}`)}}>DELETE</button>
             </div>
           </div>
