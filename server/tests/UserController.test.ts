@@ -61,7 +61,8 @@ describe('User update', () => {
         const response = await api.post('/api/users/register').send({
             "name": "testUser",
             "email": "testUser@gmail.com",
-            "password": "1234"
+            "password": "1234",
+            "rol":"admin"
         });
         expect(response.status).toBe(201);
         expect(response.body.sesiondata).toHaveProperty('id_user');

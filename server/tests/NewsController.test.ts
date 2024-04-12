@@ -1,11 +1,10 @@
 import /* * as */ request  from "supertest";
 import {app, server} from '../app';
-import connection_db from '../database/connection_db'
-import NewsModel from "../models/NewModel";
+import {NewsModel} from "../models/NewModel";
 import UserModel from "../models/UserModel";
 import {createToken} from "../utils/jwt"
 
-
+const api = request(app);
 describe('TESTING CRUD news', () => {
 
     let userId = "";
@@ -16,7 +15,9 @@ describe('TESTING CRUD news', () => {
         const user:any = await UserModel.create({
             name: "test",
             email: "test@gmail.com",
-            password: "1234" 
+            password: "1234",
+            rol: "admin"
+             
         });
         userId = await user?.get('id_user').toString();
         token = await createToken(user);
@@ -57,31 +58,50 @@ describe('TESTING CRUD news', () => {
     })
 
     describe('PUT', () => {
-        let dataNew ={}
-        beforeEach(() => {
+        let dataNew = {};
+        let newsId = "";
+    
+        beforeEach(async () => {
+            // Preparar los datos para la creación de la noticia
             dataNew = {
                 tittle: "test",
                 imageUrl: "test",
                 content: "test",
                 date: "2022-01-01",
                 user: userId
-            }
-        })
-        test("when users update a new note", async()=>{
-            const createdNew = await NewsModel.findOne({where: {id_user:userId}});
-            const newId = createdNew?.get('id_news')?.toString()
+            };
+    
+            // Crear una noticia de prueba utilizando api.post
+            const responseCreation = await request(app)
+                .post('/api/news').set('Authorization', `Bearer ${token}`)
+                .send(dataNew);
+    
+            // Asegurarse de que la noticia se haya creado correctamente
+            expect(responseCreation.status).toBe(201);
+            expect(responseCreation.body.id_news).toBeDefined();
+    
+            // Asignar el ID de la noticia recién creada
+            newsId = responseCreation.body.id_news.toString();
+        });
+    
+        test("when users update a new note", async () => {
+            // Actualizar la noticia con los nuevos datos
+            const updatedData = {
+                tittle: "updated test",
+                imageUrl: "updated test",
+                content: "updated test",
+                date: "2022-01-02",
+                user: userId
+            };
+    
             const response = await request(app)
-            .put(`/api/news/${newId}`)
-            .set('Authorization', `Bearer ${token}`)
-            .send(dataNew);
-
+                .put(`/api/news/${newsId}`).set('Authorization', `Bearer ${token}`)
+                .send(updatedData);
+    
             expect(response.status).toBe(200);
-            expect(response.body.message).toContain("The Note was updated successfully!")
-
-        })
-
-
-    })
+            expect(response.body.message).toContain("The Note was updated successfully!");
+        });
+    });
     /* afterAll(async () => {
         await UserModel.destroy({
             where: {
