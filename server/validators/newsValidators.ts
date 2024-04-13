@@ -1,4 +1,4 @@
-import { check } from "express-validator";
+import { check} from "express-validator";
 import  {validateResult}  from '../helpers/validationHelper';
 import { Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
@@ -33,15 +33,13 @@ export function validateNews(data: unknown): News {
 }
 
 
-
-
-
 export const newsValidator =[
-    check('tittle').exists().notEmpty().withMessage('The Title is required'),
-    check('imageUrl').exists().notEmpty().withMessage('The image is required'),
-    check('content').exists().notEmpty().withMessage('The content is required'), 
-    check('date').exists().withMessage('The date is required'),
-    (request: Request, response: Response, next: NextFunction) =>{
-        validateResult(request, response, next)
-    } 
+    check('tittle').exists().notEmpty().withMessage('The Title is required')
+    .isLength({ max: 100 }).withMessage('Title must be less than 100 characters'),
+    check('imageUrl').exists().notEmpty().withMessage('The image is required').isURL().withMessage('The image URL is not valid'),
+    check('content').exists().notEmpty().withMessage('The content is required')
+    .isLength({ max: 5000 }).withMessage('Content must be less than 5000 characters'),
+    check('date').exists().withMessage('The date is required')
+    .isISO8601().withMessage('Date must be in yyyy-mm-dd format'),
+        validateResult
 ]

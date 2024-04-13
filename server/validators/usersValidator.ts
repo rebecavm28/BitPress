@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import {check} from 'express-validator'
+import  {validateResult}  from '../helpers/validationHelper';
 
 //USERSMODEL
 
@@ -63,3 +65,22 @@ export function validateUserUpdate(data: unknown): UserUpdate {
         return {} as UserUpdate;
     }
 }
+
+// Asume que este es tu archivo de validadores, por ejemplo, validators/userValidators.ts
+
+export const userValidationRegister =[
+    check('name').exists().notEmpty().withMessage('name is required'),
+    check('email').exists().notEmpty().withMessage('Email is required').isEmail().withMessage('Email is not valid'),
+    check('password').exists().notEmpty().withMessage('Password is required').isLength({ min: 2 }).withMessage('Password must be at least 8 characters long'),
+    
+    validateResult
+    
+]
+
+export const userValidationLogin =[
+    check('email').exists().notEmpty().withMessage('Email is required').isEmail().withMessage('Email is not valid'),
+    check('password').exists().notEmpty().withMessage('Password is required').isLength({ min: 2 }).withMessage('Password must be at least 8 characters long'),
+    
+    validateResult
+    
+]
