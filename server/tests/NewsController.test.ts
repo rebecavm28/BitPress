@@ -4,6 +4,7 @@ import {NewsModel} from "../models/NewModel";
 import UserModel from "../models/UserModel";
 import {createToken} from "../utils/jwt";
 import connection_db from "../database/connection_db";
+import {userAdminTest, newsTest, updatedData, newsTestUpdate} from './helpers/helperTest'
 
 const api = request(app);
 describe('TESTING CRUD news', () => {
@@ -13,13 +14,9 @@ describe('TESTING CRUD news', () => {
     let newsId= "";
     
     beforeAll(async () => {
-        const user:any = await UserModel.create({
-            name: "test",
-            email: "test@gmail.com",
-            password: "1234",
-            rol: "admin"
-             
-        });
+        const user:any = await UserModel.create(
+            userAdminTest
+        );
         userId = await user?.get('id_user').toString();
         token = await createToken(user);
     });
@@ -37,12 +34,9 @@ describe('TESTING CRUD news', () => {
         let dataNew = {}
         beforeEach(() => {
             dataNew = {
-                tittle: "test",
-                imageUrl: "test",
-                content: "test",
-                date: "2022-01-01",
-                user: userId
-            }
+                ...newsTest,
+                user: userId 
+            };
         })
 
         test("when users create a new note", async()=>{
@@ -54,7 +48,12 @@ describe('TESTING CRUD news', () => {
             expect(response.body.content).toBeDefined();
             expect(response.body.tittle).toBeDefined();
         })
-
+        afterAll(async () => {
+            await NewsModel.destroy({
+                where: {
+                    tittle: "test"
+                }
+            }); });
     })
 
     describe('PUT', () => {
@@ -63,11 +62,8 @@ describe('TESTING CRUD news', () => {
     
         beforeEach(async () => {
             dataNew = {
-                tittle: "test",
-                imageUrl: "test",
-                content: "test",
-                date: "2022-01-01",
-                user: userId
+                ...updatedData,
+                user: userId 
             };
 
             const responseCreation = await request(app)
@@ -81,41 +77,64 @@ describe('TESTING CRUD news', () => {
         });
     
         test("when users update a new note", async () => {
-            const updatedData = {
-                tittle: "updated test",
-                imageUrl: "updated test",
-                content: "updated test",
-                date: "2022-01-02",
-                user: userId
-            };
-    
-            const response = await request(app)
+          const response = await request(app)
                 .put(`/api/news/${newsId}`).set('Authorization', `Bearer ${token}`)
-                .send(updatedData);
+                .send(dataNew);
     
             expect(response.status).toBe(200);
             expect(response.body.message).toContain("The Note was updated successfully!");
         });
+        afterAll(async () => {
+            await NewsModel.destroy({
+                where: {
+                    tittle: "updated test"
+                }
+            })
+        });
     });
     afterAll(async () => {
-        try {
-            if (connection_db) {
-                await UserModel.destroy({
-                    where: {
-                        name: "test"
-                    }
-                });
-                await NewsModel.destroy({
-                    where: {
-                        tittle: "test"
-                    }
-                });
-                await connection_db.sync({ force: true });
+        await UserModel.destroy({
+            where: {
+                name: "test"
             }
-        } catch (error) {
-            console.error("Error", error);
-        } finally {
-            server.close();
-        }
+        })
+        await connection_db.sync({ force: true });
+        server.close();
+    });
+
+    describe('DELETE', () => {
+        let newsId = "";
+        let dataNew = {}
+        beforeEach(async () => {
+            dataNew= {
+                ...newsTestUpdate,
+                user: userId 
+            };
+    
+            const responseCreation = await request(app)
+                .post('/api/news').set('Authorization', `Bearer ${token}`)
+                .send(dataNew);
+    
+            expect(responseCreation.status).toBe(201);
+            expect(responseCreation.body.id_news).toBeDefined();
+    
+            newsId = responseCreation.body.id_news.toString();
+        });
+    
+        test("when users delete a new note", async () => {
+            const response = await request(app)
+                .delete(`/api/news/${newsId}`).set('Authorization', `Bearer ${token}`);
+    
+            expect(response.status).toBe(201);
+            expect(response.body.message).toContain("the note has deleted correctly");
+        });
+    
+        afterAll(async () => {
+            await NewsModel.destroy({
+                where: {
+                    tittle: "test for delete"
+                }
+            }).catch(error => console.error("Error", error));
+        });
     });
 })

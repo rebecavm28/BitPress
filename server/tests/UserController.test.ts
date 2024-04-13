@@ -82,9 +82,10 @@ describe('User update', () => {
         expect(user.get('name')).toBe(updatedUserData.name);
         expect(user.get('email')).toBe(updatedUserData.email);
     });
-});
-afterAll( async () => {
+    afterAll( async () => {
     server.close();
     await connection_db.sync({force: true });
     console.log('All databases are clean')
  });
+});
+
