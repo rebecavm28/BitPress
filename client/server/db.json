@@ -1,0 +1,154 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Sofia",
+      "email": "sofia@example.com",
+      "password": "1234",
+      "rol": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Carlos",
+      "email": "carlos@example.com",
+      "password": "65432",
+      "rol": "user"
+    },
+    {
+      "id": "3",
+      "name": "Naruto",
+      "email": "naruto@example.com",
+      "password": "9876",
+      "rol": "user"
+    },
+    {
+      "id": "4",
+      "name": "Carlota",
+      "email": "carlota@example.com",
+      "password": "123456",
+      "rol": "user"
+    },
+    {
+      "id": "c604",
+      "name": "Estefania",
+      "email": "bpfany@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "3008",
+      "name": "Estefania",
+      "email": "bpfany@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "1a61",
+      "name": "Lara",
+      "email": "lara234@gmail.com",
+      "password": "12345"
+    }
+  ],
+  "news": [
+    {
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/8f/49/b2/8f49b2688947dd1f445d8d6b19a7317a.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
+    },
+    {
+      "id": "2",
+      "tittle": "La ley recurre a código abierto",
+      "date": "8 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/4a/0a/39/4a0a39c5c5f0971a9131bddb213aaf25.jpg",
+      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
+    },
+    {
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/8f/49/b2/8f49b2688947dd1f445d8d6b19a7317a.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
+    },
+    {
+      "id": "2",
+      "tittle": "La ley recurre a código abierto",
+      "date": "8 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/4a/0a/39/4a0a39c5c5f0971a9131bddb213aaf25.jpg",
+      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
+    },
+    {
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/8f/49/b2/8f49b2688947dd1f445d8d6b19a7317a.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
+    },
+    {
+      "id": "2",
+      "tittle": "La ley recurre a código abierto",
+      "date": "8 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/4a/0a/39/4a0a39c5c5f0971a9131bddb213aaf25.jpg",
+      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
+    },
+    {
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/8f/49/b2/8f49b2688947dd1f445d8d6b19a7317a.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
+    },
+    {
+      "id": "2",
+      "tittle": "La ley recurre a código abierto",
+      "date": "8 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/4a/0a/39/4a0a39c5c5f0971a9131bddb213aaf25.jpg",
+      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
+    },
+    {
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/8f/49/b2/8f49b2688947dd1f445d8d6b19a7317a.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
+    },
+    {
+      "id": "2",
+      "tittle": "La ley recurre a código abierto",
+      "date": "8 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/4a/0a/39/4a0a39c5c5f0971a9131bddb213aaf25.jpg",
+      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
+    },
+    {
+      "id": "1",
+      "tittle": "Algoritmos humanizados",
+      "date": "27 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/8f/49/b2/8f49b2688947dd1f445d8d6b19a7317a.jpg",
+      "content": "A medida que la IA se vuelve más sofisticada, también lo hacen nuestras expectativas sobre su comportamiento. No nos conformamos con meros ejecutores de órdenes, buscamos capacidad de comprender, empatizar y adaptarse a nuestras necesidades"
+    },
+    {
+      "id": "2",
+      "tittle": "La ley recurre a código abierto",
+      "date": "8 marzo 2023",
+      "imageUrl": "https://i.pinimg.com/564x/4a/0a/39/4a0a39c5c5f0971a9131bddb213aaf25.jpg",
+      "content": "Las compañías sin plataformas éticas tendrán que demostrar que sus desarrollos se ajustan a la norma en un entorno de pruebas"
+    },
+    {
+      "id": "4519",
+      "title": "Chat GPT se cae ",
+      "image": "https://i.pinimg.com/564x/57/af/23/57af23a27262ca2365a0c898bf19e4ee.jpg",
+      "description": "La plataforma ChatGPT experimenta una interrupción inesperada, dejando a millones de usuarios en espera. Expertos técnicos están trabajando arduamente para restaurar el servicio lo antes posible. "
+    },
+    {
+      "id": "00d3",
+      "tittle": "La IA se cae",
+      "imageUrl": "https://i.pinimg.com/564x/57/af/23/57af23a27262ca2365a0c898bf19e4ee.jpg",
+      "content": " La plataforma ChatGPT experimenta una interrupción inesperada, dejando a millones de usuarios en espera. Expertos técnicos están trabajando arduamente para restaurar el servicio lo antes posible. "
+    },
+    {
+      "id": "c98b",
+      "tittle": "Prueba",
+      "imageUrl": "https://i.pinimg.com/564x/d6/2f/76/d62f762d08ecb0456e9f46967ba34230.jpg",
+      "content": "Prueba"
+    }
+  ]
+}

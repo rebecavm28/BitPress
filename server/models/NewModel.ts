@@ -1,3 +1,4 @@
+
 import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
 import UserModel from './UserModel'; 

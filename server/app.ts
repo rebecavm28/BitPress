@@ -19,6 +19,6 @@ try {
     console.log(`connection error 😒😒`)
     
 }
-app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
       console.log(`🚆Servidor corriendo en http://localhost:${PORT}`);
     });

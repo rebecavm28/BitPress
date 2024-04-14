@@ -1,5 +1,5 @@
-import { JWT_SECRET } from '../config';
-import * as jwt from 'jsonwebtoken'; // Add missing import statement
+import * as jwt from 'jsonwebtoken';
+import  {JWT_SECRET}  from '../config';
 
 export const createToken = async (user: any) => {
     const token = jwt.sign(
@@ -12,10 +12,9 @@ export const createToken = async (user: any) => {
     );
     return token;
 }
-
-export const verifyToken = async (tokenJwt: string) => {
+export const  verifyToken = async (tokenJwt:any)=>{
     try {
-        return jwt.verify(tokenJwt, JWT_SECRET || ''); // Provide a default value for JWT_SECRET
+       return jwt.verify(tokenJwt, JWT_SECRET); 
     } catch (error) {
         return null;
     }

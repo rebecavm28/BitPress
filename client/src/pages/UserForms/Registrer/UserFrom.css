@@ -1,0 +1,147 @@
+/* Inicio tarjeta para cambiar de formulario */
+.formulary{
+    display: flex;
+    align-items: center;
+}
+
+.formulary_text{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 60px;
+}
+
+.registrer_option{
+    color: #AEFFBF;
+    font-size: 27px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.registrer_option_changer{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFCEF;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.registrer_option{
+    color: #AEFFBF;
+}
+
+.registrer_option_changer{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFCEF;
+}
+/* Fin tarjeta para cambiar de formulario */
+
+/* ///////////////////////////////////////////////// */
+
+/* Inicio formulario */
+
+.formulary_section{
+    display: flex;
+    border-radius: 15px;
+    place-content: center;
+}
+
+.formulary{
+    display: flex;
+    border: 2px solid #FFFCEF;
+    border: 2px solid #FFFCEF;
+    border-radius: 15px;
+}
+
+.register,
+.login {
+    width: 550px;
+    margin: 130px 30px;
+    display: grid;
+    place-content: center;
+}
+
+.register input,
+.login input {
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #FFFCEF;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #FFFCEF;
+    width: 450px;
+    font-size: 20px;
+}
+
+.register button,
+.login button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    width: 450px;
+    font-size: 20px;
+}
+
+.register [type="submit"],
+.login [type="submit"] {
+    background-color: #C5A3F0;
+    transition: 0.7s;
+}
+
+.register [type="submit"]:hover,
+.login [type="submit"]:hover {
+    background-color: #AEFFBF;
+}
+
+/* Final de los formulario */
+
+@media only screen and (min-width: 400px) and (max-width: 1200px){
+    .formulary_section {
+        flex-direction: column;
+    }
+
+    .registrer_option,
+    .registrer_option_changer{
+        font-size: 100%;
+    }
+
+    .register input,
+    .register button{
+        width: 120%;
+    }
+
+    .formulary,
+    .login
+    .register,
+    .social {
+        width: 80%;
+        margin: 20px auto;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 1200px){
+    .register input,
+    .register button{
+        width: 100%;
+    }
+
+    .formulary_section{
+        margin: 40px 0 0 80px;
+    }
+}

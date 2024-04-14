@@ -19,10 +19,11 @@ export const registerUser = async ( request :Request ,response:Response)=>{
       id_user: userData?.get('id_user') as number,
       name: userData?.get('name') as string,
       email: userData?.get('email') as string,
-      rol: userData?.get('rol') as number
+      rol: userData?.get('rol') as string
     }
     const sesiondata: SesionData={
       id_user: user.id_user,
+      rol: user.rol,
       token: await createToken(userData),
     }
       return response.status(201).json({message: "user created correctly", sesiondata})
@@ -43,7 +44,7 @@ export const loginUser = async ( request :Request ,response:Response)=>{
      
      const hashPassword = oneUser?.get("password") as string;
      const idUser = oneUser?.get("id_user") as number;
-     const rol=  oneUser?.get('rol') as number ;
+     const rol=  oneUser?.get('rol') as string ;
      const isUser =  await bcrypt.compare(request.body.password, hashPassword );
      
      if (!isUser) {
@@ -54,12 +55,12 @@ export const loginUser = async ( request :Request ,response:Response)=>{
       rol:rol,
       token:await createToken(oneUser)
     }
-/*      token = sign({id_user: idUser}, JWT_SECRET, { expiresIn: '2h' })
- */     
+   
      return response.status(200).json({message:"login correctly", SesionData});
 
   } catch (error: any) {
-    return response.status(500).json({message: 'Error login', error: error.message});
+           return response.status(500).json({message: 'Error login', error: error.message});
+
   }
 }
 
@@ -93,3 +94,12 @@ export const updateUser = async(request: Request, response: Response)=>{
   }
 }
 
+export const showOneNews = async (request: Request, response: Response) => {
+  const idUser = request.params.id;
+  try {
+    const oneUser = await UserModel.findOne({ where: { id_user: Number(idUser) } });
+    return response.status(200).json(oneUser);
+  } catch (error: any) {
+    return response.status(500).json({ message: 'error to show the user', error: error.message });
+  }
+}
