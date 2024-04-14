@@ -1,23 +1,32 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Login.css';
-import UserForm from '../Registrer/UserForm'
+import { useForm } from 'react-hook-form';
 import { loginUser } from '../../../services/authService'; // Cambio de nombre para evitar conflicto de nombres
 import { useUserContext } from '../../../context/UserContext';
 import { useNavigate } from "react-router-dom"; // "React-rout-dom" => "react-router-dom" (cambio en el nombre de la importación)
 
 const Login = () => {
-  const { register, handleSubmit } = UserForm();
+  const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const { setIsAuthenticated } = useUserContext();
+  const { setIsAuthenticated, isAuthenticated } = useUserContext();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard');
+    }
+ }, [isAuthenticated, navigate]);
+
+
 
   const onSubmit = async (data) => { 
     try {
       const response = await loginUser(data);
-      const {token, rol} = response.data.sesiondata;
+      console.log(response)
+      const {token, rol} = response.SesionData;
       localStorage.setItem('token', token);
       localStorage.setItem('rol', rol);
       setIsAuthenticated(true);
-      navigate('dashboard'); 
+      navigate('/dashboard'); 
     } catch (error) {
       console.error('Error:', error);
     }

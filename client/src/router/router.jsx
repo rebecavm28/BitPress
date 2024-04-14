@@ -1,5 +1,6 @@
 import {createBrowserRouter} from 'react-router-dom'
 import LayoutPublic from '../layout/LayoutPublic'
+import LayoutPrivate from '../layout/LayoutPrivate'
 import Home from '../pages/Home/Home'
 import { getNew } from '../services/newServices'
 import Detail from '../pages/Detail/Detail'
@@ -17,32 +18,38 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home/>,
+            },{
+                path: "register",
+                element: <UserForm/>
             },
-             {
-                path: "/dashboard",
+            {
+                path: "login",
+                element: <Login/>
+            }
+        ]
+    },
+    {
+        path: "/dashboard",
+        element: <LayoutPrivate/>,
+        children: [
+            {
+                index: true,
                 element: <Dashboard/>,
                 loader: getNew
             },
             {
-                path: "/detail/:id_news",
+                path: "detail/:id_news",
                 element: <Detail/>
             },
             {
-                path: "/add",
+                path: "add",
                 element: <AddForm/>
             },
             {
-                path: "/edit/:id_news",
+                path: "edit/:id_news",
                 element: <EditForm/>
             },
-            {
-                path: "/register",
-                element: <UserForm/>
-            },
-            {
-                path: "/login",
-                element: <Login/>
-            }
+            
         ]
     }
 ])
