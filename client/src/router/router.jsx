@@ -6,8 +6,9 @@ import { getNew } from '../services/newServices'
 import Detail from '../pages/Detail/Detail'
 import AddForm from '../pages/AddForm/AddForm'
 import EditForm from '../pages/EditForm/EditForm'
-import NewsForm from '../components/NewsForm/NewsForm'
 import Dashboard from '../pages/Dashboard/Dashboard'
+import Login from '../pages/UserForms/Login/Login'
+import UserForm from '../pages/UserForms/Registrer/UserForm'
 
 const router = createBrowserRouter([
     {
@@ -17,37 +18,40 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home/>,
-                /* loader: getNew */
+            },{
+                path: "register",
+                element: <UserForm/>
             },
-             {
-                path: "dashboard",
-                element:<LayoutPrivate/>,
-                children:[
-                    {
-                        index:true,
-                        element: <Dashboard/>,
-                        loader: getNew
-                    },
-                    {
-                        path: "detail/:id_news",
-                        element: <Detail/>
-                    },
-                    {
-                        path: "add",
-                        element: <AddForm/>
-                    },
-                    {
-                        path: "edit/:id",
-                        element: <EditForm/>
-                    },
-                    {
-                        path: "newsform",
-                        element: <NewsForm/>
-                    }
-                ]
-
+            {
+                path: "login",
+                element: <Login/>
+            }
+        ]
+    },
+    {
+        path: "/dashboard",
+        element: <LayoutPrivate/>,
+        children: [
+            {
+                index: true,
+                element: <Dashboard/>,
+                loader: getNew
+            },
+            {
+                path: "detail/:id_news",
+                element: <Detail/>
+            },
+            {
+                path: "add",
+                element: <AddForm/>
+            },
+            {
+                path: "edit/:id_news",
+                element: <EditForm/>
+            },
+            
+        ]
     }
-]}
 ])
 
 export default router

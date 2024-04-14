@@ -1,6 +1,6 @@
 import './Home.css'
-import UserForm from '../../components/UserForms/UserForm'
-import Login from '../../components/Login/Login'
+//import NewsGallery from '../../components/Gallery/NewsGallery'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
@@ -15,9 +15,7 @@ const Home = () => {
               <div className="blur_effect"></div>
             </div>
         </main>
-        <UserForm/>
-        <Login/>
-        
+        {/* <NewsGallery /> */}
       </div>
   )
 }
