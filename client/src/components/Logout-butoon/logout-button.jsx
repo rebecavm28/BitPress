@@ -24,10 +24,10 @@
 // };
 
 // export default LogoutButton;
-
+import '../Navbar/Navbar.css'
 import { useUserContext } from '../../context/UserContext';
 
-const LogoutComponent = () => {
+const LogoutButton = () => {
   const { setUser, setIsAuthenticated } = useUserContext();
 
   const handleLogout = () => {
@@ -39,10 +39,16 @@ const LogoutComponent = () => {
   };
 
   return (
-    <button onClick={handleLogout}>
+    <nav>
+    {/* <div className="logo_container" onClick={() => navigate(`/`)} >
+    <img src={logo} alt="" className='image1'/>
+    <img src={texto} alt="" className='image2'/> */}
+    {/* </div> */}
+    <button className='navbar_link violet' onClick={handleLogout}>
       Logout
     </button>
+    </nav>
   );
 };
 
-export default LogoutComponent;
+export default LogoutButton;
