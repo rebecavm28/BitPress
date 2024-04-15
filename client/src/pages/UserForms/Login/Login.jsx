@@ -8,7 +8,7 @@ import { useUserContext } from '../../../context/UserContext'; // Corregir la ru
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const { setIsAuthenticated, isAuthenticated } = useUserContext();
+  const { setIsAuthenticated, isAuthenticated, setIdUser } = useUserContext();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -22,10 +22,12 @@ const Login = () => {
     try {
       const response = await loginUser(data);
       console.log(response)
-      const {token, rol} = response.SesionData;
+      const {token, rol, id_user} = response.SesionData;
       localStorage.setItem('token', token);
       localStorage.setItem('rol', rol);
+      localStorage.setItem('id_user', id_user);
       setIsAuthenticated(true);
+      setIdUser(id_user)
       navigate('/dashboard'); 
     } catch (error) {
       console.error('Error:', error);
