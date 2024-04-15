@@ -15,8 +15,8 @@ const Navbar = () => {
       <img src={texto} alt="" className='image2'/>
     </div>
     <ul className='list_box'>
-      <li><a className='navbar_link violet' onClick={()=> navigate(`/register`)}>Registrer</a></li>
-      <li><a className='navbar_link cream' onClick={()=> navigate(`/login`)}>Login</a></li>
+    <li><button className='navbar_link violet' onClick={() => navigate('/login')}>Login</button></li>
+        <li><button className='navbar_link cream' onClick={() => navigate('/register')}>Register</button></li>
     </ul>
   </nav>
   )

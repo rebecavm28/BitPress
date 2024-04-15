@@ -1,16 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import UserProvider from './context/UserContext'; // Importa UserProvider como componente predeterminado
-import router from './router/router';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { RouterProvider } from 'react-router-dom'
+import router from './router/router'
+import './index.css'
+import UserProvider from './context/UserContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
-      <UserProvider>
-        {router} {/* Renderiza tu enrutador dentro de UserProvider */}
-      </UserProvider>
-    </Router>
+     <UserProvider>
+      <RouterProvider router={router} />
+     </UserProvider>
+
   </React.StrictMode>
 );

@@ -60,7 +60,8 @@ describe('User update', () => {
         const response = await api.post('/api/users/register').send({
             "name": "testUser",
             "email": "testUser@gmail.com",
-            "password": "1234"
+            "password": "1234",
+            "rol":"admin"
         });
         expect(response.status).toBe(201);
         expect(response.body.sesiondata).toHaveProperty('id_user');
@@ -80,9 +81,10 @@ describe('User update', () => {
         expect(user.get('name')).toBe(updatedUserData.name);
         expect(user.get('email')).toBe(updatedUserData.email);
     });
-});
-afterAll( async () => {
+    afterAll( async () => {
     server.close();
     await connection_db.sync({force: true });
     console.log('All databases are clean')
  });
+});
+

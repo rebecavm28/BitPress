@@ -24,7 +24,7 @@ const Detail = () => {
   const handleDelete = async () => {
     try {
       await deleteData(id_news);
-      navigate('/dashboard')
+      navigate('dashboard')
       setTimeout(() => { window.location.reload() }, 100);
 
       const response = await registerUser(data);
@@ -49,8 +49,8 @@ const Detail = () => {
               <p>{data.content}</p>
             </div>
             <div className="buttons">
-              <button className="bEdit">EDIT</button>
-              <button className="bDelete" onClick={() => {handleDelete(`${data.new_id}`)}}>DELETE</button>
+              <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDIT</button>
+              <button className="bDelete" onClick={() => {handleDelete(`${data.id_news}`)}}>DELETE</button>
             </div>
           </div>
         </div>
