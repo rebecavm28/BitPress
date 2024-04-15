@@ -40,11 +40,11 @@ const Detail = () => {
     <div>
       {data ? (
         <div className="chargingBox">
-          <h2 className="titleNew">{data.title}</h2>
+          <h2 className="titleNew">{data.tittle}</h2>
           <img className="imgNew" src={data.imageUrl} alt="News Image" />
           <div className="subtitles">
-            <p><span className="author">User: </span>{data.user}<span className="date"> | Date: </span>{data.date}</p>
-            <h3 className="subDescrip">DESCRIPTION:</h3>
+            <p><span className="author">User: </span>{data.user}<span className="date"> | Date: </span>{new Date(data.date).toLocaleDateString()}</p>
+            <h3 className="subDescrip">DESCRIPTION:</h3>                             
             <div className="description">
               <p>{data.content}</p>
             </div>
