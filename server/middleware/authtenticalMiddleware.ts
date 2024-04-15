@@ -1,6 +1,6 @@
 import { verifyToken } from "../utils/jwt";
 import { Request, Response, NextFunction} from "express";
-import {IdUser} from '../interfaces/interface'
+import {IdUser} from '../Interfaces/interface'
 
 
 export const isAuthenticated = async  (request:Request, response:Response, next:NextFunction) =>{
