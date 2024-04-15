@@ -12,7 +12,7 @@ const SocialBox = () => {
                 </div>
                 <div className="linkedin_box">
                     <img className='social_logo' src={linkedin_logo} alt="linkedin logo" />
-                    <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">Linkedin/Bitpress</a>
+                    <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">LinkedIn/Bitpress</a>
                 </div>
     </div>
   )
