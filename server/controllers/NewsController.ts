@@ -10,14 +10,14 @@ export const getAllNews = async(request: Request, response: Response )=>{
     }  
 }
 
-export const createdNews = async (req: Request, res: Response) => {
+export const createdNews = async (request: Request, response: Response) => {
     try {
-        const createdNews = await NewsModel.create(req.body);
-        res.status(201).json(createdNews);
+        const createdNews = await NewsModel.create(request.body);
+        response.status(201).json(createdNews);
     }catch(error){
-        return res.status(500).send({ error: 'Internal Server Error' });
+        return response.status(500).send({ error: 'Internal Server Error' });
     }
-
+}
 export const deleteNews = async(request: Request, response: Response)=>{
     const idNews = request.params.id;
     try {
@@ -26,13 +26,6 @@ export const deleteNews = async(request: Request, response: Response)=>{
     } catch (error: any) {
         return response.status(500).json({message:'error to delete the note', error: error.message})
     }
-  const idNews = request.params.id;
-  try {
-    await NewsModel.destroy({where:{id:idNews}});
-    return response.status(201).json({message: 'the note has deleted correctly'})
-  } catch (error) {
-    return response.status(500).json({message:'error to delete the note', error: error.message})
-  }
 }
 
 export const updateNews = async(request: Request, response: Response)=>{
@@ -54,4 +47,3 @@ export const showOneNews = async(request: Request, response: Response) => {
         return response.status(500).json({ message: 'error to show the', error: error.message });
     }
 }
-

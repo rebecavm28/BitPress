@@ -4,7 +4,7 @@ import connection_db from "../database/connection_db";
 import UserModel from './UserModel'; 
 
 export const NewsModel = connection_db.define('news', {
-    idnews: {
+    id_news: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
