@@ -1,12 +1,26 @@
 import /* * as */ request  from "supertest";
 import {app, server} from '../app';
-import connection_db from '../database/connection_db'
-import NewsModel from "../models/NewModel";
-
+import {NewsModel} from "../models/NewModel";
+import UserModel from "../models/UserModel";
+import {createToken} from "../utils/jwt";
+import connection_db from "../database/connection_db";
+import {userAdminTest, newsTest, updatedData, newsTestUpdate} from './helpers/helperTest'
 
 const api = request(app);
-
 describe('TESTING CRUD news', () => {
+
+    let userId = "";
+    let token= "";
+    let newsId= "";
+    
+    beforeAll(async () => {
+        const user:any = await UserModel.create(
+            userAdminTest
+        );
+        userId = await user?.get('id_user').toString();
+        token = await createToken(user);
+    });
+
 
     describe('GET', () => {
         test('GET ', async() => {
@@ -15,47 +29,112 @@ describe('TESTING CRUD news', () => {
             expect(Array.isArray(response.body)).toBe(true)
         })    
     });
-    });
-    
-    describe('News creation', () => {
-        let userId: number;
-        let token: string;
-        test('POST /api/users/register', async () => {
-            const response = await api.post('/api/users/register').send({
-                "name": "testUser",
-                "email": "test@gmail.com",
-                "password": "1234"
-            });
-            expect(response.status).toBe(201);
-            expect(response.body.sesiondata).toHaveProperty('id_user');
-            userId = response.body.sesiondata.id_user; 
-            token = `Bearer ${response.body.sesiondata.token}`; 
-        });
-        test('POST /api/news', async () => {
-            const newsData = {
-                "tittle": "Test",
-                "imageUrl": "www.google.es",
-                "content": "test news.",
-                "date": new Date().toISOString(),
-                "user": userId
-            };
-    
-            const response = await api.post('/api/news').set('Authorization', token).send(newsData);
-            expect(response.status).toBe(201);
-            try {
-                const news:any = await NewsModel.findOne({ where: { title: newsData.tittle } });
-                expect(news).not.toBeNull();
-                expect(news.get('title')).toBe(newsData.tittle);
-                expect(news.get('content')).toBe(newsData.content);
-            } catch (error) {
-                console.error('Error al buscar la noticia:', error);
-            }
-        });
-    });
 
+    describe('POST', () => {
+        let dataNew = {}
+        beforeEach(() => {
+            dataNew = {
+                ...newsTest,
+                user: userId 
+            };
+        })
+
+        test("when users create a new note", async()=>{
+            const response = await request(app)
+            .post('/api/news').set('Authorization', `Bearer ${token}`)
+            .send(dataNew);
+
+            expect(response.status).toBe(201);
+            expect(response.body.content).toBeDefined();
+            expect(response.body.tittle).toBeDefined();
+        })
+        afterAll(async () => {
+            await NewsModel.destroy({
+                where: {
+                    tittle: "test"
+                }
+            }); });
+    })
+
+    describe('PUT', () => {
+        let dataNew = {};
+        let newsId = "";
+    
+        beforeEach(async () => {
+            dataNew = {
+                ...updatedData,
+                user: userId 
+            };
+
+            const responseCreation = await request(app)
+                .post('/api/news').set('Authorization', `Bearer ${token}`)
+                .send(dataNew);
+    
+            expect(responseCreation.status).toBe(201);
+            expect(responseCreation.body.id_news).toBeDefined();
+
+            newsId = responseCreation.body.id_news.toString();
+        });
+    
+        test("when users update a new note", async () => {
+          const response = await request(app)
+                .put(`/api/news/${newsId}`).set('Authorization', `Bearer ${token}`)
+                .send(dataNew);
+    
+            expect(response.status).toBe(200);
+            expect(response.body.message).toContain("The Note was updated successfully!");
+        });
+        afterAll(async () => {
+            await NewsModel.destroy({
+                where: {
+                    tittle: "updated test"
+                }
+            })
+        });
+    });
     afterAll(async () => {
+        await UserModel.destroy({
+            where: {
+                name: "test"
+            }
+        })
         await connection_db.sync({ force: true });
         server.close();
     });
 
+    describe('DELETE', () => {
+        let newsId = "";
+        let dataNew = {}
+        beforeEach(async () => {
+            dataNew= {
+                ...newsTestUpdate,
+                user: userId 
+            };
     
+            const responseCreation = await request(app)
+                .post('/api/news').set('Authorization', `Bearer ${token}`)
+                .send(dataNew);
+    
+            expect(responseCreation.status).toBe(201);
+            expect(responseCreation.body.id_news).toBeDefined();
+    
+            newsId = responseCreation.body.id_news.toString();
+        });
+    
+        test("when users delete a new note", async () => {
+            const response = await request(app)
+                .delete(`/api/news/${newsId}`).set('Authorization', `Bearer ${token}`);
+    
+            expect(response.status).toBe(201);
+            expect(response.body.message).toContain("the note has deleted correctly");
+        });
+    
+        afterAll(async () => {
+            await NewsModel.destroy({
+                where: {
+                    tittle: "test for delete"
+                }
+            }).catch(error => console.error("Error", error));
+        });
+    });
+})

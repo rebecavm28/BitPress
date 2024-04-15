@@ -26,11 +26,8 @@
     width: 50px;
     height: 140px;
     margin: 15px;
-    /* Espacio entre palabras */
     writing-mode: vertical-rl; 
-    /* Cambia la direccion de la escritura (vertical) */
     transform: rotate(180deg); 
-    /* Rota las letras hacia la derecha */
     border: 2px solid #2A2A2A;
     border-radius: 10px;
     transition: 0.5s;
@@ -38,8 +35,6 @@
 
   .cream:hover{
     box-shadow: 0px 0px 10px#2A2A2A;
-    /* background-color: #444444;
-    color: #FFFCEF; */
   }
 
   .violet{
@@ -47,7 +42,6 @@
   }
 
   .violet:hover{
-    /* background-color: #AEFFBF; */
     box-shadow: 0px 0px 10px#2A2A2A;
   }
 
@@ -59,7 +53,7 @@
 
   .image1, .image2 {
     position: absolute;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
   }
   
   .image1 {
@@ -77,6 +71,4 @@
   
   .logo_container:hover .image2 {
     transform: translateX(97%); 
-    /* Desplaza la imagen 2 hacia la derecha */
-
   }

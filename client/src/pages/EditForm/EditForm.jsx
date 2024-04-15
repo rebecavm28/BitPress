@@ -1,22 +1,10 @@
-import React from 'react'
-import '../EditForm/EditForm.css'
-import { useNavigate } from "react-router";
+import './EditForm.css'
+import { useForm } from 'react-hook-form'
+import { loginUser } from '../../services/authService'
+import { useNavigate } from 'react-router-dom'
 
 const EditForm = () => {
-    const { register, handleSubmit } = EditForm();
-    const navigate = useNavigate();
-    const onSubmit = async (data) => { 
-        try {
-          const response = await EditForm(data);
-          const {token, rol} = response.data.sesiondata;
-          localStorage.setItem('token', token);
-          localStorage.setItem('rol', rol);
-          setIsAuthenticated(true);
-          navigate('/editForm'); 
-        } catch (error) {
-          console.error('Error:', error);
-        }
-      }; 
+    
 
 
   return (
