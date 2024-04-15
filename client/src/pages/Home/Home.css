@@ -3,6 +3,7 @@ main{
     display: flex;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     box-shadow: 0px 0px 30px #FFFCEF;
+    min-height: 90vh;
 }
 
 /* .news_carrousel{

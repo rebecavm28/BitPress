@@ -1,3 +1,4 @@
+import SocialBox from '../../components/SocialBox/SocialBox';
 import './Home.css'
 //import NewsGallery from '../../components/Gallery/NewsGallery'
 import { useNavigate } from 'react-router-dom'
@@ -16,11 +17,12 @@ const Home = () => {
               <div className="color_back"></div>
               <div className="blur_effect"></div>
             </div>
-          <div className="circle_button">
+          {/* <div className="circle_button">
             <h2 className='button_letters' onClick={() => navigate(`/add`)} >AÑADIR NOTICIA</h2>
-          </div>
+          </div> */}
+          <SocialBox/>
         </main>
-        {/* <NewsGallery /> */}
+        
       </div>
   )
 }
