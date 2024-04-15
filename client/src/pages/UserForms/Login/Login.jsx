@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import './Login.css';
 import { useForm } from 'react-hook-form';
 import { loginUser } from '../../../services/authService'; // Cambio de nombre para evitar conflicto de nombres
 import { useNavigate } from 'react-router-dom'; // "React-rout-dom" => "react-router-dom" (cambio en el nombre de la importación)
-import { useUserContext } from '../../context/UserContext'; // Corregir la ruta de importación
+import { useUserContext } from '../../../context/UserContext'; // Corregir la ruta de importación
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
