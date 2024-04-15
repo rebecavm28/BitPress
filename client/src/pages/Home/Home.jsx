@@ -14,6 +14,8 @@ const Home = () => {
               <div className="color_back"></div>
               <div className="blur_effect"></div>
             </div>
+          <div className="circle_button">
+          </div>
         </main>
         {/* <NewsGallery /> */}
       </div>

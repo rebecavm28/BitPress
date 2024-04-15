@@ -88,4 +88,3 @@ describe('User update', () => {
     console.log('All databases are clean')
  });
 });
-
