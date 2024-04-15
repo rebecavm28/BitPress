@@ -7,7 +7,7 @@ import connection_db from "../database/connection_db";
 import {userAdminTest, newsTest, updatedData, newsTestUpdate} from './helpers/helperTest'
 
 const api = request(app);
-describe('TESTING CRUD news', () => {
+describe('TESTING CRUD news_test', () => {
 
     let userId = "";
     let token= "";

@@ -1,6 +1,5 @@
 import { DataTypes, Model } from "sequelize";
 import connection_db from "../database/connection_db";
-import RolModel from "./RolesModel";
 import { UserAttributes } from "../Interfaces/interface"
 interface UserModel extends Model<UserAttributes>, UserAttributes{}
 
@@ -27,10 +26,8 @@ export const UserModel = connection_db.define('user', {
         type:DataTypes.STRING,
         allowNull:false,
         references: {
-            model: RolModel, // referencia al modelo RolModel
             key: 'id', 
         },
-        defaultValue: "user",
     }
 },{
         tableName: 'users', 
