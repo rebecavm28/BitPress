@@ -1,11 +1,13 @@
 import {useContext, createContext, useState } from "react";
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
-const UserProvider =({children}) => {
-    const[IsAuthenticated, setIsAuthenticated] = useState(false)
+const UserProvider = ({children}) => {
+
+    const[isAuthenticated, setIsAuthenticated] = useState(false)
+    
     return(
-        <UserContext.Provider value={{IsAuthenticated, setIsAuthenticated}}>
+        <UserContext.Provider value={{isAuthenticated, setIsAuthenticated}}>
             {children}
         </UserContext.Provider>
     );

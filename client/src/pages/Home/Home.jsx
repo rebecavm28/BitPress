@@ -1,6 +1,5 @@
 import './Home.css'
 //import NewsGallery from '../../components/Gallery/NewsGallery'
-import UserForm from '../../components/UserForms/UserForm'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
@@ -22,7 +21,6 @@ const Home = () => {
           </div> */}
         </main>
         {/* <NewsGallery /> */}
-        <UserForm/>
       </div>
   )
 }

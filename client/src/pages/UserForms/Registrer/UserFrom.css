@@ -1,4 +1,9 @@
 /* Inicio tarjeta para cambiar de formulario */
+.formulary{
+    display: flex;
+    align-items: center;
+}
+
 .formulary_text{
     width: 300px;
     height: 300px;
@@ -6,13 +11,14 @@
     display: grid;
     place-content: center;
     font-family: 'Courier New', Courier, monospace;
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 .registrer_option{
     color: #AEFFBF;
     font-size: 27px;
     text-align: center;
+    font-size: 35px;
 }
 
 .registrer_option_changer{
@@ -22,7 +28,7 @@
     padding: 0;
     margin: 0;
     color: #FFFCEF;
-    font-size: 17px;
+    font-size: 25px;
     text-decoration: underline;
 }
 
@@ -42,13 +48,12 @@
 
 /* ///////////////////////////////////////////////// */
 
-/* Inicio formularios */
+/* Inicio formulario */
 
 .formulary_section{
     display: flex;
     border-radius: 15px;
     place-content: center;
-    margin: 40px;
 }
 
 .formulary{
@@ -60,8 +65,8 @@
 
 .register,
 .login {
-    width: 300px;
-    margin: 0 30px;
+    width: 550px;
+    margin: 130px 30px;
     display: grid;
     place-content: center;
 }
@@ -75,7 +80,8 @@
     box-sizing: border-box;
     background-color: transparent;
     color: #FFFCEF;
-    width: 250px;
+    width: 450px;
+    font-size: 20px;
 }
 
 .register button,
@@ -88,6 +94,8 @@
     color: #000;
     font-weight: bold;
     cursor: pointer;
+    width: 450px;
+    font-size: 20px;
 }
 
 .register [type="submit"],
@@ -101,49 +109,7 @@
     background-color: #AEFFBF;
 }
 
-/* Final de los formularios */
-
-/* Tarjeta social */
-
-.social{
-    border: 2px solid #FFFCEF;
-    border-radius: 15px;
-    margin-left: 20px;
-    padding-right: 20px;
-    display: grid;
-    place-content: center;
-    width: 300px;
-}
-
-.social_tittle{
-    color: #AEFFBF;
-    width: 200px;
-    text-align: center;
-    font-size: 28px;
-    margin-left: 28px;
-}
-
-.instagram_box{
-    display: flex;
-}
-
-.linkedin_box{
-    display: flex;
-}
-
-.social_links{
-    display: block;
-    color: #FFFCEF;
-    margin-top: 30px;
-    font-size: 20px;
-    margin-bottom: 30px;
-    text-decoration: none;
-}
-
-.social_logo{
-    color: #FFFCEF;
-    margin: 0 15px;
-}
+/* Final de los formulario */
 
 @media only screen and (min-width: 400px) and (max-width: 1200px){
     .formulary_section {
@@ -166,14 +132,6 @@
     .social {
         width: 80%;
         margin: 20px auto;
-    }
-
-    .social_tittle {
-        font-size: 24px;
-    }
-
-    .social_links {
-        font-size: 100%;
     }
 }
 
