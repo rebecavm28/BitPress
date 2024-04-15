@@ -1,31 +1,33 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './AddForm.css'
 import { useForm } from "react-hook-form";
 import { postNew } from '../../services/newServices';
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
-import { loginUser } from "../../services/authService";
+import { useUserContext } from '../../context/UserContext'; 
+
 
 const AddForm = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const navigate = useNavigate()
-/*     const [isLoggedIn, setIsLoggedIn] = useState(false);
- */    const currentDate = new Date().toISOString().split('T')[0];
-    const onSubmit = async (data) => {
-        // try {
-        //     // Verifica si el usuario está autenticado
-        //     const isAuthenticated = await login(variableForm);
-        //     if (!isAuthenticated) {
-        //       return;
-        //     }
-        //data.publicationDate = currentDate;
-        await postNew(data).then(() => {
-            navigate("/") //Cambiar luego la navegación a la página de detail
-        })
-    /* } catch (error){
-        console.error('Error al intentar iniciar sesión:', error);
-    } */
-  };
+    const {id_user} = useUserContext();
+    const navigate = useNavigate();
+       
+
+    const onSubmit = async (data) =>{
+        console.log(data)
+        try { 
+                      
+            const token = localStorage.getItem('token');
+            const id_user = localStorage.getItem('id_user');
+            const response = await postNew({...data, user:id_user}, token);
+            console.log(response)
+            alert("News created successfully");
+            navigate("/dashboard");
+}
+    catch(error){
+
+        console.error('Error creating new:', error);
+}
+}
  
     return (
         <div className='formAdd'>
@@ -34,7 +36,7 @@ const AddForm = () => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}> 
                 <div className='formFields'>
-                    <label htmlFor="title"className='addTitle'>Title</label>
+                    <label htmlFor="tittle"className='addTitle'>Title</label>
                     <input type="text" id="tittle" name="title" {...register('tittle', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  100 
@@ -51,10 +53,10 @@ const AddForm = () => {
                 </div>
                 <div className='formFields'>
                     <label htmlFor='publicationDate' className='publicationDate'>Publication Date</label>
-                    <input type='text' id='publicationDate' name='publicationDate'value={currentDate} readOnly/>
+                    <input type='date' id='publicationDate' name='publicationDate' {...register('date',{required:true})} />
                 </div>
                 <div className='formFields'>
-                    <label htmlFor="description"className='addDescription'>Description</label>
+                    <label htmlFor="content"className='addDescription'>Description</label>
                     <input type="text" id="description" name="content"{...register('content', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  1000 
