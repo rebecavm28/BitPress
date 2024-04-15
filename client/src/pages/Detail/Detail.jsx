@@ -8,7 +8,7 @@ const Detail = () => {
   const { id_news } = useParams();
   const [ data, setData ] = useState(null);
   const navigate = useNavigate();
-  const{id_user} = useUserContext();
+  const{isAuthenticated, rol} = useUserContext();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,21 +23,6 @@ const Detail = () => {
     fetchData();
   }, [id_news]);
 
- /*  const handleDelete = async () => {
-    try {
-      await deleteData(id_news);
-      navigate('/dashboard')
-      setTimeout(() => { window.location.reload() }, 100);
-
-      const response = await registerUser(data);
-      const {token, rol} = response.sesiondata;
-      localStorage.setItem('token', token);
-      localStorage.setItem('rol', rol);
-    } catch (error) {
-          console.error(error)
-    }
-  }; */
-
   return (
     <div>
       {data ? (
@@ -51,8 +36,12 @@ const Detail = () => {
               <p>{data.content}</p>
             </div>
             <div className="buttons">
-              <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDIT</button>
-              <button className="bDelete" onClick={() => deleteData(id_news).then(()=> navigate("/dashboard"))}>DELETE</button>
+    
+                <>
+                 <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDITAR</button>
+                 <button className="bDelete" onClick={() => deleteData(id_news).then(()=> navigate("/dashboard"))}>ELIMINAR</button>
+                </>
+          
             </div>
           </div>
         </div>

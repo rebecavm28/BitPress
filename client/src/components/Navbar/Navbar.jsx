@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import LogoutButton from '../Logout-butoon/logout-button';
 
 const Navbar = () => {
-  const { isAuthenticated } = useUserContext();
+  const { isAuthenticated, rol } = useUserContext();
   const navigate = useNavigate();
   
   return (
