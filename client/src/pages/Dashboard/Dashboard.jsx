@@ -11,7 +11,7 @@ const Dashboard = () => {
       <div className='home_container'>
         <main>
           <div className="circle_button">
-            <h2 className='button_letters' onClick={() => navigate(`/add`)} >AÑADIR NOTICIA</h2>
+            <h2 className='button_letters' onClick={() => navigate(`add`)} >AÑADIR NOTICIA</h2>
           </div>
         </main>
         <NewsGallery />
