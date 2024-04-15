@@ -34,10 +34,6 @@ const router = createBrowserRouter([
             {
                 path: "/editForm/:id_news",
                 element: <EditForm/>
-            },
-            {
-                path: "/newsform",
-                element: <NewsForm/>
             }
         ]
     }

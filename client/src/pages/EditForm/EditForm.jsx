@@ -1,5 +1,5 @@
 import React from 'react'
-import './EditForm.css'
+import '../EditForm/EditForm.css'
 import { useNavigate } from "react-router";
 
 const EditForm = () => {
