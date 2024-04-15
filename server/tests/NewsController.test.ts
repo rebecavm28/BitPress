@@ -1,12 +1,12 @@
+import request  from "supertest";
 import {app, server} from '../app';
-import request from 'supertest';
 import {NewsModel} from "../models/NewModel";
 import UserModel from "../models/UserModel";
 import {createToken} from "../utils/jwt";
 import connection_db from "../database/connection_db";
 import {userAdminTest, newsTest, updatedData, newsTestUpdate} from './helpers/helperTest'
 
-const api= request(app);
+const api = request(app);
 describe('TESTING CRUD news', () => {
 
     let userId = "";
