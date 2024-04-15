@@ -1,7 +1,7 @@
 import UserModel from "../models/UserModel";
 import { Request, Response } from "express";
 import * as bcrypt from 'bcrypt';
-import {User, SesionData, UserAttributes} from '../interfaces/interface';
+import {User, SesionData, UserAttributes} from '../Interfaces/interface';
 import { createToken } from "../utils/jwt";
 import {Model} from 'sequelize'
 
