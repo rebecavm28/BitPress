@@ -1,11 +1,70 @@
 import UserModel from "../models/UserModel";
 import { Request, Response } from "express";
-import * as bcrypt from "bcrypt";
-import { sign } from "jsonwebtoken";
-import {JWT_SECRET} from '../config'
-import { UserAttributes } from "../Interfaces/Interfaces";
+import * as bcrypt from 'bcrypt';
+import {User, SesionData, UserAttributes} from '../interfaces/interface';
+import { createToken } from "../utils/jwt";
+import {Model} from 'sequelize'
 
 
+//Registro
+export const registerUser = async ( request :Request ,response:Response)=>{
+  try { 
+      const{email,name, password, rol} = request.body;//extraemos name , email y password
+      //encriptar contraseña:
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const newUser = {email, name, password: hashedPassword, rol};
+      const userData: Model<UserAttributes> = await UserModel.create(newUser);
+
+    const user : User ={
+      id_user: userData?.get('id_user') as number,
+      name: userData?.get('name') as string,
+      email: userData?.get('email') as string,
+      rol: userData?.get('rol') as string
+    }
+    const sesiondata: SesionData={
+      id_user: user.id_user,
+      rol: user.rol,
+      token: await createToken(userData),
+    }
+      return response.status(201).json({message: "user created correctly", sesiondata})
+      
+     } catch (error: any) {
+       return response.status(500).json({message: 'Error on creating user', error: error.message});
+     }
+}
+
+//Login
+export const loginUsers = async ( request :Request ,response:Response)=>{
+  
+  try {
+     const oneUser = await UserModel.findOne({where: {email: request.body.email}});
+     if(!oneUser){
+      return response.status(401).json({message:"User not found"});
+     }
+     
+     const hashPassword = oneUser?.get("password") as string;
+     const idUser = oneUser?.get("id_user") as number;
+     const rol=  oneUser?.get('rol') as string ;
+     const isUser =  await bcrypt.compare(request.body.password, hashPassword );
+     
+     if (!isUser) {
+        return response.status(401).json({auth: false, message: 'Wrong Password'});
+     }
+     const SesionData : SesionData ={
+      id_user:idUser,
+      rol:rol,
+      token:await createToken(oneUser)
+    }
+   
+     return response.status(200).json({message:"login correctly", SesionData});
+
+  } catch (error: any) {
+           return response.status(500).json({message: 'Error login', error: error.message});
+
+  }
+}
+
+//////////
 
 export const getAllUsers = async(request: Request, response: Response )=>{
   try {
@@ -13,91 +72,36 @@ export const getAllUsers = async(request: Request, response: Response )=>{
     const users = await UserModel.findAll()
     console.log(users)
     response.status(200).json(users);
-  } catch (error) {
-    response.status(500).json({message:error.message})
+  } catch (error: any) {
+    response.status(500).json({message: error.message});
   }  
 }
-
-export const createUsers = async(request: Request, response: Response)=>{
-    try {
-      const users = await UserModel.create()
-      
-      response.status(200).json(users);  
-    } catch (error) {
-      response.status(500).json({message:error.message})  
-    }
-}
-
-export const deleteUsers= async(request: Request, response: Response)=>{
+export const deleteUsers = async(request: Request, response: Response)=>{
   const idUser = request.params.id;
   try {
-    await UserModel.destroy({where:{id:idUser}});
-    return response.status(201).json({message: 'the note has deleted correctly'})
-  } catch (error) {
-    return response.status(500).json({message:'error to delete the note', error: error.message})
+    await UserModel.destroy({where:{id_user:idUser}});
+    return response.status(201).json({message: 'the user has deleted correctly'})
+  } catch (error: any) {
+    return response.status(500).json({message:'error to delete user', error: error.message})
   }
 }
 
 export const updateUsers = async(request: Request, response: Response)=>{
   const idUser =request.params.id;
   try {
-    await UserModel.update(request.body,{where:{id:idUser}});
-    return response.status(200).json({message:'The Note was updated successfully!'});
-  } catch (error) {
-    return response.status(500).json({message:'error to update the note', error: error.message})
+    await UserModel.update(request.body,{where:{id_user:idUser}});
+    return response.status(200).json({message:'The user was updated successfully!'});
+  } catch (error: any) {
+    return response.status(500).json({message:'error to update user', error: error.message})
   }
 }
 
-export const  showOneUsers = async(request:Request,response:Response)=> {  //para que traiga una sola//
-  const idUser =request.params.id;
+export const showOneNews = async (request: Request, response: Response) => {
+  const idUser = request.params.id;
   try {
-    const oneNew = await UserModel.findOne({where: {id:Number(idUser)}});
-    return response.status(200).json(oneNew);
-  } catch (error) {
-    return response.status(500).json({message:'error to show the', error: error.message})
+    const oneUser = await UserModel.findOne({ where: { id_user: Number(idUser) } });
+    return response.status(200).json(oneUser);
+  } catch (error: any) {
+    return response.status(500).json({ message: 'error to show the user', error: error.message });
   }
 }
-
-export const registerUser = async ( request :Request ,response:Response)=>{
-  try { 
-      const{email,name, password,id_rol} = request.body;//extraemos name , email y password
-      //encriptar contraseña:
-      const hashedPassword = await bcrypt.hash(password, 10);   //2 parametros la contraseña y las vueltas //
-      const userData = {email, name, id_rol, password: hashedPassword};    //que te hashed la contraseña//
-      await UserModel.create(userData);  //aqui le dices cogeme los datos del userdata y creamelo//
-      response.status(201).json({message: "user created correctly"})
-    } catch (error) {
-       return response.status(500).json({message: 'Error on creating user', error: error.message});
-    }
-}
-
-//login//
- 
-export const login = async (req:Request, res:Response) => {
- try {
-  const { email, password } = req.body;
-    // Buscar al usuario por su correo electrónico
-    const user:UserAttributes= await UserModel.findOne({ where: { email } });
-     
-    // Verificar si el usuario existe
-    if (!user) {
-      return res.status(404).json({ message: 'Usuario no encontrado' });
-    }
-    // Verificar si la contraseña es correcta
-    //const hashedPassword= user?.get("password") as string;
-    const hashedPassword= user.password
-    const idUser = user.id 
-    const role= user.id_rol 
-    const passwordMatch = await bcrypt.compare(password, hashedPassword);
-    if (!passwordMatch) {
-      return res.status(401).json({ message: 'Contraseña incorrecta' });
-    }
-    const token = sign({id: idUser}, JWT_SECRET, { expiresIn: '2h' })
-    return res.status(200).json({message:"login correctly", token,idUser,role});
-
-  } catch (error) {
-    return res.status(500).json({message: 'error login', error: error.message});
- }
-}
-
-

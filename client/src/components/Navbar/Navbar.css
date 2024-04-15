@@ -1,0 +1,82 @@
+  body {
+    margin: 0;
+    padding: 0;
+  }
+   
+   nav {
+    /* Orientación al revés */
+    position: fixed; 
+    /* Hace que la navbar solo ocupe el tamaño del texto*/
+    background-color: #FFFCEF;
+    height: 100%;
+  }
+  
+  .list_box {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar_link {
+    color: #2A2A2A;
+    font-size: 23px;
+    text-decoration: none;
+    display: grid;
+    place-content: center;
+    width: 50px;
+    height: 140px;
+    margin: 15px;
+    /* Espacio entre palabras */
+    writing-mode: vertical-rl; 
+    /* Cambia la direccion de la escritura (vertical) */
+    transform: rotate(180deg); 
+    /* Rota las letras hacia la derecha */
+    border: 2px solid #2A2A2A;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+
+  .cream:hover{
+    box-shadow: 0px 0px 10px#2A2A2A;
+    /* background-color: #444444;
+    color: #FFFCEF; */
+  }
+
+  .violet{
+    background-color: #C5A3F0;
+  }
+
+  .violet:hover{
+    /* background-color: #AEFFBF; */
+    box-shadow: 0px 0px 10px#2A2A2A;
+  }
+
+  /* logo */
+
+  .logo_container{
+    height: 100px;
+  }
+
+  .image1, .image2 {
+    position: absolute;
+    transition: transform 0.5s ease;
+  }
+  
+  .image1 {
+    width: 84px;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .image2 {
+    width: 180px;
+    left: -96px;
+    z-index: 1;
+  }
+  
+  .logo_container:hover .image2 {
+    transform: translateX(97%); 
+    /* Desplaza la imagen 2 hacia la derecha */
+
+  }

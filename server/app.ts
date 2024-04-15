@@ -1,12 +1,12 @@
 import connection_db from "./database/connection_db";
-import * as express from 'express';
+import express from 'express';
 import {PORT} from './config'
-import * as cors from 'cors';
+import cors from 'cors';
 import {UserModel} from './models/UserModel'
 import {RolModel} from    "./models/RolesModel"
 import NewsModel from "./models/NewModel";
 import newsRouter from "./routes/NewsRouter";
-import userRouter from "./routes/UsersRouter";
+import userRouter from "./routes/UserRouter";
 
 export const app = express();
 app.use(cors());
@@ -17,6 +17,7 @@ app.use('/api', userRouter)
 
 try {
     connection_db.authenticate()
+    connection_db.sync()
     RolModel.sync();
     UserModel.sync();
     NewsModel.sync();
@@ -26,6 +27,6 @@ try {
     console.log(`connection error 😒😒`)
     
 }
-app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
       console.log(`🚆Servidor corriendo en http://localhost:${PORT}`);
     });

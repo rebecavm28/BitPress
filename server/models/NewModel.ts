@@ -1,40 +1,41 @@
+
 import { DataTypes } from "sequelize";
 import connection_db from "../database/connection_db";
-import  UserModel from "./UserModel";
+import UserModel from './UserModel'; 
 
-export const NewModel = connection_db.define('news', {
-    id: {
+export const NewsModel = connection_db.define('news', {
+    idnews: {
         type: DataTypes.INTEGER,
-        autoIncrement: true, 
+        autoIncrement: true,
         primaryKey: true,
     },
-    title: {
+    tittle: {
         type: DataTypes.STRING,
-        allowNull: false, 
+        allowNull: false,
     },
     imageUrl: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(500),
         allowNull: false,
     },
     content: {
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    date:{ 
-        type: DataTypes.DATE, 
-        allowNull: false 
+    date: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
     },
-    id_user: {
+    user: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
-            model: UserModel,
-            key: 'id',
-        }
+            model: UserModel, 
+            key: 'id_user', 
+        },
+        allowNull: false,
     },
-},
-{
-    tableName: 'news', // Nombre de la tabla en la base de datos
-    timestamps: false, // Disable timestamps
+}, {
+    tableName: 'news', 
+    timestamps: false, 
 });
-export default NewModel;
+
+export default NewsModel;

@@ -24,16 +24,20 @@ export const UserModel = connection_db.define('user', {
         allowNull: false,
     },
     rol:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.STRING,
         allowNull:false,
         references: {
             model: RolModel, // referencia al modelo RolModel
             key: 'id', 
         },
+        defaultValue: "user",
     }
 },{
-        tableName: 'users', // Nombre de la tabla en la base de datos
-        timestamps: false, // Disable timestamps
+        tableName: 'users', 
+        timestamps: false, 
       }
 );
+
+/* UserModel.hasMany(NewsModel,{foreignKey: "id_user"})
+ */
 export default UserModel;
