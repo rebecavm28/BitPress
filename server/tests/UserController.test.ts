@@ -39,7 +39,7 @@ describe('User creation and deletion', () => {
         const response = await api.post('/api/users/register').send({
             "name": "testUser",
             "email": "testUser@example.com",
-            "password": "1234"
+            "password": "1236"
         });
         expect(response.status).toBe(201);
         expect(response.body.sesiondata).toHaveProperty('id_user');
@@ -89,3 +89,12 @@ describe('User update', () => {
  });
 });
 
+// Iniciar el servidor
+beforeAll(() => {
+  server.listen(5000);
+});
+
+// Cerrar el servidor después de las pruebas
+afterAll((done) => {
+  server.close(done);
+});

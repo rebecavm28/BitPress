@@ -3,7 +3,6 @@ import express from 'express';
 import {PORT} from './config'
 import cors from 'cors';
 import {UserModel} from './models/UserModel'
-import {RolModel} from    "./models/RolesModel"
 import NewsModel from "./models/NewModel";
 import newsRouter from "./routes/NewsRouter";
 import userRouter from "./routes/UserRouter";
@@ -18,7 +17,6 @@ app.use('/api', userRouter)
 try {
     connection_db.authenticate()
     connection_db.sync()
-    RolModel.sync();
     UserModel.sync();
     NewsModel.sync();
     
