@@ -88,13 +88,3 @@ describe('User update', () => {
     console.log('All databases are clean')
  });
 });
-
-// Iniciar el servidor
-beforeAll(() => {
-  server.listen(5000);
-});
-
-// Cerrar el servidor después de las pruebas
-afterAll((done) => {
-  server.close(done);
-});

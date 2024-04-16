@@ -1,4 +1,3 @@
-import React from 'react'
 import './Dashboard.css'
 import NewsGallery from '../../components/Gallery/NewsGallery'
 import { useNavigate } from 'react-router-dom'

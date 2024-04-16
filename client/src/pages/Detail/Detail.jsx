@@ -1,19 +1,21 @@
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from 'react';
 import { getNewById, deleteData } from '../../services/newServices'; // Asumiendo que existe una función deleteData en tu servicio
 import './Detail.css';
-import { useNavigate } from 'react-router-dom'
+import { useUserContext } from "../../context/UserContext";
 
 const Detail = () => {
   const { id_news } = useParams();
   const [ data, setData ] = useState(null);
   const navigate = useNavigate();
-
+  const{rol} = useUserContext();
+  console.log(rol)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await getNewById(id_news); 
-        setData(response); 
+        setData(response.data); 
+        
       } catch (error) {
         console.error(error);
       }
@@ -21,36 +23,25 @@ const Detail = () => {
     fetchData();
   }, [id_news]);
 
-  const handleDelete = async () => {
-    try {
-      await deleteData(id_news);
-      navigate('dashboard')
-      setTimeout(() => { window.location.reload() }, 100);
-
-      const response = await registerUser(data);
-      const {token, rol} = response.sesiondata;
-      localStorage.setItem('token', token);
-      localStorage.setItem('rol', rol);
-    } catch (error) {
-          console.error(error)
-    }
-  };
-
   return (
     <div>
       {data ? (
         <div className="chargingBox">
-          <h2 className="titleNew">{data.title}</h2>
+          <h2 className="titleNew">{data.tittle}</h2>
           <img className="imgNew" src={data.imageUrl} alt="News Image" />
           <div className="subtitles">
-            <p><span className="author">User: </span>{data.user}<span className="date"> | Date: </span>{data.date}</p>
-            <h3 className="subDescrip">DESCRIPTION:</h3>
+            <p><span className="author">User: </span>{data.user}<span className="date"> | Date: </span>{new Date(data.date).toLocaleDateString()}</p>
+            <h3 className="subDescrip">DESCRIPTION:</h3>                             
             <div className="description">
               <p>{data.content}</p>
             </div>
             <div className="buttons">
-              <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDIT</button>
-              <button className="bDelete" onClick={() => {handleDelete(`${data.id_news}`)}}>DELETE</button>
+            {rol == 'admin' &&(
+              <>
+              <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDITAR</button>
+              <button className="bDelete" onClick={() => deleteData(id_news).then(()=> navigate("/dashboard"))}>ELIMINAR</button>
+              </>
+            )}
             </div>
           </div>
         </div>
