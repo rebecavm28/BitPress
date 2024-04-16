@@ -17,7 +17,6 @@ const Home = () => {
               <div className="blur_effect"></div>
             </div>
           <div className="circle_button">
-            <h2 className='button_letters' onClick={() => navigate(`/add`)} >AÑADIR NOTICIA</h2>
           </div>
         </main>
         {/* <NewsGallery /> */}

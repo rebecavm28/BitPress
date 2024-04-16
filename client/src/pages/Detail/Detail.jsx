@@ -1,40 +1,27 @@
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from 'react';
 import { getNewById, deleteData } from '../../services/newServices'; // Asumiendo que existe una función deleteData en tu servicio
 import './Detail.css';
-import { useNavigate } from 'react-router-dom'
+import { useUserContext } from "../../context/UserContext";
 
 const Detail = () => {
   const { id_news } = useParams();
   const [ data, setData ] = useState(null);
   const navigate = useNavigate();
+  const{id_user} = useUserContext();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await getNewById(id_news); 
-        setData(response); 
+        setData(response.data); 
+        
       } catch (error) {
         console.error(error);
       }
     };
     fetchData();
   }, [id_news]);
-
-  const handleDelete = async () => {
-    try {
-      await deleteData(id_news);
-      navigate('dashboard')
-      setTimeout(() => { window.location.reload() }, 100);
-
-      const response = await registerUser(data);
-      const {token, rol} = response.sesiondata;
-      localStorage.setItem('token', token);
-      localStorage.setItem('rol', rol);
-    } catch (error) {
-          console.error(error)
-    }
-  };
 
   return (
     <div>
@@ -50,7 +37,7 @@ const Detail = () => {
             </div>
             <div className="buttons">
               <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDIT</button>
-              <button className="bDelete" onClick={() => {handleDelete(`${data.id_news}`)}}>DELETE</button>
+              <button className="bDelete" onClick={() => deleteData(id_news).then(()=> navigate("/dashboard"))}>DELETE</button>
             </div>
           </div>
         </div>

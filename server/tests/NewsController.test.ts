@@ -1,3 +1,4 @@
+import request  from "supertest";
 import {app, server} from '../app';
 import {NewsModel} from "../models/NewModel";
 import UserModel from "../models/UserModel";
