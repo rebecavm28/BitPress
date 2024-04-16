@@ -8,8 +8,8 @@ const Detail = () => {
   const { id_news } = useParams();
   const [ data, setData ] = useState(null);
   const navigate = useNavigate();
-  const{id_user} = useUserContext();
-
+  const{rol} = useUserContext();
+  console.log(rol)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,8 +36,12 @@ const Detail = () => {
               <p>{data.content}</p>
             </div>
             <div className="buttons">
-              <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDIT</button>
-              <button className="bDelete" onClick={() => deleteData(id_news).then(()=> navigate("/dashboard"))}>DELETE</button>
+            {rol == 'admin' &&(
+              <>
+              <button className="bEdit" onClick={() => navigate(`edit/${data.id_news}`)}>EDITAR</button>
+              <button className="bDelete" onClick={() => deleteData(id_news).then(()=> navigate("/dashboard"))}>ELIMINAR</button>
+              </>
+            )}
             </div>
           </div>
         </div>
