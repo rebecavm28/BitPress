@@ -1,4 +1,4 @@
-import /* * as */ request from 'supertest';
+import request from 'supertest';
 import { app, server } from '../app';
 import UserModel from '../models/UserModel';
 import connection_db from '../database/connection_db';
