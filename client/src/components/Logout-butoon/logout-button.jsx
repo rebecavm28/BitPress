@@ -39,15 +39,9 @@ const LogoutButton = () => {
   };
 
   return (
-    <nav>
-    {/* <div className="logo_container" onClick={() => navigate(`/`)} >
-    <img src={logo} alt="" className='image1'/>
-    <img src={texto} alt="" className='image2'/> */}
-    {/* </div> */}
     <button className='navbar_link violet' onClick={handleLogout}>
       Logout
     </button>
-    </nav>
   );
 };
 
