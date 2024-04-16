@@ -33,7 +33,8 @@ const LogoutButton = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('rol');
-    
+/*     localStorage.removeItem('id_user')
+ */    
     setUser(null);
     setIsAuthenticated(false);
   };
