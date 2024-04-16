@@ -23,21 +23,6 @@ const Detail = () => {
     fetchData();
   }, [id_news]);
 
- /*  const handleDelete = async () => {
-    try {
-      await deleteData(id_news);
-      navigate('/dashboard')
-      setTimeout(() => { window.location.reload() }, 100);
-
-      const response = await registerUser(data);
-      const {token, rol} = response.sesiondata;
-      localStorage.setItem('token', token);
-      localStorage.setItem('rol', rol);
-    } catch (error) {
-          console.error(error)
-    }
-  }; */
-
   return (
     <div>
       {data ? (

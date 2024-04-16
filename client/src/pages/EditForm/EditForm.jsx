@@ -10,7 +10,6 @@ const EditForm = () => {
     const { register, handleSubmit, formState: { errors }, setValue } = useForm()
     const {id_news} = useParams();
     const {id_user} = useUserContext();
-    const [ImageUrl, setImageUrl] = useState('');
 
     const dateValue = "2024-03-27T00:00:00.000Z";
     const date = new Date(dateValue);
@@ -23,8 +22,7 @@ const EditForm = () => {
                 const data = response.data;
                 setValue('tittle', data.tittle);
                 setValue('content', data.content);
-                setImageUrl(data.imageUrl);
-                setValue('user', data.id_user);
+                setValue('imageUrl',data.imageUrl);
                 setValue('dateFieldName', formattedDate);
             } catch (error) {
                console.error(error.message);
@@ -36,8 +34,8 @@ const EditForm = () => {
 
     const onSubmit = async (data) =>{
       try {
-        const id_user = localStorage.getItem('id_user');
-        await updateData( data,id_news, {user:id_user});
+        const updatedData = { ...data, user: id_user };
+        await updateData( updatedData, id_news);
         alert('New updated');
         navigate('/dashboard');
       } catch (error) {
