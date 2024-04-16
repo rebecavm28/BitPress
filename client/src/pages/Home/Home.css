@@ -5,14 +5,6 @@ main{
     box-shadow: 0px 0px 30px #FFFCEF;
 }
 
-/* .news_carrousel{
-    width: 400px;
-    height: 400px;
-    background-color: #bbb;
-    border-radius: 25px;
-    margin: 40px 40px 40px 400px;
-} */
-
 .slogan{
     padding-top: 90px;
     padding-bottom: 60px;
@@ -33,6 +25,7 @@ main{
     -webkit-text-stroke: 5px transparent;
     background: linear-gradient(45deg, #7333FB, #F32972);
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .color_back{
@@ -58,30 +51,3 @@ main{
     bottom: 15px;
     margin-right: 50px;
 }
-
-/* .circle_button{
-    background-color: #AEFFBF;
-    border-radius: 200px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #2A2A2A;
-    height: 210px;
-    margin: 110px 0 0 20px;
-    transition: 0.3s;
-}
-
-.button_letters{
-    width: 150px;
-    font-size: 35px;
-    color: #AEFFBF;
-    -webkit-text-stroke: 1.5px #2A2A2A;
-    transform: rotate(-14deg);
-    margin: 30px;
-    padding: 0;
-    transition: 0.3s;
-}
-
-.circle_button:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 20px #fffcef51;
-} */
