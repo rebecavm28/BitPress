@@ -1,12 +1,11 @@
 # BitPress
-Bienvenido a nuestro proyecto BitPress fullstack el proyecto se trata de una aplicación web de gestión de noticias con sistema de usuarios y roles. 
-Los usuarios podrán acceder con sesiones encriptadas y tendrán dos roles: administrador y usuario estándar.
-El proyecto tiene como objetivo proporcionar una plataforma donde los usuarios puedan interactuar con noticias, ya sea consultándolas como usuarios estándar o gestionándolas como administradores.
+## Bienvenido a nuestro proyecto BitPress fullstack el proyecto se trata de una aplicación web de gestión de noticias con sistema de usuarios y roles, los usuarios podrán acceder con sesiones encriptadas y tendrán dos roles: administrador y usuario estándar.
+## El proyecto tiene como objetivo proporcionar una plataforma donde los usuarios puedan interactuar con noticias, ya sea consultándolas como usuarios estándar o gestionándolas como administradores.
 
--ESTRUCTURA DEL PROYECTO
--TECNOLOGÍAS
--INSTALACIÓN
--DESARROLLADORAS
+- ESTRUCTURA DEL PROYECTO
+- TECNOLOGÍAS
+- INSTALACIÓN
+- DESARROLLADORAS
 
 Estructura DEL ROYECTO 
 PÁGINA PRINCIPAL-
@@ -16,16 +15,16 @@ FOTOS DEL REGISTER Y LOGIN
 
 
 TECNOLOGIAS 
--React 
--Typescrit
--Jest 
--Node
--Express
--Mysql 
--Visual Studio Code
--Github
--CSS
--JSON Server
+- React 
+- Typescrit
+- Jest 
+- Node
+- Express
+- Mysql 
+- Visual Studio Code
+- Github
+- CSS
+- JSON Server
 
 
 INTALACIÓN ENTORNO TEST CON NODE Y TYPESCRIPT
