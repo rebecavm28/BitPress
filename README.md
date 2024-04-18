@@ -7,7 +7,7 @@ Bienvenido a nuestro proyecto BitPress fullstack el proyecto se trata de una apl
 - **DESARROLLADORAS**
 
 **Estructura del proyecto**
-La página de inicio tiene una estructura básica pero visualmente atractiva,con las opiones de regiter y login ubicados en la parte izquierda en el que segun seas admi o users te redirigira a tus opciones.
+La página de inicio tiene una estructura básica pero visualmente atractiva,con las opiones de regiter y login ubicados en la parte izquierda en el que según seas admi o users te redirigira a tus opciones.
 
 FOTOS DEL REGISTER Y LOGIN 
 
@@ -32,7 +32,7 @@ npm i -D jest ts-jest supertest @types/jest
 npx ts-jest config:init
 ```
 
-el comando anterior crea este archivo 📄 jest.config.js 👇 que podemos
+El comando anterior crea este archivo 📄 jest.config.js 👇 que podemos
 modificar en función de nuestras necesidades, abajo te indico con ✏ las líneas
 extra
 
@@ -48,7 +48,7 @@ module.exports = {
 ```
 
 
-el comando anterior crea este archivo 📄 jest.config.js 👇 que podemos
+El comando anterior crea este archivo 📄 jest.config.js 👇 que podemos
 modificar en función de nuestras necesidades, abajo te indico con ✏ las líneas
 extra
 ```
@@ -63,12 +63,22 @@ module.exports = {
 ```
 En nuestro caso lo dejaremos asi ☝
 
-vamos a crear nuestro Script de test npm run test
+Vamos a crear nuestro Script de test npm run test
 📄 package.json
  "test": "jest --detectOpenHandles --silent --verbose"
 4️⃣creamos la carpeta de 📂 __test__
-y ahora a testeeea
+y ahora a testear.
 
 
+## DOCUMENTACION DE POSTMAN
+https://documenter.getpostman.com/view/32563781/2sA3BkbYME
 
+
+## DESARROLLADORAS 
+- Nhoeli (Scrum Master)
+- Triana (Product Owner)
+- Rebeca (Developer)
+- Lucero (Developer)
+- Estefania (Developer)
+- Andrea (Developer)
 
