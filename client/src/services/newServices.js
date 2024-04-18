@@ -16,7 +16,6 @@ function getToken(){
 export const getNew = async () => {
   try {
     const headers = getToken()
-    console.log(headers)
     const response = await axios.get(url, {headers});
     return response.data
   } catch (error) {
@@ -31,7 +30,6 @@ export const postNew = async (data, token) => {
  
   try {
     const headers = getToken()
-    console.log(headers)
      const response = await axios.post(url, data, {headers});
      alert("News created successfully");
      return response;
@@ -45,7 +43,6 @@ export const postNew = async (data, token) => {
 export const deleteData = async (id_news) =>{
   try {
     const headers = getToken()
-    console.log("eliminar")
     let urlId = `${url}/${id_news}`;
     const response = await axios.delete(urlId, {headers});
     alert("News deleted successfully");

@@ -2,12 +2,10 @@ import './UserFrom.css'
 import { useForm } from 'react-hook-form'
 import { registerUser } from '../../../services/authService'
 import { useNavigate } from 'react-router-dom'
-/* import { useUserContext } from '../../../context/UserContext'
- */
+
 const UserForm = () => {
 const navigate = useNavigate();
-/* const { setIsAuthenticated } = useUserContext();
- */
+
   const { register, handleSubmit, formState: { errors } } = useForm()
   
   const onSubmit = async (data) =>{
@@ -17,7 +15,6 @@ const navigate = useNavigate();
         const {token, rol} = response.sesiondata;
         localStorage.setItem('token', token);
         localStorage.setItem('rol', rol);
-        /* setIsAuthenticated(true); */
         alert('Usuario creado correctamente ')
         navigate('/');
     } catch (error) {
