@@ -1,26 +1,27 @@
-main{
+
+.home_container{
     background-color: #2A2A2A;
+    min-height: 90vh;
     display: flex;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    box-shadow: 0px 0px 30px #FFFCEF;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%
 }
 
 .slogan{
-    padding-top: 90px;
-    padding-bottom: 60px;
-    margin-left: 30%;
+    padding-top: 5%;
 }
 
-.tittle_1{
-    font-size: 33px;
+.home_tittle_1{
+    font-size: 3.1em;
     margin: 0;
     color: #2A2A2A;
     -webkit-text-stroke: 1.5px #FFFCEF;
 }
 
-.tittle_2{
-    font-size: 48px;
-    margin: 0 0 50px 50px;
+.home_tittle_2{
+    font-size: 4.3em;
+    margin: 0 0 2.5vw 2.5vw;
     color: #2A2A2A;
     -webkit-text-stroke: 5px transparent;
     background: linear-gradient(45deg, #7333FB, #F32972);
@@ -28,7 +29,7 @@ main{
     background-clip: text;
 }
 
-.color_back{
+.home_color_back{
     width: 30vw;
     height: 170px;
     border-radius: 30px;
@@ -39,7 +40,7 @@ main{
     position: absolute;
 }
 
-.blur_effect{
+.home_blur_effect{
     width: 30vw;
     height: 170px;
     border: 1px solid #FFFCEF;
@@ -47,7 +48,40 @@ main{
     background-color: rgba(0, 0, 0, 0.258);
     backdrop-filter: blur(15px);
     position: relative;
-    left: 15px;
-    bottom: 15px;
-    margin-right: 50px;
+    left: 2.5vw;
+    bottom: 2.5vw;
+    margin-right: 5%;
+}
+.home_socialbox{
+    font-family: "Anonymous Pro", monospace;
+    border: 1px solid #FFFCEF;
+    border-radius: 15px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding: 0 1em;
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+@media screen and (max-width: 768px) {
+    .slogan{
+        margin-left: 10%;
+    }
+    .home_tittle_1{
+        font-size: 3em;
+    }
+    .home_tittle_2{
+        font-size: 4em;
+    }
+    .home_color_back,
+    .home_blur_effect {
+        width: 60vw; 
+        height: 30vw;
+        margin-left: 10%
+    }
+    .home_socialbox {
+        margin-left: 20%; 
+    }
 }

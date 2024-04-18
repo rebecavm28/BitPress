@@ -26,13 +26,14 @@
 
 /* Descripción, Párrafo de la noticia */
 
-.author {
+.textDetail{
     word-wrap: break-word;
     text-align: justify;
 }
 
-p{
+.textDetail{
     text-align: justify;
+    margin-right: 8%;
 }
 
 .description{
@@ -40,7 +41,7 @@ p{
     height: auto;
 }
 
-h2{
+.titleNew{
     font-size: 35px;
 }
 
@@ -48,30 +49,73 @@ h2{
     width: 80vw;
     min-height: auto;
     margin-top: 1vw;
-    margin-bottom: 2vw;
+    margin-bottom: 10%;
+    display: flex;
   }
 
 .bEdit{
-    width: 6vw;
-    height: 2vw;
+    width: 10%;
+    height: 2em;
     background-color: rgb(174, 255, 191);
     border-radius: 20px;
     font-weight: bold;
-    font-size:0.8vw;
+    font-size:50%;
     margin-right: 1.5vw;
     border-color: rgb(197, 163, 240);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 2%;
+    display: grid;
+    place-content: center;
 }
 
 .bDelete{
-    width: 6vw;
+    width: 10%;
     height: 2vw;
     background-color: rgb(197, 163, 240);
     border-radius: 20px;
     font-weight: bold;
-    font-size:0.8vw;
+    font-size:50%;
     border-color:  rgb(174, 255, 191);
+    padding: 20px;
+    display: grid;
+    place-content: center;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 750px) {
     
+    .bEdit {
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 10%;
+        width: 16%;
+
+    }
+    .bDelete{
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 10%;
+        width: 16%;
+    }
+    .buttons{
+        margin-left: 10%;
+    }
+    .description{
+        margin: 5% 5% 5% 12%;
+        font-size: 0.8em;
+        text-align: left;
+    }
+    .titleNew{
+        font-size: 1em;
+        text-align: center;
+        margin: 10% 10% 10% 20%;
+    }
+    .imgNew{
+        height: auto;
+        margin-left: 5%;
+    }
+    .subtitlesDetail{
+        font-size: 0.8em;
+        text-align: center;
+    }
   }

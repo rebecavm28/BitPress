@@ -14,7 +14,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <button className='navbar_link violet' onClick={handleLogout}>
+    <button className='navbar_link violet' style={{marginTop:"5em"}} onClick={handleLogout}>
       Logout
     </button>
   );
