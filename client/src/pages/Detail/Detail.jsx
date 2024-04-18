@@ -24,7 +24,7 @@ const Detail = () => {
   }, [id_news]);
 
   return (
-    <div>
+    <div className="boxPincipalDetail">
       {data ? (
         <div className="chargingBox">
           <h2 className="titleNew">{data.tittle}</h2>

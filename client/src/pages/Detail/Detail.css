@@ -1,13 +1,17 @@
-.details_box{
-    margin-left: 66px;
-    background-color: blanchedalmond;
-}
 
+.boxPincipalDetail{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.subtitlesDetail{
+    margin-top: 0;
+}
 /* Pantalla decarga */
 
 .chargingBox{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: grid;
     place-items: center;
     color: antiquewhite;
@@ -23,12 +27,6 @@
     border-radius:20px;
     box-shadow: 0 0 35px rgb(253, 249, 249);
 }
-
-/* Descripción, Párrafo de la noticia */
-
-/* .textDetail{
-    word-wrap: break-word;
-} */
 
 .textDetail{
     text-align: justify;

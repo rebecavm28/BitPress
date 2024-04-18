@@ -1,13 +1,12 @@
 footer{
     background-color: #FFFCEF;
-    height: 5%;
+    height: 20px;
     display: grid;
     place-content: center;
-    /* position:fixed; */
-    left:0px;
-    right:0px;
-    bottom:0px;
+    width: 100%;
+    margin-bottom: 0;
     padding: 20px;
+    margin-top: auto;
 }
 
 .copyrigth{
