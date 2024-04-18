@@ -1,6 +1,7 @@
 import { SesionData } from "../interfaces/interface";
 import NewsModel from "../models/NewModel";
 import { Request, Response } from "express";
+import UserModel from "../models/UserModel";
 
 export const getAllNews = async(request: Request, response: Response )=>{
     try {
@@ -43,9 +44,22 @@ export const updateNews = async(request: Request, response: Response)=>{
 export const showOneNews = async(request: Request, response: Response) => {
     const idNews = request.params.id;
     try {
-        const oneNew = await NewsModel.findOne({ where: { id_news: Number(idNews) } });
-        return response.status(200).json(oneNew);
+        const oneNew:any = await NewsModel.findOne({ where: { id_news: Number(idNews) } });
+        const oneUser:any= await UserModel.findOne({ where: { id: Number(oneNew.user_id) } });
+        const oneNewUser= {...oneNew, author: oneUser.name}
+        return response.status(200).json(oneNewUser);
     } catch (error: any) {
         return response.status(500).json({ message: 'error to show the', error: error.message });
     }
 }
+
+
+
+
+
+
+
+
+
+
+

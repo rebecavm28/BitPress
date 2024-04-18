@@ -11,12 +11,11 @@ function getToken(){
   };
   return headers
 }
+
 //GET
- 
 export const getNew = async () => {
   try {
     const headers = getToken()
-    console.log(headers)
     const response = await axios.get(url, {headers});
     return response.data
   } catch (error) {
@@ -24,10 +23,9 @@ export const getNew = async () => {
     throw error;
   }
 };
-
 //POST
 
-export const postNew = async (data, token) => {
+export const postNew = async (data) => {
  
   try {
     const headers = getToken()
@@ -76,7 +74,7 @@ export const updateData = async (data, id_news) => {
 export const getNewById = async (id) => {
   try {
     const headers = getToken()
-    const response = await axios.get(`${url}/${id}`, {headers});
+    const response = await axios.get(`${url}/${id}`,{headers});
     return response;
   } catch (error) {
     console.error('Error get new', error.message);
