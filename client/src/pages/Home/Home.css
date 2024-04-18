@@ -68,6 +68,18 @@
     .slogan{
         margin-left: 10%;
     }
+    .home_tittle_1{
+        font-size: 3em;
+    }
+    .home_tittle_2{
+        font-size: 4em;
+    }
+    .home_color_back,
+    .home_blur_effect {
+        width: 60vw; 
+        height: 30vw;
+        margin-left: 10%
+    }
     .home_socialbox {
         margin-left: 20%; 
     }
