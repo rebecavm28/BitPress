@@ -16,7 +16,9 @@ Bienvenido a nuestro proyecto BitPress fullstack el proyecto se trata de una apl
 
 La página de inicio tiene una estructura básica pero visualmente atractiva,con las opiones de regiter y login ubicados en la parte izquierda en el que según seas admi o users te redirigira a tus opciones.
 
-FOTOS DEL REGISTER Y LOGIN 
+(![home](https://github.com/rebecavm28/BitPress/assets/152180505/1d103cbd-2bd8-4acb-b027-031304c47087)
+)
+
 
 
 ## TECNOLOGIAS 
@@ -59,43 +61,11 @@ npm i -D jest ts-jest supertest @types/jest
 npx ts-jest config:init
 ```
 
-El comando anterior crea este archivo 📄 jest.config.js 👇 que podemos
-modificar en función de nuestras necesidades, abajo te indico con ✏ las líneas
-extra
 
-```
-/** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  testMatch: ["**/**/*.test.ts"], // Si no tenemos carpeta de 
-  verbose: false,
-  forceExit: true,
-};
-```
-
-
-El comando anterior crea este archivo 📄 jest.config.js 👇 que podemos
-modificar en función de nuestras necesidades, abajo te indico con ✏ las líneas
-extra
-```
-/** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
- preset: 'ts-jest',
- testEnvironment: 'node',
- testMatch: ["**/**/*.test.ts"], // Si no tenemos carpeta de 
- verbose: false,
- forceExit: true,
-};
-```
-En nuestro caso lo dejaremos asi ☝
-
-Vamos a crear nuestro Script de test npm run test
-📄 package.json
- "test": "jest --detectOpenHandles --silent --verbose"
-4️⃣creamos la carpeta de 📂 __test__
-y ahora a testear.
-
+(![todos-los-test](https://github.com/rebecavm28/BitPress/assets/152180505/a56b4fc4-d0c4-4bc2-9d43-97d9b37ca897)
+)
+(![test](https://github.com/rebecavm28/BitPress/assets/152180505/c6ef5f1b-3fe2-4db3-8326-b7f38dd33462)
+)
 
 ## DOCUMENTACION DE POSTMAN
 https://documenter.getpostman.com/view/32563781/2sA3BkbYME
