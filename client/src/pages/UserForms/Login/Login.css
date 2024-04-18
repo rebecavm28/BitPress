@@ -1,16 +1,58 @@
+.Login {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.FormLogin {
+    display: flex;
+    place-items: center;
+    width: 70vw;
+    height: 75vh;
+    border: 2px solid #FFFCEF;
+    border-radius:20px;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    margin-left: 17vw;
+    justify-content: space-between;
+}
+
+.formulary_text{
+    color: #AEFFBF;
+    margin-top: -45vw;
+    justify-items: center;
+}
+
+.formulary{
+    width: 25vw;
+    margin-left: 57vw;
+}
+
+h3 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.register_option_changer{
+    background-color: #c4a3f000;
+    border-radius: 10px;
+    color: #C5A3F0;
+    font-size: 12px;
+}
+
+/* 
 .formulary_section{
     display: flex;
     border-radius: 15px;
     place-content: center;
     margin: 40px;
-}
+} */
 
-.formulary{
+/* .formulary{
     display: flex;
     border: 2px solid #FFFCEF;
     border: 2px solid #FFFCEF;
     border-radius: 15px;
-}
+} */
 
 .register,
 .login {
@@ -54,3 +96,4 @@
 .login [type="submit"]:hover {
     background-color: #AEFFBF;
 }
+

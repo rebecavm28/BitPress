@@ -36,15 +36,19 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form className="register" onSubmit={handleSubmit(onSubmit)}> {/* Pasar onSubmit como el manejador del evento onSubmit */}
-        <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
-        <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
-        <button type="submit">Login</button>
-      </form>
-      <div className="formulary_text">
+    <div className="Login"> 
+      <div className="FormLogin">
+         <form className="register" onSubmit={handleSubmit(onSubmit)}> {/* Pasar onSubmit como el manejador del evento onSubmit */}
+           <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
+           <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
+           <button type="submit">Login</button>
+         </form>
+      </div>
+      <div className="formulary">
+        <div className="formulary_text">
                 <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
                 <button className='register_option_changer'>Aún no tengo una cuenta</button>
+        </div>
       </div>
     </div>
   );
