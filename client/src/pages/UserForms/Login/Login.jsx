@@ -37,18 +37,32 @@ const Login = () => {
 
   return (
     <div>
-      <form className="register" onSubmit={handleSubmit(onSubmit)}>
-        <input type="email" name='email' {...register('email',{ required: true })} className="register_email" placeholder="Email" required/>
-        {errors.email && <p className="error-message">Por favor, añade un email</p>}
-        <input type="password" name='password' {...register('password',{ required: true })} className="register_password" placeholder="Password" required/>
-        {errors.password && <p className="error-message">La contraseña es necesaria</p>}
-        <button type="submit">Login</button>
-      </form>
-      <div className="formulary_text">
-                <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
-                <button className='register_option_changer'>Aún no tengo una cuenta</button>
-      </div>
+    <form className="register" onSubmit={handleSubmit(onSubmit)}>
+      <input type="email" name='email' {...register('email', { 
+        required: "El correo electrónico es requerido",
+        pattern: {
+          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+          message: "El correo electrónico no es válido"
+        }
+      })} className="register_email" placeholder="Email" />
+      {errors.email && <p className="error-message">{errors.email.message}</p>}
+
+      <input type="password" name='password' {...register('password', { 
+        required: "La contraseña es requerida",
+        minLength: {
+          value: 8,
+          message: "La contraseña debe tener al menos 8 caracteres"
+        }
+      })} className="register_password" placeholder="Password" />
+      {errors.password && <p className="error-message">{errors.password.message}</p>}
+
+      <button type="submit">Login</button>
+    </form>
+    <div className="formulary_text">
+      <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
+      <button className='register_option_changer'>Aún no tengo una cuenta</button>
     </div>
+  </div>
   );
 };
 
