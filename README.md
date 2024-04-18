@@ -102,10 +102,10 @@ https://documenter.getpostman.com/view/32563781/2sA3BkbYME
 
 
 ## DESARROLLADORAS 
-- Nhoeli (Scrum Master)
-- Triana (Product Owner)
-- Rebeca (Developer)
-- Lucero (Developer)
-- Estefania (Developer)
-- Andrea (Developer)
+- [Nhoeli](https://github.com/Nho89) (Scrum Master)
+- [Triana](https://github.com/TrianaSolerMartin) (Product Owner)
+- [Rebeca](https://github.com/rebecavm28)(Developer)
+- [Lucero](https://github.com/LuHeRiver) (Developer)
+- [Estefania](https://github.com/EstefanyBatPel) (Developer)
+- [Andrea](https://github.com/Andreamartinn17) (Developer)
 
