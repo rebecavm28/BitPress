@@ -1,21 +1,25 @@
-.formulary_section{
+.formulary_section {
     display: flex;
-    border-radius: 15px;
-    place-content: center;
-    margin: 40px;
+    border-radius: 1.5em;
 }
 
-.formulary{
+.formulary {
     display: flex;
-    border: 2px solid #FFFCEF;
-    border: 2px solid #FFFCEF;
-    border-radius: 15px;
+    border: 0.125em solid #FFFCEF;
+    border-radius: 1.5em;
+    padding: 2.5%;
+}
+
+.login_option {
+    color: #AEFFBF;
+    text-align: center;
+    font-size: 2.5vw;
 }
 
 .register,
 .login {
-    width: 300px;
-    margin: 0 30px;
+    width: 20%;
+    margin: 0 3%;
     display: grid;
     place-content: center;
 }
@@ -23,10 +27,10 @@
 .register input,
 .login input {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #FFFCEF;
-    border-radius: 30px;
+    padding: 1.25%;
+    margin: 1% 0;
+    border: 0.0625em solid #FFFCEF;
+    border-radius: 3em;
     box-sizing: border-box;
     background-color: transparent;
     color: #FFFCEF;
@@ -35,13 +39,24 @@
 .register button,
 .login button {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
+    padding: 1.25%;
+    margin: 1% 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 1em;
     color: #000;
     font-weight: bold;
     cursor: pointer;
+}
+
+.login_option_changer {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFCEF;
+    font-size: 1.25vw;
+    text-decoration: underline;
 }
 
 .register [type="submit"],

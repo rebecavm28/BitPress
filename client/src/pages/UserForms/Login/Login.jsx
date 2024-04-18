@@ -36,7 +36,8 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className='formulary_section'>
+    <div className="formulary">
     <form className="register" onSubmit={handleSubmit(onSubmit)}>
       <input type="email" name='email' {...register('email', { 
         required: "El correo electrónico es requerido",
@@ -60,8 +61,9 @@ const Login = () => {
     </form>
     <div className="formulary_text">
       <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
-      <button className='register_option_changer'>Aún no tengo una cuenta</button>
+      <button className='login_option_changer'>Aún no tengo una cuenta</button>
     </div>
+  </div>
   </div>
   );
 };
