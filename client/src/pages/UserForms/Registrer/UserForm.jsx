@@ -36,12 +36,12 @@ const { setIsAuthenticated } = useUserContext();
 
 
             <form className="register" onSubmit={handleSubmit(onSubmit)}>
-                <input name='name' {...register('name', { 
+                <input name='name' type='text'{...register('name', { 
         required: "El nombre es requerido",
-        pattern: {value: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
+        pattern: {value: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/i,
           message: "El nombre es requerido"
         }
-      })} className="register_username" placeholder="Username" required/>
+      })} className="register_name" placeholder="Name" required/>
             {errors.name && <p className="error-message">{errors.name.message}</p>}
 
                 <input type="email" name='email' {...register('email',{ 
@@ -56,8 +56,8 @@ const { setIsAuthenticated } = useUserContext();
             <input type="password" name='password' {...register('password', { 
         required: "La contraseña es requerida",
         minLength: {
-          value: 8,
-          message: "La contraseña debe tener al menos 8 caracteres"
+          value: 2,
+          message: "La contraseña debe tener al menos 2 caracteres"
         }
       })} className="register_password" placeholder="Password" />
       {errors.password && <p className="error-message">{errors.password.message}</p>}

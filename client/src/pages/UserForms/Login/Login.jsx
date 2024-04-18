@@ -50,8 +50,8 @@ const Login = () => {
       <input type="password" name='password' {...register('password', { 
         required: "La contraseña es requerida",
         minLength: {
-          value: 8,
-          message: "La contraseña debe tener al menos 8 caracteres"
+          value: 2,
+          message: "La contraseña debe tener al menos 2 caracteres"
         }
       })} className="register_password" placeholder="Password" />
       {errors.password && <p className="error-message">{errors.password.message}</p>}
