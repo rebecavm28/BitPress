@@ -26,13 +26,13 @@
 
 /* Descripción, Párrafo de la noticia */
 
-.textDetail{
+/* .textDetail{
     word-wrap: break-word;
-}
+} */
 
 .textDetail{
     text-align: justify;
-    margin-right: 8%;
+    margin-right: 0%;
 }
 
 .description{
@@ -42,6 +42,7 @@
 
 .titleNew{
     font-size: 35px;
+    margin: 5% 5% 5% 7%;
 }
 
 .buttons{
@@ -97,13 +98,11 @@
         width: 16%;
     }
     .buttons{
-        margin-left: 10%;
+        margin-left: 13%;
     }
     .description{
-        margin: 5% 5% 5% 12%;
         font-size: 0.8em;
-        text-align: left;
-    }
+            }
     .titleNew{
         font-size: 1em;
         text-align: center;
@@ -116,5 +115,10 @@
     .subtitlesDetail{
         font-size: 0.8em;
         text-align: center;
+    }
+    .textDetail{
+        font-size: 0.8em;
+        text-align: justify;
+        margin-left: 13%;
     }
   }
