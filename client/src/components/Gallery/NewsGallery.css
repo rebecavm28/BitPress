@@ -13,6 +13,7 @@ body{
     width: 90%;
     display: flex;
     flex-wrap: wrap;
+    margin-left: 10%;
     gap: 5%;
    
 }
@@ -31,7 +32,6 @@ body{
     
     .news_container{
         grid-template-columns: 1fr 1fr;
-        grid-gap: 0;
     }
 }
 
