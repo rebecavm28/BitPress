@@ -6,8 +6,8 @@ import { useUserContext } from '../../../context/UserContext'
 
 const UserForm = () => {
 const navigate = useNavigate();
-const { setIsAuthenticated } = useUserContext();
-
+/* const { setIsAuthenticated } = useUserContext();
+ */
   const { register, handleSubmit, formState: { errors } } = useForm()
   
   const onSubmit = async (data) =>{
@@ -17,8 +17,8 @@ const { setIsAuthenticated } = useUserContext();
         const {token, rol} = response.sesiondata;
         localStorage.setItem('token', token);
         localStorage.setItem('rol', rol);
-        setIsAuthenticated(true);
-        navigate('login');
+        /* setIsAuthenticated(true); */
+        navigate('/');
     } catch (error) {
         console.error(error)
     }
