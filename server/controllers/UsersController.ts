@@ -9,8 +9,7 @@ import {Model} from 'sequelize'
 //Registro
 export const registerUser = async ( request :Request ,response:Response)=>{
   try { 
-      const{email,name, password, rol} = request.body;//extraemos name , email y password
-      //encriptar contraseña:
+      const{email,name, password, rol} = request.body;
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = {email, name, password: hashedPassword, rol};
       const userData: Model<UserAttributes> = await UserModel.create(newUser);

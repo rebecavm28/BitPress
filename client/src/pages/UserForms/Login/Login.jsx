@@ -1,14 +1,14 @@
 import {useEffect} from 'react';
 import './Login.css';
 import { useForm } from 'react-hook-form';
-import { loginUser } from '../../../services/authService'; // Cambio de nombre para evitar conflicto de nombres
-import { useNavigate } from 'react-router-dom'; // "React-rout-dom" => "react-router-dom" (cambio en el nombre de la importación)
-import { useUserContext } from '../../../context/UserContext'; // Corregir la ruta de importación
+import { loginUser } from '../../../services/authService';
+import { useNavigate } from 'react-router-dom';
+import { useUserContext } from '../../../context/UserContext';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const { setIsAuthenticated, isAuthenticated, setIdUser } = useUserContext();
+  const { setIsAuthenticated, isAuthenticated, setIdUser, setRol } = useUserContext();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -27,7 +27,8 @@ const Login = () => {
       localStorage.setItem('rol', rol);
       localStorage.setItem('id_user', id_user);
       setIsAuthenticated(true);
-      setIdUser(id_user)
+      setIdUser(id_user);
+      setRol(rol);
       navigate('/dashboard'); 
     } catch (error) {
       console.error('Error:', error);
@@ -36,7 +37,7 @@ const Login = () => {
 
   return (
     <div>
-      <form className="register" onSubmit={handleSubmit(onSubmit)}> {/* Pasar onSubmit como el manejador del evento onSubmit */}
+      <form className="register" onSubmit={handleSubmit(onSubmit)}>
         <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
         <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
         <button type="submit">Login</button>

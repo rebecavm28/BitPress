@@ -33,6 +33,7 @@
     -webkit-text-stroke: 5px transparent;
     background: linear-gradient(45deg, #7333FB, #F32972);
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .color_back{

@@ -36,32 +36,31 @@ const AddForm = () => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}> 
                 <div className='formFields'>
-                    <label htmlFor="tittle"className='addTitle'>Title</label>
-                    <input type="text" id="tittle" name="title" {...register('tittle', { 
+                    <label htmlFor="tittle"className='addTitle'>Título</label>
+                    <input type="text" id="tittle" name="tittle" {...register('tittle', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  100 
                     })}/>
-                    {errors.title?.type === 'required' && <p className="error-message">Please, add the title of the new</p>}
-                </div>
+                    {errors.tittle && <p className="error-message">Por favor, añade un título</p>}                </div>
                 <div className='formFields'>
-                    <label htmlFor="image"className='image'>Imagen</label>
-                    <input type="url" id="image" name="imageUrl" {...register('imageUrl', { 
+                    <label htmlFor="imageUrl"className='image'>Imagen</label>
+                    <input type="url" id="imageUrl" name="imageUrl" {...register('imageUrl', { 
                         pattern: /^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$/,
                         required: true 
                     })}/>
-                    {errors.image?.type === 'required' && <p className="error-message">Please, add the image of the new</p>}
-                </div>
+                    {errors.imageUrl && <p className="error-message">Por favor, añade una imagen válida</p>}                </div>
                 <div className='formFields'>
-                    <label htmlFor='publicationDate' className='publicationDate'>Publication Date</label>
-                    <input type='date' id='publicationDate' name='publicationDate' {...register('date',{required:true})} />
+                    <label htmlFor='date' className='publicationDate'>Fecha de publicación</label>
+                    <input type='date' id='date' name='date' {...register('date',{required:true})} />
                 </div>
+                {errors.publicationDate && <p className="error-message">Por favor, añade una fecha válida</p>}
                 <div className='formFields'>
-                    <label htmlFor="content"className='addDescription'>Description</label>
-                    <input type="text" id="description" name="content"{...register('content', { 
+                    <label htmlFor="content"className='addDescription'>Descripción</label>
+                    <input type="text" id="content" name="content"{...register('content', { 
                         pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                         required: true, maxLength:  1000 
                     })}/>
-                    {errors.description?.type === 'required' && <p className="error-message">Please, add the description of the new</p>}
+                    {errors.content && <p className="error-message">La descripción es requerida</p>}
                 </div>
                 <input className="buttonAdd" type="submit" value="ADD NEW"/>
             </form>

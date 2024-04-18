@@ -1,6 +1,5 @@
 import SocialBox from '../../components/SocialBox/SocialBox';
 import './Home.css'
-//import NewsGallery from '../../components/Gallery/NewsGallery'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {

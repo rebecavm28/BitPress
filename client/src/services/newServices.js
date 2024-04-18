@@ -1,8 +1,5 @@
 import axios from "axios";
 
-//export const url = 'http://localhost:3000'
-//url de la base de datos = 'http://localhost:5000/api'
-
 
 export const url = 'http://localhost:5000/api/news';
 
@@ -62,22 +59,10 @@ export const deleteData = async (id_news) =>{
 
 //UPDATE
 
-/* export const updateData = async (id, newData) => {
-  console.log("modifying");
-  const response = await fetch(`${url}/news/${id}`, {
-    method: "PUT",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(newData)
-  });
-  const data = await response.json();
-  return data;
-}; */
-export const updateData = async (data) => {
+export const updateData = async (data, id_news) => {
   try {
     const headers = getToken()
-    let urlId = 	`${url}/${data.id_news}`;
+    let urlId = 	`${url}/${id_news}`;
     const response = await axios.put(urlId, data, {headers});
     alert('Noticia actualizada');
     return response;
