@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../../context/UserContext';
 
 const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
   const { setIsAuthenticated, isAuthenticated, setIdUser, setRol } = useUserContext();
 
@@ -38,8 +38,10 @@ const Login = () => {
   return (
     <div>
       <form className="register" onSubmit={handleSubmit(onSubmit)}>
-        <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
-        <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
+        <input type="email" name='email' {...register('email',{ required: true })} className="register_email" placeholder="Email" required/>
+        {errors.email && <p className="error-message">Por favor, añade un email</p>}
+        <input type="password" name='password' {...register('password',{ required: true })} className="register_password" placeholder="Password" required/>
+        {errors.password && <p className="error-message">La contraseña es necesaria</p>}
         <button type="submit">Login</button>
       </form>
       <div className="formulary_text">
