@@ -15,7 +15,7 @@ const Home = () => {
               <div className="color_back"></div>
               <div className="blur_effect"></div>
             </div>
-            <div className="social_container">
+            <div className="home_socialbox">
           <SocialBox/>
           </div>
       </div>
