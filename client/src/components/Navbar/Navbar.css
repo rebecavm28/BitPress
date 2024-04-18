@@ -4,15 +4,27 @@
   }
    
    nav {
-    position: fixed; 
+    position:fixed; 
+    top: 0;
+    left: 0;
     background-color: #FFFCEF;
     height: 100%;
+    width: 80px;
+    z-index: 1000;
   }
   
   .list_box {
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    position: relative;
+  }
+  .buttons_nav{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 100%;
   }
   
   .navbar_link {
@@ -43,29 +55,31 @@
     box-shadow: 0px 0px 10px#2A2A2A;
   }
 
-  /* logo */
+  /* logo done */
 
   .logo_container{
-    height: 100px;
+    height: 100%;
+    display: flex;
+    align-items:flex-start;
   }
 
-  .image1, .image2 {
+  .logoImage{
     position: absolute;
     transition: transform 0.6s ease;
-  }
-  
-  .image1 {
-    width: 84px;
+    width: 80px;
     left: 0;
     overflow: hidden;
     z-index: 2;
   }
-  
-  .image2 {
-    width: 180px;
+  .logoText{
+    position: absolute;
+    transition: transform 0.6s ease;
+    width: 176px;
     left: -96px;
     z-index: 1;
   }
+
+  
   
   .logo_container:hover .image2 {
     transform: translateX(97%); 

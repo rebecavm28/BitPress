@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../../context/UserContext';
 
 const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
   const { setIsAuthenticated, isAuthenticated, setIdUser, setRol } = useUserContext();
 
@@ -38,20 +38,37 @@ const Login = () => {
   return (
     <div className="Login"> 
       <div className="FormLogin">
+
          <form className="register" onSubmit={handleSubmit(onSubmit)}> {/* Pasar onSubmit como el manejador del evento onSubmit */}
-           <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" required/>
-           <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" required/>
+           <input type="email" name='email' {...register('email')} className="register_email" placeholder="Email" {...register('email', { 
+        required: "El correo electrónico es requerido",
+        pattern: {
+          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+          message: "El correo electrónico no es válido"
+        }
+      })}/>
+      {errors.email && <p className="error-message">{errors.email.message}</p>}
+      
+      <input type="password" name='password' {...register('password')} className="register_password" placeholder="Password" {...register('password', { 
+              required: "La contraseña es requerida",
+              minLength: {
+              value: 2,
+              message: "La contraseña debe tener al menos 2 caracteres"
+              }
+            })}/>
+            {errors.password && <p className="error-message">{errors.password.message}</p>}
+            
            <button type="submit">Login</button>
          </form>
-      </div>
-      <div className="formularyy">
-        <div className="text_formulary">
-                <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
-                <button className='login_option_changer' onClick={() => navigate(`/register`)}>Aún no tengo una cuenta</button>
+
         </div>
-      </div>
-    </div>
-  );
-};
+          <div className="formularyy">
+            <div className="text_formulary">
+              <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
+              <button className='login_option_changer' onClick={() => navigate(`/register`)}>Aún no tengo una cuenta</button>
+            </div>
+          </div>
+        </div>
+  )};
 
 export default Login;
