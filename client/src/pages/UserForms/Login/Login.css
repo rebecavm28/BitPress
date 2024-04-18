@@ -1,11 +1,10 @@
 .formulary_section {
-    display: flex;
     border-radius: 1.5em;
     margin: 5% 0;
+    display: wrap;
 }
 
 .formulary {
-    display: flex;
     border: 0.125em solid #FFFCEF;
     border-radius: 1.5em;
     padding: 2.5%;
@@ -19,7 +18,7 @@
     font-size: 2.5vw;
 }
 
-.register,
+.Login,
 .login {
     width: 20%;
     margin: 0 3%;
@@ -27,7 +26,7 @@
     place-content: center;
 }
 
-.register input,
+.login input,
 .login input {
     width: 100%;
     padding: 1.25%;
@@ -41,9 +40,8 @@
 
 .login_option{
     color: #AEFFBF;
-    font-size: 27px;
     text-align: center;
-    font-size: 35px;
+    font-size: 2.5vw;
 }
 
 .login_option_changer{
@@ -87,4 +85,28 @@
 .register [type="submit"]:hover,
 .login [type="submit"]:hover {
     background-color: #AEFFBF;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 800px){
+    .formulary_section {
+        flex-direction: column;
+    }
+
+    .login_option,
+    .login_option_changer{
+        font-size: 100%;
+    }
+
+    .login input,
+    .login button{
+        width: 120%;
+    }
+
+    .formulary,
+    .login
+    .register,
+    .social {
+        width: 80%;
+        margin: 20px;
+    }
 }
