@@ -9,7 +9,6 @@ const Home = () => {
 
   return (
       <div className='home_container'>
-        <main>
           {/* <div className="news_carrousel"></div> */}
             <div className="slogan">
               <h3 className='tittle_1'>THE BEST</h3>
@@ -17,12 +16,9 @@ const Home = () => {
               <div className="color_back"></div>
               <div className="blur_effect"></div>
             </div>
-          {/* <div className="circle_button">
-            <h2 className='button_letters' onClick={() => navigate(`/add`)} >AÑADIR NOTICIA</h2>
-          </div> */}
+            <div className="social_container">
           <SocialBox/>
-        </main>
-        
+          </div>
       </div>
   )
 }

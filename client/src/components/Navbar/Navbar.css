@@ -6,9 +6,13 @@
    nav {
     /* Orientación al revés */
     position: fixed; 
+    top: 0;
+    left: 0;
     /* Hace que la navbar solo ocupe el tamaño del texto*/
     background-color: #FFFCEF;
     height: 100%;
+    /* width: 100%; */
+    z-index: 1000;
   }
   
   .list_box {
@@ -48,7 +52,9 @@
   /* logo */
 
   .logo_container{
-    height: 100px;
+    height: 100%;
+    display: flex;
+    align-items:flex-start;
   }
 
   .image1, .image2 {
@@ -57,14 +63,14 @@
   }
   
   .image1 {
-    width: 84px;
+    width: 80px;
     left: 0;
     overflow: hidden;
     z-index: 2;
   }
   
   .image2 {
-    width: 180px;
+    width: 170px;
     left: -96px;
     z-index: 1;
   }
