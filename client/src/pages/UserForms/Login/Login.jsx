@@ -44,8 +44,8 @@ const Login = () => {
            <button type="submit">Login</button>
          </form>
       </div>
-      <div className="formulary">
-        <div className="formulary_text">
+      <div className="formularyy">
+        <div className="text_formulary">
                 <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
                 <button className='register_option_changer'>Aún no tengo una cuenta</button>
         </div>
