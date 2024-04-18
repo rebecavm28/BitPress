@@ -3,8 +3,7 @@ import { useForm} from 'react-hook-form'
 import { registerUser } from '../../../services/authService'
 import { useNavigate } from 'react-router-dom'
 import { useUserContext } from '../../../context/UserContext'
-/* import { Link } from 'react-router-dom'
- */
+
 const UserForm = () => {
 const navigate = useNavigate();
 const { setIsAuthenticated } = useUserContext();
@@ -31,7 +30,7 @@ const { setIsAuthenticated } = useUserContext();
 
             <div className="formulary_text">
                 <h3 className="registrer_option">¿Quieres  ser miembro de nuestra web de noticias?</h3>
-                {/* <Link to="/register/login"> */}<button className='registrer_option_changer' >Ya tengo una cuenta</button>{/* </Link> */}
+                <button className='registrer_option_changer' >Ya tengo una cuenta</button>
             </div>
 
 
