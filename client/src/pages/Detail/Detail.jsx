@@ -33,7 +33,7 @@ const Detail = () => {
             <p><span className="author">User: </span>{data.user}<span className="date"> | Date: </span>{new Date(data.date).toLocaleDateString()}</p>
             <h3 className="subDescrip">DESCRIPTION:</h3>                             
             <div className="description">
-              <p>{data.content}</p>
+              <p className="textDetail">{data.content}</p>
             </div>
             <div className="buttons">
             {rol == 'admin' &&(

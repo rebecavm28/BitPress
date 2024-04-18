@@ -12,19 +12,20 @@ const Navbar = () => {
   
   return (
     <nav>
-      <div className="logo_container" onClick={() => navigate(`/dashboard`)}>
-        <img src={logo} alt="" className='image1'/>
-        <img src={texto} alt="" className='image2'/>
-      </div>
-      <div className="list_box">
-        {isAuthenticated ? (
-          <LogoutButton />
-        ) : (
-          <div className="buttons_nav">
-            <button className='navbar_link violet' onClick={() => navigate('/login')}>Login</button>
-            <button className='navbar_link cream' onClick={() => navigate('/register')}>Register</button>
-          </div>
-        )}
+      <div className="logo_container" >
+        <img src={logo} alt="" className='logoImage'onClick={() => navigate(`/dashboard`)}/>
+        <img src={texto} alt="" className='logoText'/>
+      
+        <div className="list_box">
+            {isAuthenticated ? (
+              <LogoutButton />
+            ) : (
+              <div className="buttons_nav">
+                <button className='navbar_link violet' onClick={() => navigate('/login')}>Login</button>
+                <button className='navbar_link cream' onClick={() => navigate('/register')}>Register</button>
+              </div>
+            )}
+        </div>
       </div>
     </nav>
   );

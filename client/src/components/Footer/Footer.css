@@ -3,9 +3,22 @@ footer{
     height: 55px;
     display: grid;
     place-content: center;
+    position:fixed;
+    left:0px;
+    right:0px;
+    bottom:0px;
 }
 
 .copyrigth{
     margin: 0;
     font-size: large;
+}
+@media (max-width: 750px) {
+    .copyrigth{
+        font-size: small;
+        margin-left: 15%;
+    }
+    .footer{
+        
+    }
 }
