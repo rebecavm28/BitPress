@@ -1,6 +1,7 @@
 .formulary_section {
     display: flex;
     border-radius: 1.5em;
+    margin: 5% 0;
 }
 
 .formulary {
