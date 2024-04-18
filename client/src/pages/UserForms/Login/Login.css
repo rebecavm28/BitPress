@@ -1,62 +1,27 @@
-.Login {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.FormLogin {
+.formulary_section {
     display: flex;
-    place-items: center;
-    width: 70vw;
-    height: 75vh;
-    border: 2px solid #FFFCEF;
-    border-radius:20px;
-    margin-top: 5vw;
-    margin-bottom: 5vw;
-    margin-left: 17vw;
-    justify-content: space-between;
+    border-radius: 1.5em;
 }
 
-.text_formulary{
+.formulary {
+    display: flex;
+    border: 0.125em solid #FFFCEF;
+    border-radius: 1.5em;
+    padding: 2.5%;
+    place-content: center;
+
+}
+
+.login_option {
     color: #AEFFBF;
-    margin-top: -45vw;
-    justify-items: center;
-}
-
-.formularyy{
-    width: 25vw;
-    margin-left: 57vw;
-    margin-top: 17vw;
-}
-
-h3 {
-    font-size: 25px;
     text-align: center;
+    font-size: 2.5vw;
 }
-
-.login_option{
-    color: #AEFFBF;
-    font-size: 27px;
-    text-align: center;
-    font-size: 35px;
-}
-
-.login_option_changer{
-    border: none;
-    outline: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    color: #FFFCEF;
-    font-size: 25px;
-    text-decoration: underline;
-    margin-left: 4vw;
-}
-
 
 .register,
 .login {
-    width: 300px;
-    margin: 0 30px;
+    width: 20%;
+    margin: 0 3%;
     display: grid;
     place-content: center;
 }
@@ -64,10 +29,10 @@ h3 {
 .register input,
 .login input {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #FFFCEF;
-    border-radius: 30px;
+    padding: 1.25%;
+    margin: 1% 0;
+    border: 0.0625em solid #FFFCEF;
+    border-radius: 3em;
     box-sizing: border-box;
     background-color: transparent;
     color: #FFFCEF;
@@ -92,15 +57,24 @@ h3 {
 
 .login button{
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
+    padding: 1.25%;
+    margin: 1% 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 1em;
     color: #000;
     font-weight: bold;
     cursor: pointer;
-    width: 450px;
-    font-size: 20px;
+}
+
+.login_option_changer {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFCEF;
+    font-size: 1.25vw;
+    text-decoration: underline;
 }
 
 .register [type="submit"],
@@ -112,7 +86,4 @@ h3 {
 .register [type="submit"]:hover,
 .login [type="submit"]:hover {
     background-color: #AEFFBF;
-}
-
-@media only screen and (min-width: 300px) and (max-width: 1200px){
 }
