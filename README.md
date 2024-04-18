@@ -14,7 +14,7 @@ Bienvenido a nuestro proyecto BitPress fullstack el proyecto se trata de una apl
 
 ## ESTRUCTURA DEL PROYECTO 
 
-La página de inicio tiene una estructura básica pero visualmente atractiva,con las opiones de regiter y login ubicados en la parte izquierda en el que según seas admi o users te redirigira a tus opciones.
+La página de inicio cuenta con una estructura básica pero atractiva visualmente. Las opciones de "Register" y "Login" se encuentran ubicadas en la parte izquierda de la página. Dependiendo de si eres administrador o usuario, serás redirigido a tus respectivas opciones.
 
 (![home](https://github.com/rebecavm28/BitPress/assets/152180505/1d103cbd-2bd8-4acb-b027-031304c47087)
 )
