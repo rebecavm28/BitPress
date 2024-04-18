@@ -1,8 +1,5 @@
 import axios from "axios";
 
-//export const url = 'http://localhost:3000'
-//url de la base de datos = 'http://localhost:5000/api'
-
 
 export const url = 'http://localhost:5000/api/news';
 

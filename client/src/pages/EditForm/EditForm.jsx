@@ -50,29 +50,34 @@ const EditForm = () => {
         </div>
         <form onSubmit={handleSubmit(onSubmit)}> 
             <div className='formFields'>
-                <label htmlFor="title"className='editTitle'>Title</label>
-                <input type="text" id="title" name="title" {...register('tittle', { 
+                <label htmlFor="tittle"className='editTitle'>Título</label>
+                <input type="text" id="tittle" name="tittle" {...register('tittle', { 
                     pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                     required: true, maxLength:  100 
                 })}/>
+                {errors.tittle && <p className="error-message">Por favor, añade un título</p>}
             </div>
+            
             <div className='formFields'>
-                <label htmlFor="image"className='image'>Imagen</label>
-                <input type="url" id="image" name="image" {...register('imageUrl', { 
+                <label htmlFor="imageUrl"className='image'>Imagen</label>
+                <input type="url" id="imageUrl" name="imageUrl" {...register('imageUrl', { 
                     pattern: /^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$/,
                     required: true 
                 })}/>
+                {errors.imageUrl && <p className="error-message">Por favor, añade una imagen válida</p>} 
             </div>
             <div className='formFields'>
-            <label htmlFor="date"className='editDate'>Date</label>
+            <label htmlFor="date"className='editDate'>Fecha</label>
             <input {...register('dateFieldName')} type="date" />
+            {errors.publicationDate && <p className="error-message">Por favor, añade una fecha válida</p>}
             </div>
             <div className='formFields'>
-                <label htmlFor="description"className='editDescription'>Description</label>
-                <input type="text" id="description" name="description"{...register('content', { 
+                <label htmlFor="content"className='editDescription'>Descripción</label>
+                <input type="text" id="content" name="content"{...register('content', { 
                     pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\s\.,:;!¿¡?]+$/,
                     required: true, maxLength:  10000 
                 })}/>
+                {errors.content && <p className="error-message">La descripción es requerida</p>}
             </div>
             <input className="buttonEdit" type="submit" value="EDIT NEW"/>
         </form>
