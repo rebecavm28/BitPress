@@ -4,9 +4,7 @@
   }
    
    nav {
-    /* Orientación al revés */
     position: fixed; 
-    /* Hace que la navbar solo ocupe el tamaño del texto*/
     background-color: #FFFCEF;
     height: 100%;
   }

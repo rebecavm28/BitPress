@@ -12,7 +12,7 @@ const Navbar = () => {
   
   return (
     <nav>
-      <div className="logo_container" onClick={() => navigate(`/`)}>
+      <div className="logo_container" onClick={() => navigate(`/dashboard`)}>
         <img src={logo} alt="" className='image1'/>
         <img src={texto} alt="" className='image2'/>
       </div>

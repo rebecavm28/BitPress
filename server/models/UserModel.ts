@@ -35,6 +35,4 @@ export const UserModel = connection_db.define('user', {
       }
 );
 
-/* UserModel.hasMany(NewsModel,{foreignKey: "id_user"})
- */
 export default UserModel;
