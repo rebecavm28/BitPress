@@ -30,8 +30,8 @@ const Detail = () => {
           <h2 className="titleNew">{data.tittle}</h2>
           <img className="imgNew" src={data.imageUrl} alt="News Image" />
           <div className="subtitlesDetail">
-            <p><span className="author">User: </span>{data.user}<span className="date"> | Date: </span>{new Date(data.date).toLocaleDateString()}</p>
-            <h3 className="subDescrip">DESCRIPTION:</h3>                             
+            <p><span className="author">User </span>{data.user}<span className="date"> | Fecha: </span>{new Date(data.date).toLocaleDateString()}</p>
+            <h3 className="subDescrip">Descripción:</h3>                             
             <div className="description">
               <p className="textDetail">{data.content}</p>
             </div>

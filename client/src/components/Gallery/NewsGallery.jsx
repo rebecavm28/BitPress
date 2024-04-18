@@ -7,11 +7,11 @@ const NewsGallery = () => {
 
   return (
     <div className="gallery_container">
-      <div className="center">
-        <div className='news_container'>
+      {/* <div className="center"> */}
+        {/* <div className='news_container'> */}
           <New news={news}/>
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   )
 }

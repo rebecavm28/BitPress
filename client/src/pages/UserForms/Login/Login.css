@@ -1,16 +1,57 @@
-.formulary_section{
-    display: flex;
-    border-radius: 15px;
-    place-content: center;
-    margin: 40px;
+.Login {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-.formulary{
+.FormLogin {
     display: flex;
+    place-items: center;
+    width: 70vw;
+    height: 75vh;
     border: 2px solid #FFFCEF;
-    border: 2px solid #FFFCEF;
-    border-radius: 15px;
+    border-radius:20px;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    margin-left: 17vw;
+    justify-content: space-between;
 }
+
+.text_formulary{
+    color: #AEFFBF;
+    margin-top: -45vw;
+    justify-items: center;
+}
+
+.formularyy{
+    width: 25vw;
+    margin-left: 57vw;
+    margin-top: 17vw;
+}
+
+h3 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.login_option{
+    color: #AEFFBF;
+    font-size: 27px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.login_option_changer{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFCEF;
+    font-size: 25px;
+    text-decoration: underline;
+    margin-left: 4vw;
+}
+
 
 .register,
 .login {
@@ -32,8 +73,24 @@
     color: #FFFCEF;
 }
 
-.register button,
-.login button {
+.login_option{
+    color: #AEFFBF;
+    font-size: 27px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.login_option_changer{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    color: #FFFCEF;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.login button{
     width: 100%;
     padding: 10px;
     margin: 8px 0;
@@ -42,6 +99,8 @@
     color: #000;
     font-weight: bold;
     cursor: pointer;
+    width: 450px;
+    font-size: 20px;
 }
 
 .register [type="submit"],
@@ -53,4 +112,7 @@
 .register [type="submit"]:hover,
 .login [type="submit"]:hover {
     background-color: #AEFFBF;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1200px){
 }

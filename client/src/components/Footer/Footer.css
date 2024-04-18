@@ -1,13 +1,13 @@
 footer{
     background-color: #FFFCEF;
-    height: 55px;
+    height: 5%;
     display: grid;
     place-content: center;
     position:fixed;
     left:0px;
     right:0px;
     bottom:0px;
-    margin-top: 20%;
+    top: 95%;
 }
 
 .copyrigth{
