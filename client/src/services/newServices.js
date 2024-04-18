@@ -74,7 +74,7 @@ export const updateData = async (data, id_news) => {
 export const getNewById = async (id) => {
   try {
     const headers = getToken()
-    const response = await axios.get(`${url}/${id}`,{headers});
+    const response = await axios.get(`${url}/${id}`, {headers});
     return response;
   } catch (error) {
     console.error('Error get new', error.message);

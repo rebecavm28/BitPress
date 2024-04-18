@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from 'react';
-import { getNewById, deleteData } from '../../services/newServices'; // Asumiendo que existe una función deleteData en tu servicio
+import { getNewById, deleteData } from '../../services/newServices'; 
 import './Detail.css';
 import { useUserContext } from "../../context/UserContext";
 
