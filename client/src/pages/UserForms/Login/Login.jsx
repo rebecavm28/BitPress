@@ -48,14 +48,14 @@ const Login = () => {
       })} className="register_email" placeholder="Email" />
       {errors.email && <p className="error-message">{errors.email.message}</p>}
 
-      <input type="password" name='password' {...register('password', { 
-        required: "La contraseña es requerida",
-        minLength: {
-          value: 2,
-          message: "La contraseña debe tener al menos 2 caracteres"
-        }
-      })} className="register_password" placeholder="Password" />
-      {errors.password && <p className="error-message">{errors.password.message}</p>}
+           <input type="password" name='password' {...register('password', { 
+            required: "La contraseña es requerida",
+            minLength: {
+            value: 2,
+            message: "La contraseña debe tener al menos 2 caracteres"
+              }
+            })} className="register_password" placeholder="Password" />
+            {errors.password && <p className="error-message">{errors.password.message}</p>}
 
       <button type="submit">Login</button>
     </form>

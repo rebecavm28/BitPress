@@ -38,8 +38,24 @@
     color: #FFFCEF;
 }
 
-.register button,
-.login button {
+.login_option{
+    color: #AEFFBF;
+    font-size: 27px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.login_option_changer{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    color: #FFFCEF;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.login button{
     width: 100%;
     padding: 1.25%;
     margin: 1% 0;
