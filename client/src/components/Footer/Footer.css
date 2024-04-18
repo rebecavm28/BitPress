@@ -3,11 +3,11 @@ footer{
     height: 5%;
     display: grid;
     place-content: center;
-    position:fixed;
+    /* position:fixed; */
     left:0px;
     right:0px;
     bottom:0px;
-    top: 95%;
+    padding: 20px;
 }
 
 .copyrigth{
