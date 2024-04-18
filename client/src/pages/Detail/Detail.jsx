@@ -9,6 +9,7 @@ const Detail = () => {
   const [ data, setData ] = useState(null);
   const navigate = useNavigate();
   const{rol} = useUserContext();
+  // const {user, setUser} = useUserContext();
   console.log(rol)
   useEffect(() => {
     const fetchData = async () => {
