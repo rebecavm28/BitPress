@@ -1,34 +1,73 @@
 
+.social_container{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 2em;
+}
 .social_tittle{
     color: #AEFFBF;
     width: 12em;
-    text-align: center;
-    margin-left: 1.75em;
+    margin: 0;
+    font-size: 1.5em;
 }
 
 .instagram_box
 .linkedin_box{
     display: flex;
-    
+    align-items: center;
 }
 
 .social_links{
-    display: block;
     color: #FFFCEF;
-    margin: 1.875em 0;
-    font-size: 1.25em;
+    margin: 0 0.5em;
+    font-size: 1em;
     text-decoration: none;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .social_logo{
     color: #FFFCEF;
     margin: 0 0.5em;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+@media only screen and (max-width: 768px) {
+    .social_container {
+        grid-template-columns: 1fr; /* Cambia a una columna en pantallas pequeñas */
+        text-align: center; /* Centra el contenido en pantallas pequeñas */
+        padding: 1em; /* Ajusta el padding en pantallas pequeñas */
+        margin-bottom: 20px;
+    }
+    .social_links {
+        margin: 0.5em 0;
+        margin-bottom: 10px;
+    }
+
+    .linkedin_box,
+    .instagram_box {
+        flex-direction: column;
+        justify-content: center; /* Centra los elementos en pantallas pequeñas */
+    }
+
+    .social_logo {
+        margin: 0; /* Elimina el margen para que el logo esté completamente centrado */
+    }
+    body {
+        padding-bottom: 100px; /* Agrega espacio al final del cuerpo para evitar superposiciones con el footer */
+    }
+
+    footer {
+        position: fixed; /* Fija el footer en la parte inferior de la ventana */
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+    }
 }
 
-.socialmedia{
-    background-color: pink;
-}
-@media only screen and (min-width: 400px) and (max-width: 1200px){
+/* @media only screen and (min-width: 400px) and (max-width: 1200px){
     .formulary_section {
         flex-direction: column;
     }
@@ -58,4 +97,4 @@
     .social_links {
         font-size: 100%;
     }
-}
+} */
