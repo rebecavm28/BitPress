@@ -16,16 +16,16 @@ const Navbar = () => {
         <img src={logo} alt="" className='image1'/>
         <img src={texto} alt="" className='image2'/>
       </div>
-      <ul className='list_box'>
+      <div className="list_box">
         {isAuthenticated ? (
           <LogoutButton />
         ) : (
-          <>
-            <li><button className='navbar_link violet' onClick={() => navigate('/login')}>Login</button></li>
-            <li><button className='navbar_link cream' onClick={() => navigate('/register')}>Register</button></li>
-          </>
+          <div className="buttons_nav">
+            <button className='navbar_link violet' onClick={() => navigate('/login')}>Login</button>
+            <button className='navbar_link cream' onClick={() => navigate('/register')}>Register</button>
+          </div>
         )}
-      </ul>
+      </div>
     </nav>
   );
 };

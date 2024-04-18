@@ -4,8 +4,7 @@ import linkedin_logo from '../../assets/svg/linkedinCream.svg'
 
 const SocialBox = () => {
   return (
-    <div>
-      <div className="social_home">
+      <div className="social_container">
               <h2 className='social_tittle'>Síguenos en redes sociales</h2>
                   <div className="instagram_box">
                       <img className='social_logo' src={instagram_logo} alt="instagram logo" />
@@ -16,7 +15,6 @@ const SocialBox = () => {
                       <a className='social_links' href="http://" target="_blank" rel="noopener noreferrer">LinkedIn/Bitpress</a>
                   </div>
       </div>
-    </div>
   )
 }
 
