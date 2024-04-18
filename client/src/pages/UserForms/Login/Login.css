@@ -8,6 +8,8 @@
     border: 0.125em solid #FFFCEF;
     border-radius: 1.5em;
     padding: 2.5%;
+    place-content: center;
+
 }
 
 .login_option {
