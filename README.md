@@ -2,7 +2,7 @@
 
 Bienvenido a nuestro proyecto BitPress fullstack el proyecto se trata de una aplicación web de gestión de noticias con sistema de usuarios y roles, los usuarios podrán acceder con sesiones encriptadas y tendrán dos roles: administrador y usuario estándar. El proyecto tiene como objetivo proporcionar una plataforma donde los usuarios puedan interactuar con noticias, ya sea consultándolas como usuarios estándar o gestionándolas como administradores.
 
-## Indice
+## INDICE 
 
 - [ESTRUCTURA DEL PROYECTO](#ESTRUCTURA-DEL-PROYECTO)
 - [TECNOLOGÍAS](#TECNOLOGÍAS-UTILIZADAS)
@@ -12,7 +12,7 @@ Bienvenido a nuestro proyecto BitPress fullstack el proyecto se trata de una apl
 - [DESARROLLADORAS](#DESARROLLADORAS)
 
 
-## Estructura del proyecto
+## ESTRUCTURA DEL PROYECTO 
 
 La página de inicio tiene una estructura básica pero visualmente atractiva,con las opiones de regiter y login ubicados en la parte izquierda en el que según seas admi o users te redirigira a tus opciones.
 
