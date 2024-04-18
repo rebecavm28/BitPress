@@ -7,6 +7,7 @@ footer{
     left:0px;
     right:0px;
     bottom:0px;
+    margin-top: 20%;
 }
 
 .copyrigth{
@@ -18,7 +19,5 @@ footer{
         font-size: small;
         margin-left: 15%;
     }
-    .footer{
-        
-    }
+    
 }

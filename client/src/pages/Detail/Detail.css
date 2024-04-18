@@ -32,6 +32,7 @@
 
 .textDetail{
     text-align: justify;
+    margin-right: 8%;
 }
 
 .description{
@@ -83,32 +84,37 @@
 @media (max-width: 750px) {
     
     .bEdit {
-        padding: 25px;
+        padding: 20px;
         border-radius: 20px;
+        margin-bottom: 10%;
+        width: 16%;
 
     }
     .bDelete{
-        padding: 25px;
+        padding: 20px;
         border-radius: 20px;
+        margin-bottom: 10%;
+        width: 16%;
     }
     .buttons{
         margin-left: 10%;
     }
     .description{
-        padding: 10%;
+        margin: 5% 5% 5% 12%;
         font-size: 0.8em;
         text-align: left;
     }
     .titleNew{
         font-size: 1em;
         text-align: center;
-        margin: 10% 10% 10% 18%;
+        margin: 10% 10% 10% 20%;
     }
     .imgNew{
         height: auto;
+        margin-left: 5%;
     }
-    .subtitles{
+    .subtitlesDetail{
         font-size: 0.8em;
-        text-align: left;
+        text-align: center;
     }
   }
