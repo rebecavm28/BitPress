@@ -25,7 +25,7 @@ const Navbar = () => {
             <button className='navbar_link cream' onClick={() => navigate('/register')}>Register</button>
           </div>
         )}
-      </div>
+      </div> 
     </nav>
   );
 };
