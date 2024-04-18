@@ -30,7 +30,7 @@ const { setIsAuthenticated } = useUserContext();
 
             <div className="formulary_text">
                 <h3 className="registrer_option">¿Quieres  ser miembro de nuestra web de noticias?</h3>
-                <button className='registrer_option_changer'>Ya tengo una cuenta</button>
+                <button className='registrer_option_changer' onClick={() => navigate(`/login`)}>Ya tengo una cuenta</button>
             </div>
 
 
