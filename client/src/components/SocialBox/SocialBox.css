@@ -9,6 +9,7 @@
 .instagram_box
 .linkedin_box{
     display: flex;
+    
 }
 
 .social_links{
@@ -24,6 +25,9 @@
     margin: 0 0.5em;
 }
 
+.socialmedia{
+    background-color: pink;
+}
 @media only screen and (min-width: 400px) and (max-width: 1200px){
     .formulary_section {
         flex-direction: column;
