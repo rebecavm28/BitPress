@@ -1,61 +1,69 @@
 
+.social_container{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 2em;
+}
 .social_tittle{
     color: #AEFFBF;
     width: 12em;
-    text-align: center;
-    margin-left: 1.75em;
+    margin: 0;
+    font-size: 1.5em;
 }
 
 .instagram_box
 .linkedin_box{
     display: flex;
-    
+    align-items: center;
 }
 
 .social_links{
-    display: block;
     color: #FFFCEF;
-    margin: 1.875em 0;
-    font-size: 1.25em;
+    margin: 0 0.5em;
+    font-size: 1em;
     text-decoration: none;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .social_logo{
     color: #FFFCEF;
     margin: 0 0.5em;
+    font-size: 1.2em;
+    vertical-align: middle;
 }
-
-.socialmedia{
-    background-color: pink;
-}
-@media only screen and (min-width: 400px) and (max-width: 1200px){
-    .formulary_section {
-        flex-direction: column;
+@media only screen and (max-width: 768px) {
+    .social_container {
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        padding: 1em; 
+        margin-bottom: 20px;
     }
-
-    .registrer_option,
-    .registrer_option_changer{
-        font-size: 100%;
-    }
-
-    .register input,
-    .register button{
-        width: 120%;
-    }
-
-    .formulary,
-    .login
-    .register,
-    .social {
-        width: 80%;
-        margin: 20px auto;
-    }
-
-    .social_tittle {
-        font-size: 24px;
-    }
-
     .social_links {
-        font-size: 100%;
+        margin: 0.5em 0;
+        margin-bottom: 10px;
+    }
+
+    .linkedin_box,
+    .instagram_box {
+        flex-direction: column;
+        justify-content: center; 
+    }
+
+    .social_logo {
+        margin: 0; 
+    }
+    body {
+        padding-bottom: 100px; 
+    }
+
+    footer {
+        position: fixed; 
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
     }
 }
+
