@@ -47,7 +47,7 @@ const Login = () => {
       <div className="formularyy">
         <div className="text_formulary">
                 <h3 className="login_option">¡Logeate y crea las mejores noticias tech!</h3>
-                <button className='login_option_changer'>Aún no tengo una cuenta</button>
+                <button className='login_option_changer' onClick={() => navigate(`/register`)}>Aún no tengo una cuenta</button>
         </div>
       </div>
     </div>
